@@ -14,7 +14,11 @@ una certa pagina (la pagina interessata sarà colei che creerà l’evento in qu
 <h2>Scopo e motivazione:</h2>
 
 Lo scopo è quello di creare una community per riunire gli utenti appassionati di automobilismo su questo social, c
-he permette di rimanere aggiornati sulle novità del momento e che dà la possibilità di organizzare degli incontri.
+he permette di rimanere aggiornati sulle novità del momento e che dà la possibilità di organizzare degli incontri. 
+
+
+
+ciao
 <ul>
 <li><a href="https://wireframe.cc/DyoQnj">Wireframe 1</a></li>
 <li><a href="https://wireframe.cc/AJ9ykL">Wireframe 2</a></li>
