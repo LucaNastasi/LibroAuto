@@ -17,6 +17,6 @@ Lo scopo è quello di creare una community per riunire gli utenti appassionati d
 he permette di rimanere aggiornati sulle novità del momento e che dà la possibilità di organizzare degli incontri.
 <ul>
 <li><a href="https://wireframe.cc/DyoQnj">Wireframe 1</a></li>
-<li><a href="https://wireframe.cc/DyoQnj">Wireframe 2</a></li>
+<li><a href="https://wireframe.cc/AJ9ykL">Wireframe 2</a></li>
 </ul>
 </p>
