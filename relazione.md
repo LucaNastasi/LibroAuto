@@ -20,7 +20,11 @@ he permette di rimanere aggiornati sulle novità del momento e che dà la possib
 
 ciao
 <ul>
-<li><a href="https://wireframe.cc/DyoQnj">Wireframe 1</a></li>
-<li><a href="https://wireframe.cc/AJ9ykL">Wireframe 2</a></li>
+<li><a href="https://wireframe.cc/DyoQnj">Wireframe News</a></li>
+<li><a href="https://wireframe.cc/5QKU0w">Wireframe Registrazione/Accedi</a></li>
+<li><a href="https://wireframe.cc/AJ9ykL">Wireframe Eventi</a></li>
+<li><a href="https://wireframe.cc/U3LoLr">Wireframe Profilo</a></li>
+<li><a href="https://wireframe.cc/w54CQa">Wireframe Social</a></li>
+ 
 </ul>
 </p>
