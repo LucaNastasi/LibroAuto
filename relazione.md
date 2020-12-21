@@ -23,5 +23,6 @@ he permette di rimanere aggiornati sulle novità del momento e che dà la possib
 <li><a href="https://wireframe.cc/DyoQnj">Wireframe News</a></li>
 <li><a href="https://wireframe.cc/AJ9ykL">Wireframe Eventi</a></li>
 <li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/UseCase.png">Use Case</a></li>
+ <li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/diagram-er-auto-project.png">Diagramma ER</a></li>
 </ul>
 </p>
