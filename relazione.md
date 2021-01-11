@@ -5,11 +5,9 @@ Consonni, Nastasi, Picuno, Venegoni.
 
 <h2>Intro: </h2>
 <p>
-Social: applicazione mobile che ha come scopo quello di mettere in comunicazione la community di appassionati
- di automotive sfruttando una piattaforma social che fa utilizzo di post, condividendo news e immagini, con relativa sezione commenti.
-
-Presenta anche una mappa dell’Italia, con i “pin” che indicano i luoghi di incontro tra gli utenti di 
-una certa pagina (la pagina interessata sarà colei che creerà l’evento in questione)
+È un’applicazione nata per informare gli utenti sugli eventi e sulle novità riguardanti il mondo automobilistico, concretizzando anche i legami social fra gli users, che saranno liberi di usufruire di chat e di commentare i post degli altri utenti.
+L’applicazione permette agli utenti di visualizzare la mappa del Belpaese, accessoriata con la presenza di “pin”, che segnaleranno all’utilizzatore tutte le città in cui sono in programma eventi, fiere e manifestazioni sportive.
+Viene implementata inoltre una funzione informativa “news” che verrà consultata dagli users, ma completata dai “giornalisti”, ovvero una classe con opportuni privilegi, capaci di creare contenuti, arricchiti di trafiletti, foto e video.
 
 <h2>Scopo e motivazione:</h2>
 
@@ -24,5 +22,7 @@ he permette di rimanere aggiornati sulle novità del momento e che dà la possib
  <li><a href="https://wireframe.cc/U3LoLr">Wireframe Profilo</a></li>
 <li><a href="https://wireframe.cc/DyoQnj">Wireframe News</a></li>
 <li><a href="https://wireframe.cc/AJ9ykL">Wireframe Eventi</a></li>
+<li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/UseCase.png">Use Case</a></li>
+ <li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/diagramma-er-auto.png">Diagramma ER</a></li>
 </ul>
 </p>
