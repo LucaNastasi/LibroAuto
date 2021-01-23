@@ -11,11 +11,12 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
-  font-family: 'Roboto', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
 .titolo{
     font-style: italic;
-    color: goldenrod;
+    color: gold;
     margin-bottom: 40px;
     margin-top: -30px;
 }
@@ -61,4 +62,23 @@ body {
 .forgot{
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.modal-title{
+  font-size: 1.75rem;
+  font-style: italic;
+  color: gold;
+}
+
+.mb-3{
+  margin-top: 1rem!important;
+}
+
+.form-group{
+  margin-top: 1rem!important;
+}
+
+.modal-footer{
+  display: block;
+  text-align: center;
 }
