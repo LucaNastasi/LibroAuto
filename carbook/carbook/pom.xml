@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>it.itsrizzoli.ifts</groupId>
-	<artifactId>spring-boot-01</artifactId>
+	<artifactId>carbook</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-01</name>
+	<name>carbook</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
