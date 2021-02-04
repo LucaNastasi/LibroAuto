@@ -24,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
         EditText email= findViewById(R.id.email);
         EditText username= findViewById(R.id.username);
         EditText password= findViewById(R.id.password);
-        DatePicker data = findViewById(R.id.simpleDatePicker);
         Button button = findViewById(R.id.button);
-        button.setBackgroundColor(getResources().getColor(R.color.verde_acqua));
     }
 }

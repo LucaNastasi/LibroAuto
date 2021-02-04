@@ -43,18 +43,13 @@
         android:inputType="textPassword"
         android:hint="Password"/>
 
-    <DatePicker
-        android:id="@+id/simpleDatePicker"
-        android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_height="203dp"
-        android:datePickerMode="spinner" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:background= "@color/verde_acqua"
-        android:text="Button" />
+        android:foreground="@color/verde_acqua"
+        android:text="ciao"
+        android:textColor="@color/white" />
 </LinearLayout>

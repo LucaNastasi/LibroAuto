@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         TextView passwordDimenticata = findViewById(R.id.passwordDimenticata);
         Button accedi = findViewById(R.id.accedi);
         TextView copyright = findViewById(R.id.copyright);
-        ListView linea = findViewById(R.id.linea);
         TextView registrazione = findViewById(R.id.registrazione);
 
     }
