@@ -2,13 +2,15 @@ package it.rizzoli.carbooklogin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.Image;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import database.Persona;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,19 +19,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView logo = findViewById(R.id.logo);
-        TextView carbook = findViewById(R.id.carbook);
-        EditText email = findViewById(R.id.email);
-        EditText password = findViewById(R.id.password);
-        TextView passwordDimenticata = findViewById(R.id.passwordDimenticata);
-        Button accedi = findViewById(R.id.accedi);
-        TextView copyright = findViewById(R.id.copyright);
-        TextView registrazione = findViewById(R.id.registrazione);
+        ArrayList<Persona> lista = new ArrayList<>();
+        lista.add(new Persona("Antonio", "Lezzi", 27, "ciao@info"));
+        lista.add(new Persona("Pippo", "Pluto", 37, "ciao@info"));
+        lista.add(new Persona("Mario", "Rossi", 47, "ciao@info"));
+        lista.add(new Persona("Giuseppe", "Verdi", 57, "ciao@info"));
+
+        PersonaListAdapter personaListAdapter = new PersonaListAdapter(this, R.layout.rowlist_main, lista);
+        ListView personaListView = findViewById(R.id.personaListView);
+        personaListView.setAdapter(personaListAdapter);
+
+
+        personaListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Persona p = personaListAdapter.getItem(i);
+                String nominativo = p.getCognome() + " " + p.getNome();
+                Toast.makeText(MainActivity.this, nominativo, Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
-
-
-
-
-
 }

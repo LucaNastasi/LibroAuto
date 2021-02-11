@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Login"
     android:orientation="vertical"
     android:id="@+id/linearLayout">
 
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="100dp"
+        android:layout_width="139dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/logo_2"
         android:layout_gravity="center"
@@ -68,7 +68,7 @@
         android:textColor="@color/black"/>
 
     <Button
-        android:id="@+id/accedi"
+        android:id="@+id/buttonAccedi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Accedi"
@@ -91,7 +91,7 @@
 
 
     <Button
-        android:id="@+id/registrazione"
+        android:id="@+id/buttonRegistrazione"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
