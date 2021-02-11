@@ -11,9 +11,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME_KEY = "autenticazione.db";
     public static final int DATABASE_VER_KEY = 1;
-    private static final String PERSONA_TABLE_CREATE = "create table " + PersonaDbAdapter.PERSONA_TABLE_KEY + " ("+
+    public static final String PERSONA_TABLE_CREATE = "create table " + PersonaDbAdapter.PERSONA_TABLE_KEY + " ("+
             PersonaDbAdapter.PERSONA_ID_KEY + " integer primary key autoincrement, "+
-            PersonaDbAdapter.PERSONA_EMAIL_KEY + "String not null," +
+            PersonaDbAdapter.PERSONA_EMAIL_KEY + " String not null, " +
             PersonaDbAdapter.PERSONA_NOME_KEY + " String not null, " +
             PersonaDbAdapter.PERSONA_COGNOME_KEY + "  String not null, " +
             PersonaDbAdapter.PERSONA_USERNAME_KEY + " String not null, " +

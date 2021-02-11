@@ -10,6 +10,7 @@ import android.util.Log;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import database.DatabaseHelper;
 import database.PersonaDbAdapter;
 
 public class SplashActivity extends AppCompatActivity {
@@ -21,8 +22,8 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-       /* PersonaDbAdapter personaDb = new PersonaDbAdapter(this);
+        Log.i("Splash Activity", DatabaseHelper.PERSONA_TABLE_CREATE);
+        PersonaDbAdapter personaDb = new PersonaDbAdapter(this);
         personaDb.open();
         Cursor c = personaDb.fetchAllUsers();
         if (c != null && c.getCount() > 0) {
@@ -37,7 +38,7 @@ public class SplashActivity extends AppCompatActivity {
             while (c.moveToNext());
         }
 
-        personaDb.close();*/
+        personaDb.close();
 
 
         new Timer().schedule(new TimerTask() {
