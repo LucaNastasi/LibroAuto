@@ -55,6 +55,9 @@ public class Persona {
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Commento> commenti;
 	
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	private List<Evento> eventi;
+	
 //	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 //	private List<Messaggio> messaggiD;
 //	
