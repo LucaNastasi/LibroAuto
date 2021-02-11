@@ -35,7 +35,7 @@ public class Post {
 	private Integer idPost; 
 	
 	@Column(name = "cod_evento", length = 200)
-	private String codEvento;
+	private Integer codEvento;
 	
 	@Column(length = 1000)
 	private String descrizione;
@@ -57,11 +57,11 @@ public class Post {
 		this.idPost = id_post;
 	}
 
-	public String getCodEvento() {
+	public Integer getCodEvento() {
 		return codEvento;
 	}
 
-	public void setCodEvento(String cod_evento) {
+	public void setCodEvento(Integer cod_evento) {
 		this.codEvento = cod_evento;
 	}
 
