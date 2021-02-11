@@ -17,6 +17,15 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button registrazioneButton = findViewById(R.id.buttonRegistrazione);
+        Button accediButton = findViewById(R.id.buttonAccedi);
+
+        accediButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent accediIntent = new Intent(Login.this, MainActivity.class);
+                startActivity(accediIntent);
+            }
+        });
 
         registrazioneButton.setOnClickListener(new View.OnClickListener() {
             @Override

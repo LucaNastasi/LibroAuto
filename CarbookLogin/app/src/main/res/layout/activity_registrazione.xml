@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             app:srcCompat="@drawable/logo_2" />
         <TextView
-            android:id="@+id/carbook"
+            android:id="@+id/carbookEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
