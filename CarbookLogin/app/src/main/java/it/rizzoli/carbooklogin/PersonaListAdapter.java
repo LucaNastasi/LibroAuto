@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,14 +33,14 @@ public class PersonaListAdapter extends ArrayAdapter<Persona> {
         LayoutInflater inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(res, parent, false);
 
-        TextView nameTextView = rowView.findViewById(R.id.nameTextView);
+        ImageView imageView = rowView.findViewById(R.id.imageViewMain);
         TextView surnameTextView = rowView.findViewById(R.id.surnameTextView);
         TextView ageTextView = rowView.findViewById(R.id.ageTextView);
 
         Persona p = getItem(position);
         String eta = "" + p.getEta();
 
-        nameTextView.setText(p.getNome());
+
         surnameTextView.setText(p.getCognome());
         ageTextView.setText(eta);
 
