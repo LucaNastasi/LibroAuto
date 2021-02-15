@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        color: white;
+      }
+      .titolo{
+        font-style: italic;
+      }
+      .ricerca {
+        padding: 7px;
+      }
+      .input-group {
+        width: 57%;
+        float: left;
+        left: 21%;
+      }
+      .btn-toolbar {
+        padding-top: 1%;
+      }
+      .btn-group{
+        float: left;
+        left: 19%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Just an image -->
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <div class="row col-12">
+          <div class="col-4 text-center">
+            <h1 class="titolo">Carbook</h1>
+          </div>
+          <div class="col-4 ricerca">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-4">
+            <div
+              class="btn-toolbar"
+              role="toolbar"
+              aria-label="Toolbar with button groups"
+            >
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary">
+                  <i class="fas fa-home"></i>
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <i class="fas fa-plus"></i>
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <i class="far fa-newspaper"></i>
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <i class="far fa-bell"></i>
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <i class="far fa-calendar-alt"></i>
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <i class="far fa-paper-plane"></i>
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <i class="far fa-user"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  </body>
+</html>
