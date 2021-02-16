@@ -26,9 +26,35 @@
         <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      
         <div class="forgot">
-          <p><a href="">Password dimenticata?</a></p>
+          <p><a href="" data-toggle="modal" data-target="#PWDforgot">Password dimenticata?</a></p>
         </div>
+<div class="modal fade bd-example-modal-lg" id="PWDforgot" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content"> 
+              <div class="modal-header">
+                <h1 class="modal-title" id="ModalLabel">CarBook</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+        <div class="modal-body">
+          <h1>Reimposta password</h1>
+          <p>Scrivi qui sotto la email per ricevere un link per reimpostare la password</p>
+            <div class="row g-3">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Email" aria-label="First name">
+              </div>
+              <div>
+             <a href="" ><button type="button" class="btn btn-light" style="color: white; text-align: center; margin-right: 5px; margin-top: 5px">Reimposta password</button></a>
+            </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
         <div>
             <label>
               <input type="checkbox" value="remember-me"> Ricorda il mio ID CarBook
@@ -36,7 +62,7 @@
         </div>
         <hr>
         <div style="margin-bottom: 5px;">
-         Non hai un ID CarBook?<a href="" class="registrazione" data-toggle="modal" data-target="#exampleModal"> Crea subito il tuo.</a> 
+         Non hai un ID CarBook?<a href=""  data-toggle="modal" data-target="#exampleModal"> Crea subito il tuo.</a> 
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -81,14 +107,15 @@
       
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><a href="../Carbook/primapagina/primapagina.component.html">Registrati</a></button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Registrati</button>
               </div>
             </div>
           </div>
         </div>
-        <button class="btn btn-lg btn-danger btn-block"  type="submit">Accedi</button>
+        <a routerLink="/primapagina"><button class="btn btn-lg btn-danger btn-block"  type="submit" >Accedi</button></a>
         <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
     </form>
 
 </body>
 </html>
+
