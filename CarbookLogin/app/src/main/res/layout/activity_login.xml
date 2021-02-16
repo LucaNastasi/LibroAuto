@@ -2,24 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
+    android:background="#FDFCFC"
+    android:backgroundTint="#00FDFCFC"
     android:orientation="vertical"
-    android:id="@+id/linearLayout">
+    tools:context=".Login">
 
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="139dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/logo_2"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/logo_2"
         tools:layout_conversion_absoluteHeight="100dp"
-        tools:layout_editor_absoluteY="0dp"
+        tools:layout_conversion_absoluteWidth="100dp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_conversion_absoluteWidth="100dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
 
     <TextView
@@ -58,33 +60,31 @@
 
     <Button
         android:id="@+id/passwordDimenticata"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_gravity="end"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:text="Password dimenticata?"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/buttonAccedi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Accedi"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-
-
+        android:text="Accedi"
         />
 
     <TextView
         android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="&#169; 2020 - 2021"
-        android:layout_marginTop="20dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="&#169; 2020 - 2021"
 
 
         />
