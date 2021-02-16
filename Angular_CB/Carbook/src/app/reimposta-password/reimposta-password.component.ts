@@ -5,7 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './reimposta-password.component.html',
   styleUrls: ['./reimposta-password.component.css']
 })
+
 export class ReimpostaPasswordComponent implements OnInit {
+  
+  password: string;
+  n_password: string;
+  
 
   constructor() { }
 
