@@ -11,6 +11,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import database.Persona;
+import database.Pubblicazione;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,25 +20,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Persona> lista = new ArrayList<>();
-        lista.add(new Persona("Antonio", "Lezzi", 27, "ciao@info"));
-        lista.add(new Persona("Pippo", "Pluto", 37, "ciao@info"));
-        lista.add(new Persona("Mario", "Rossi", 47, "ciao@info"));
-        lista.add(new Persona("Giuseppe", "Verdi", 57, "ciao@info"));
+        ArrayList<Pubblicazione> lista = new ArrayList<>();
+        lista.add(new Pubblicazione("Luca Nastasi", "Lamborghini miura fantastica auto, rispecchia in pieno lo stile della casa"));
+        lista.add(new Pubblicazione("Marco Picuno", "Ferrari enzo"));
+        lista.add(new Pubblicazione("Simone Venegoni", "F40"));
+        lista.add(new Pubblicazione("Daniele Consonni", "Pagani zonda"));
 
-        PersonaListAdapter personaListAdapter = new PersonaListAdapter(this, R.layout.rowlist_main, lista);
-        ListView personaListView = findViewById(R.id.personaListView);
-        personaListView.setAdapter(personaListAdapter);
-
-
-        personaListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Persona p = personaListAdapter.getItem(i);
-                String nominativo = p.getCognome() + " " + p.getNome();
-                Toast.makeText(MainActivity.this, nominativo, Toast.LENGTH_LONG).show();
-            }
-        });
+        PubblicazioneListAdapter pubblicazioneListAdapter = new PubblicazioneListAdapter(this, R.layout.rowlist_car_layout, lista);
+        ListView pubblicazioneListView = findViewById(R.id.pubblicazioneListView);
+        pubblicazioneListView.setAdapter(pubblicazioneListAdapter);
 
     }
 }

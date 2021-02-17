@@ -1,5 +1,8 @@
-
-  .titolo{
+body{
+  background-color: transparent;
+}
+ 
+ .titolo{
     font-style: italic;
   }
   .ricerca {
