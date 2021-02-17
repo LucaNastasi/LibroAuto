@@ -7,14 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ReimpostaPasswordComponent implements OnInit {
-  
-  password: string;
-  n_password: string;
-  
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
+  controllaPassword(password: string , con_password: string){
+    if( password != con_password ){
+      console.log("Le password non coincidono, riprova")
+    } else {
+      console.log("Password aggiornata")
+    }
+  }
 }
