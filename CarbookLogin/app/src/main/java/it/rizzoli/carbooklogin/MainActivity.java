@@ -2,9 +2,11 @@ package it.rizzoli.carbooklogin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         PubblicazioneListAdapter pubblicazioneListAdapter = new PubblicazioneListAdapter(this, R.layout.rowlist_car_layout, lista);
         ListView pubblicazioneListView = findViewById(R.id.pubblicazioneListView);
         pubblicazioneListView.setAdapter(pubblicazioneListAdapter);
+
+
 
     }
 }

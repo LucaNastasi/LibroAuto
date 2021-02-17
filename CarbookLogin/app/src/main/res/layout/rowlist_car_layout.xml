@@ -4,85 +4,83 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
     >
 
+    <ImageView
+        android:id="@+id/imageProfilo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="61dp"
+        android:layout_height="59dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/profilo" />
 
+    <TextView
+        android:id="@+id/textProfilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="70dp"
+        android:layout_toEndOf="@+id/imageProfilo"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/purple_700"
+    android:text="Luca Giovanni Nastasi" />
+
+    <Button
+        android:id="@+id/buttonSegui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="segui" />
 
     <ImageView
         android:id="@+id/imageViewMain"
         android:layout_width="match_parent"
         android:layout_height="393dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/imageProfilo"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="189dp"
-        app:srcCompat="@drawable/logo_2" />
-
-
-    <ImageView
-        android:id="@+id/imageProfilo"
-        android:layout_width="61dp"
-        android:layout_height="59dp"
-        android:layout_above="@+id/imageViewMain"
-        android:layout_marginBottom="52dp"
-        android:layout_marginLeft="4dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
+        android:src="@drawable/logo_2" />
 
     <TextView
-        android:id="@+id/textProfilo"
+        android:id="@+id/textViewPersona"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageViewMain"
-        android:layout_marginStart="11dp"
-        android:layout_marginBottom="70dp"
-        android:layout_toEndOf="@+id/imageProfilo"
-        android:text="Luca Giovanni Nastasi" />
+        android:layout_below="@id/imageViewMain"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/purple_700"
+    android:text="Luca Giovanni Nastasi" />
 
-    <Button
-        android:id="@+id/buttonSegui"
+    <TextView
+        android:id="@+id/textViewDescrizione"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageViewMain"
-        android:layout_marginStart="106dp"
-        android:layout_marginBottom="55dp"
-        android:layout_toEndOf="@+id/textProfilo"
-        android:text="segui" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textViewPersona"
+        android:text="Commento" />
 
     <Button
         android:id="@+id/buttonCommenti"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageViewMain"
-        android:layout_marginBottom="-167dp"
+        android:layout_below="@+id/textViewDescrizione"
         android:text="Vizualizza tutti i commenti"
         android:textColor="@color/black"/>
 
-    <TextView
-        android:id="@+id/textViewPersona"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonCommenti"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="569dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginBottom="73dp"
-        android:text="Luca Giovanni Nastasi" />
-
-    <TextView
-        android:id="@+id/textViewDescrizione"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonCommenti"
+    <ImageButton
+        android:id="@+id/buttonLike"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="204dp"
-        android:layout_marginBottom="72dp"
-        android:text="TextView" />
-
+        android:layout_below="@id/imageViewMain"
+        android:layout_marginRight="5dp"
+        android:src="@android:drawable/btn_star"/>
 
 </RelativeLayout>

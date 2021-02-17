@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageProfilo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/profilo"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/imageProfilo"
+        android:text="Luca Nastasi"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/purple_700"/>
+    <TextView
+        android:id="@+id/textCommento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/textNome"
+        android:text="commento bla bala bala "
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"/>
+
+</RelativeLayout>

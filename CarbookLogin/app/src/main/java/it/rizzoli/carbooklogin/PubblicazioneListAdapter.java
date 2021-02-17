@@ -1,6 +1,7 @@
 package it.rizzoli.carbooklogin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,15 @@ public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
         TextView textDescrizione = rowView.findViewById(R.id.textViewDescrizione);
 
         Pubblicazione p = getItem(position);
+
+
+        buttonCommenti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent commentiActivity = new Intent(ctx, CommentiActivity.class);
+                ctx.startActivity(commentiActivity);
+            }
+        });
 
 
 

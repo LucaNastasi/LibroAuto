@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarbookLogin">
-        <activity android:name=".PasswordDimenticata"></activity>
+        <activity android:name=".CommentiActivity"></activity>
+        <activity android:name=".PasswordDimenticata" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login" />
         <activity android:name=".Registrazione" />
