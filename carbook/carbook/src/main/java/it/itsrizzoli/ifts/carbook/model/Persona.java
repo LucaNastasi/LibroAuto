@@ -58,6 +58,20 @@ public class Persona {
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Evento> eventi;
 	
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	private List<Messaggio> messaggiM;
+	
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	private List<Messaggio> messaggiD;
+	
+	
+	
+	
+	
+	
+	
+	
+	
 //	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 //	private List<Messaggio> messaggiD;
 //	

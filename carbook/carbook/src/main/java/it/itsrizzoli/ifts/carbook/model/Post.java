@@ -1,6 +1,7 @@
 package it.itsrizzoli.ifts.carbook.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -37,11 +38,16 @@ public class Post {
 	@Column(name = "cod_evento", length = 200)
 	private Integer codEvento;
 	
+	
+	
+//	@Column(name = "persona_email", length = 40)
+//	private String personaEmail;
+	
 	@Column(length = 1000)
 	private String descrizione;
 	
-//	@Column(length = 1000)
-//	private byte[] media; 
+	@Column(length = 1000)
+	private byte[] media; 
 	
 	@ManyToOne(cascade = CascadeType.ALL) 
 	private Persona persona;
@@ -73,10 +79,7 @@ public class Post {
 		this.descrizione = descrizione;
 	}
 
-	@Override
-	public String toString() {
-		return "Post [id_post=" + idPost + ", cod_evento=" + codEvento + ", descrizione=" + descrizione + "]";
-	}
+	
 
 	public Persona getPersona() {
 		return persona;
@@ -84,6 +87,20 @@ public class Post {
 
 	public void setPersona(Persona persona) {
 		this.persona = persona;
+	}
+
+	public byte[] getMedia() {
+		return media;
+	}
+
+	public void setMedia(byte[] media) {
+		this.media = media;
+	}
+
+	@Override
+	public String toString() {
+		return "Post [idPost=" + idPost + ", codEvento=" + codEvento + ", descrizione=" + descrizione + ", media="
+				+ Arrays.toString(media) + ", persona=" + persona + ", commenti=" + commenti + "]";
 	}
 	
 }
