@@ -76,45 +76,61 @@
               <div class="modal-body">
               <h1>Iscriviti</h1>
       
-                <div class="row g-3">
+                <div class="row g-3" style="margin-bottom: 10px;"> 
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="Nome" aria-label="First name">
+                    <input type="text" class="form-control" placeholder="Nome" aria-label="First name" #nome>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="Cognome" aria-label="Last name">
+                    <input type="text" class="form-control" placeholder="Cognome" aria-label="Last name" #cognome>
                   </div>
                 </div>
-      
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="Email">
+    
+                <div class="form-floating" style="margin-bottom: 10px;">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="Email" #email>
                 </div>
       
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Username">
+                <div class="row g-3" style="margin-bottom: 10px;">
+                <div class="col">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Username" #username>
                 </div>
-      
-                <div class="form-floating">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              
+
+                <div class="col">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Città" #citta>
+                </div>
+              </div>
+
+                <div class="form-floating" style="margin-bottom: 10px;">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" #password>
                 </div>
       
                 <div class="form-group row">
                   <label for="example-date-input" class="col-4 col-form-label" 
                   style="font-size: 20px;">Data di nascita</label>
                   <div class="col-8">
-                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input" #dataNascita>
                   </div>
                 </div>
       
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Registrati</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, dataNascita.value, citta.value)">Registrati</button>
               </div>
+         
             </div>
           </div>
-        </div>
-        <a routerLink="/primapagina"><button class="btn btn-lg btn-danger btn-block"  type="submit" >Accedi</button></a>
+        </div>                                                                    
+        <a routerLink="/paginaalert"><button class="btn btn-lg btn-danger btn-block" type="submit">Accedi</button></a>
         <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+       
     </form>
+      <!--<button class="btn btn-primary" type="submit" (click)="richestaHttp()">Persone</button>
+    
+      <ul>
+        <li *ngFor="let persona of persone">Nome:{{persona.nome}}; Cognome:{{persona.cognome}}</li>
+        </ul>
+      -->
+     
 
 </body>
 </html>
