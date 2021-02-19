@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
 import it.itsrizzoli.ifts.carbook.model.Evento;
 import it.itsrizzoli.ifts.carbook.repository.EventoRepository;
 
@@ -25,11 +26,9 @@ public class EventoController {
 	return repository.findAll();
 	}
 	
-	@GetMapping("/eventi/{codEvento}")	//api
-	public Evento byID(@PathVariable String cod_evento) {
-	return repository
-			.findById(cod_evento)
-			.orElseThrow();	
+	@GetMapping("/eventi/{id}")	//api
+	public Evento byID(@PathVariable Integer id) {
+			return repository.findById(id).orElseThrow(() -> new NotFoundException());
 	}
 	
 	@PostMapping("/eventi")	//api
@@ -37,21 +36,24 @@ public class EventoController {
 		return repository.save(evento);
 	}
 	
-	@PutMapping("/eventi/{cod_evento}") //api
-	public Evento aggiorna(@RequestBody Evento evento, @PathVariable String cod_evento)  {
-			repository
-				.findById(cod_evento)
-				.ifPresentOrElse((e) -> {
-					
-		
-					repository.save(e);
-				}, () -> {
-					repository.save(evento);
-				});
-		return repository.findById(cod_evento).get();	}
-	
-		@DeleteMapping("/eventi/{cod_evento}")
-		public void elimina( @PathVariable String cod_evento) {
-			repository.deleteById(cod_evento);
+	@PutMapping("/eventi/{id}") //api
+	public Evento aggiorna(@RequestBody Evento evento, @PathVariable Integer id) {
+		return repository.findById(id).map(e ->{
+			e.setNomeEvento(evento.getNomeEvento());
+			e.setDescrizione(evento.getDescrizione());
+			e.setDataEvento(evento.getDataEvento());
+			e.setLuogo(evento.getLuogo());
+			e.setPersona(evento.getPersona());
+			e.setPubblicazioni(evento.getPubblicazioni());
+			
+			return repository.save(e);
+		}).orElseGet(()->{
+			evento.setIdEvento(id);
+			return repository.save(evento);
+		});
+	}
+		@DeleteMapping("/eventi/{id}")
+		public void elimina( @PathVariable Integer id) {
+			repository.delete(repository.findById(id).orElseThrow(() -> new NotFoundException()));
 		}
 }

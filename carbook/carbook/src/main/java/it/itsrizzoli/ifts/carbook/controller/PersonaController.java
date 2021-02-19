@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
 import it.itsrizzoli.ifts.carbook.model.Persona;
 import it.itsrizzoli.ifts.carbook.repository.PersonaRepository;
 
@@ -18,44 +19,50 @@ import it.itsrizzoli.ifts.carbook.repository.PersonaRepository;
 public class PersonaController {
 
 	@Autowired
-	private PersonaRepository repository; //proprietà
-	
-	@GetMapping("/persone")	//api
+	private PersonaRepository repository; // proprietà
+
+	@GetMapping("/persone") // api
 	public List<Persona> all() {
-	return repository.findAll();
+		return repository.findAll();
 	}
-	
-	@GetMapping("/persone/{email}")	//api
-	public Persona byEMAIL(@PathVariable String email) {
-	return repository
-			.findById(email)
-			.orElseThrow();	
+
+	@GetMapping("/persone/{id}") // api
+	public Persona byID(@PathVariable Integer id) {
+		return repository.findById(id).orElseThrow(() -> new NotFoundException());
 	}
-	
-	@PostMapping("/persone")	//api
+
+	@PostMapping("/persone") // api
 	public Persona inserisci(@RequestBody Persona persona) {
 		return repository.save(persona);
 	}
-	
-	@PutMapping("/persone/{email}") //api
-	public Persona aggiorna(@RequestBody Persona persona, @PathVariable String email)  {
-			repository
-				.findById(email)
-				.ifPresentOrElse((p) -> {
-					p.setNome(p.getNome());
-					p.setCognome(p.getCognome());
-					//p.setEmail(p.getEmail());
-					p.setPassword(p.getPassword());
-					p.setUsername(p.getUsername());
-					repository.save(p);
-				}, () -> {
-					repository.save(persona);
-				});
-		return repository.findById(email).get();	}
-	
-		@DeleteMapping("/persone/{email}")
-		public void elimina( @PathVariable String email) {
-			repository.deleteById(email);
-		}
-}
 
+	@PutMapping("/persone/{id}") // api
+	public Persona aggiorna(@RequestBody Persona persona, @PathVariable Integer id) {
+		return repository.findById(id).map(p -> {
+			p.setNome(persona.getNome());
+			p.setCognome(persona.getCognome());
+			p.setEmail(persona.getEmail());
+			p.setPassword(persona.getPassword());
+			p.setUsername(persona.getUsername());
+			p.setCitta(persona.getCitta());
+			p.setDataNascita(persona.getDataNascita());
+			p.setFotoProfilo(persona.getFotoProfilo());
+			p.setCommenti(persona.getCommenti());
+			p.setEventi(persona.getEventi());
+			p.setMiPiace(persona.getMiPiace());
+			p.setMessaggiD(persona.getMessaggiD());
+			p.setMessaggiM(persona.getMessaggiM());
+			p.setPubblicazioni(persona.getPubblicazioni());
+ 
+			return repository.save(p);
+		}).orElseGet(() -> {
+			persona.setId(id);
+			return repository.save(persona);
+		});
+	}
+
+	@DeleteMapping("/persone/{id}")
+	public void elimina(@PathVariable Integer id) {
+		repository.delete(repository.findById(id).orElseThrow(() -> new NotFoundException()));
+	}
+}

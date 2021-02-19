@@ -22,13 +22,15 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(
 		
 		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "email"
+		property = "id"
 		
 		)
 public class Persona {
 
 	@Id
-	private String email;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(length = 20)
+	private int id;
 	
 	@Column(nullable = false, length = 100)
 	private String nome;
@@ -36,21 +38,30 @@ public class Persona {
 	@Column(nullable = false, length = 100)
 	private String cognome;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "data_nascita", nullable = false) 
-	private Date dataNascita;
-	
+
 	@Column(nullable = false, length = 100)
-	private String password;
+	private String email;
 	
-	@Column(nullable = false, length = 100)
-	private String citta;
 	
 	@Column(nullable = false, length = 100)
 	private String username;
 
+	
+	@Column(nullable = false, length = 100)
+	private String password;
+	
+	private byte[]fotoProfilo;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(nullable = false) 
+	private Date dataNascita;
+	
+	@Column(length = 100)
+	private String citta;
+	
+
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
-	private List<Post> posts;
+	private List<Pubblicazione> pubblicazioni;
 	
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Commento> commenti;
@@ -58,25 +69,23 @@ public class Persona {
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Evento> eventi;
 	
-	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "personaM", cascade = CascadeType.ALL)
 	private List<Messaggio> messaggiM;
 	
-	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "personaD", cascade = CascadeType.ALL)
 	private List<Messaggio> messaggiD;
 	
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	private List<MiPiace> miPiace;
 	
 	
-	
-	
-	
-	
-	
-	
-//	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
-//	private List<Messaggio> messaggiD;
-//	
-//	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
-//	private List<Messaggio> messaggiM;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getEmail() {
 		return email;
@@ -134,37 +143,68 @@ public class Persona {
 		this.username = username;
 	}
 
-	public List<Post> getPosts() {
-		return posts;
+	public List<Pubblicazione> getPubblicazioni() {
+		return pubblicazioni;
+	}
+	public void setPubblicazioni(List<Pubblicazione> pubblicazioni) {
+		this.pubblicazioni = pubblicazioni;
 	}
 
-	public void setPosts(List<Post> posts) {
-		this.posts = posts;
+	public List<Commento> getCommenti() {
+		return commenti;
 	}
-	
+
+	public void setCommenti(List<Commento> commenti) {
+		this.commenti = commenti;
+	}
+
+	public List<Evento> getEventi() {
+		return eventi;
+	}
+
+	public void setEventi(List<Evento> eventi) {
+		this.eventi = eventi;
+	}
+
+	public List<Messaggio> getMessaggiM() {
+		return messaggiM;
+	}
+
+	public void setMessaggiM(List<Messaggio> messaggiM) {
+		this.messaggiM = messaggiM;
+	}
+
+	public List<Messaggio> getMessaggiD() {
+		return messaggiD;
+	}
+
+	public void setMessaggiD(List<Messaggio> messaggiD) {
+		this.messaggiD = messaggiD;
+	}
+
+	public byte[] getFotoProfilo() {
+		return fotoProfilo;
+	}
+
+	public void setFotoProfilo(byte[] fotoProfilo) {
+		this.fotoProfilo = fotoProfilo;
+	}
+	public List<MiPiace> getMiPiace() {
+		return miPiace;
+	}
+
+	public void setMiPiace(List<MiPiace> miPiace) {
+		this.miPiace = miPiace;
+	}
+
 	@Override
 	public String toString() {
-		return "Persona [email=" + email + ", nome=" + nome + ", cognome=" + cognome + ", data_nascita=" + dataNascita
-				+ ", password=" + password + ", citta=" + citta + ", username=" + username + "]";
+		return "Persona [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", email=" + email + ", username="
+				+ username + ", password=" + password + ", dataNascita=" + dataNascita + ", citta=" + citta
+				+ ", pubblicazioni=" + pubblicazioni + ", commenti=" + commenti + ", eventi=" + eventi + ", messaggiM="
+				+ messaggiM + ", messaggiD=" + messaggiD + "]";
 	}
 
-//	public List<Messaggio> getMessaggiD() {
-//		return messaggiD;
-//	}
-//
-//	public void setMessaggiD(List<Messaggio> messaggiD) {
-//		this.messaggiD = messaggiD;
-//	}
-//
-//	public List<Messaggio> getMessaggiM() {
-//		return messaggiM;
-//	}
-//
-//	public void setMessaggiM(List<Messaggio> messaggiM) {
-//		this.messaggiM = messaggiM;
-//	} 
-
-
-
+	
 	
 }

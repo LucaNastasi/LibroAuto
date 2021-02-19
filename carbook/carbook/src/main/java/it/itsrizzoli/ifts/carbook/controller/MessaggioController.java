@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
 import it.itsrizzoli.ifts.carbook.model.Messaggio;
 import it.itsrizzoli.ifts.carbook.repository.MessaggioRepository;
 
@@ -20,21 +21,15 @@ public class MessaggioController {
 	@Autowired
 	private MessaggioRepository repository; //proprietà
 	
-	@GetMapping("/messaggiM")	//api
+	@GetMapping("/messaggi")	//api
 	public List<Messaggio> all() {
 	return repository.findAll();
 	}
 	
-	@GetMapping("/messaggiD")	//api
-	public List<Messaggio> all1() {
-	return repository.findAll();
-	}
 	
-	@GetMapping("/messaggi/{id_messaggio}")	//api
-	public Messaggio byIDMSSGG(@PathVariable String id_messaggio) {
-	return repository
-			.findById(id_messaggio)
-			.orElseThrow();	
+	@GetMapping("/messaggi/{id}")	//api
+	public Messaggio byID(@PathVariable Integer id) {
+		return repository.findById(id).orElseThrow(() -> new NotFoundException());
 	}
 	
 	@PostMapping("/messaggi")	//api
@@ -43,22 +38,21 @@ public class MessaggioController {
 	}
 	
 	@PutMapping("/messaggi/{id_messaggio}") //api
-	public Messaggio aggiorna(@RequestBody Messaggio messaggio, @PathVariable String id_messaggio)  {
-			repository
-				.findById(id_messaggio)
-				.ifPresentOrElse((m) -> {
-//					m.setPersonaEmailDestinatario(m.getPersonaEmailDestinatario());
-//					m.setPersonaEmailMittente(m.getPersonaEmailMittente());
-					m.setContenutoMessaggio(m.getContenutoMessaggio());
-					m.setDataOraMessaggio(m.getDataOraMessaggio());
-					repository.save(m);
-				}, () -> {
-					repository.save(messaggio);
-				});
-		return repository.findById(id_messaggio).get();	}
+	public Messaggio aggiorna(@RequestBody Messaggio messaggio, @PathVariable Integer id)  {
+		return repository.findById(id).map(m -> {
+					m.setContenutoMessaggio(messaggio.getContenutoMessaggio());
+					m.setContenutoMessaggio(messaggio.getContenutoMessaggio());
+					m.setPersonaD(messaggio.getPersonaD());
+					m.setPersonaM(messaggio.getPersonaM());
+					return repository.save(m);
+		}).orElseGet(() -> {
+			messaggio.setIdMessaggio(id);
+			return repository.save(messaggio);
+		});
+		}
 	
 		@DeleteMapping("/messaggi/{id_messaggio}")
-		public void elimina( @PathVariable String id_messaggio) {
-			repository.deleteById(id_messaggio);
+		public void elimina(@PathVariable Integer id) {
+			repository.delete(repository.findById(id).orElseThrow(() -> new NotFoundException()));
 		}
 }

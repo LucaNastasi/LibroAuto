@@ -32,26 +32,22 @@ public class Messaggio {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_messaggio", length = 20)
 	private Integer idMessaggio; 
 	
-	@Column(name = "persona_email_mittente", length = 40)
-	private String PersonaEmailMittente;
-	
-	@Column(name = "persona_email_destinatario", length = 40)
-	private String PersonaEmailDestinatario;
-	
-	@Column(name="contenuto_messaggio", length = 50)
+	@Column(length = 1000)
 	private String contenutoMessaggio;
 	
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name = "data_ora_messaggio", nullable = false)
+	@Column(nullable = false)
 	private Date DataOraMessaggio;
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL) 
-	private Persona persona;
+	private Persona personaM;
+	
+	@ManyToOne(cascade = CascadeType.ALL) 
+	private Persona personaD;
 
 
 	public Integer getIdMessaggio() {
@@ -62,27 +58,6 @@ public class Messaggio {
 	public void setIdMessaggio(Integer idMessaggio) {
 		this.idMessaggio = idMessaggio;
 	}
-
-
-	public String getPersonaEmailMittente() {
-		return PersonaEmailMittente;
-	}
-
-
-	public void setPersonaEmailMittente(String persona_email_mittente) {
-		this.PersonaEmailMittente = persona_email_mittente;
-	}
-
-
-	public String getPersonaEmailDestinatario() {
-		return PersonaEmailDestinatario;
-	}
-
-
-	public void setPersonaEmailDestinatario(String persona_email_destinatario) {
-		this.PersonaEmailDestinatario = persona_email_destinatario;
-	}
-
 
 	public String getContenutoMessaggio() {
 		return contenutoMessaggio;
@@ -104,22 +79,37 @@ public class Messaggio {
 	}
 
 
-	public Persona getPersona() {
-		return persona;
+	public Persona getPersonaM() {
+		return personaM;
 	}
 
 
-	public void setPersona(Persona persona) {
-		this.persona = persona;
+	public void setPersonaM(Persona personaM) {
+		this.personaM = personaM;
+	}
+
+
+	public Persona getPersonaD() {
+		return personaD;
+	}
+
+
+	public void setPersonaD(Persona personaD) {
+		this.personaD = personaD;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Messaggio [idMessaggio=" + idMessaggio + ", emailMittente=" + PersonaEmailMittente + ", emailDestinatario="
-				+ PersonaEmailDestinatario + ", contenutoMessaggio=" + contenutoMessaggio + ", DataOraMessaggio="
-				+ DataOraMessaggio + "]";
+		return "Messaggio [idMessaggio=" + idMessaggio + ", contenutoMessaggio=" + contenutoMessaggio
+				+ ", DataOraMessaggio=" + DataOraMessaggio + ", personaM=" + personaM + ", personaD=" + personaD + "]";
 	}
-	
+
+
+
+
+
+
+
 }
 	

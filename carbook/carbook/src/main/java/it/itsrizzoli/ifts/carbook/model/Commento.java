@@ -1,6 +1,7 @@
 package it.itsrizzoli.ifts.carbook.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -32,27 +33,28 @@ public class Commento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_commento", length = 20)
+	@Column(length = 20)
 	private Integer idCommento; 
 	
-	@Column(name = "media_commento", length = 200)
-	private String mediaCommento;
+	private byte[] mediaCommento;
 	
-	@Column(name = "contenuto_commento", length = 1000)
-	private String contenutoCommento;
+	@Column(length = 1000)
+	private String testoCommento;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name = "data_ora_commento", nullable = false)
+	@Column(nullable = false)
 	private Date DataOracommento;
 	
-//	@Column(length = 1000)
-//	private byte[] media_commento;
+
 	
 	@ManyToOne(cascade = CascadeType.ALL) 
 	private Persona persona;
 	
 	@ManyToOne (cascade = CascadeType.ALL) 
-	private Post post;
+	private Pubblicazione pubblicazione;
+	
+	@OneToMany(mappedBy = "commento", cascade = CascadeType.ALL)
+	private List<MiPiace> miPiace;
 
 	public Integer getIdCommento() {
 		return idCommento;
@@ -62,28 +64,28 @@ public class Commento {
 		this.idCommento = idCommento;
 	}
 
-//	public String getMediaCommento() {
-//		return mediaCommento;
-//	}
-//
-//	public void setMediaCommento(String mediaCommento) {
-//		this.mediaCommento = mediaCommento;
-//	}
-
-	public String getContenutoCommento() {
-		return contenutoCommento;
+	public byte[] getMediaCommento() {
+		return mediaCommento;
 	}
 
-	public void setContenutoCommento(String contenutoCommento) {
-		this.contenutoCommento = contenutoCommento;
+	public void setMediaCommento(byte[] mediaCommento) {
+		this.mediaCommento = mediaCommento;
+	}
+
+	public String getTestoCommento() {
+		return testoCommento;
+	}
+
+	public void setTestoCommento(String testoCommento) {
+		this.testoCommento = testoCommento;
 	}
 
 	public Date getDataOracommento() {
 		return DataOracommento;
 	}
 
-	public void setDataOracommento(Date data_ora_commento) {
-		DataOracommento = data_ora_commento;
+	public void setDataOracommento(Date dataOracommento) {
+		DataOracommento = dataOracommento;
 	}
 
 	public Persona getPersona() {
@@ -94,10 +96,29 @@ public class Commento {
 		this.persona = persona;
 	}
 
+	public Pubblicazione getPubblicazione() {
+		return pubblicazione;
+	}
+
+	public void setPubblicazione(Pubblicazione pubblicazione) {
+		this.pubblicazione = pubblicazione;
+	}
+	
+
+	public List<MiPiace> getMiPiace() {
+		return miPiace;
+	}
+
+	public void setMiPiace(List<MiPiace> miPiace) {
+		this.miPiace = miPiace;
+	}
+
 	@Override
 	public String toString() {
-		return "Commento [idCommento=" + idCommento + ", mediaCommento=" + mediaCommento + ", commentoContenuto="
-				+ contenutoCommento + ", DataOracommento=" + DataOracommento + ", persona=" + persona + "]";
+		return "Commento [idCommento=" + idCommento + ", mediaCommento=" + Arrays.toString(mediaCommento)
+				+ ", testoCommento=" + testoCommento + ", DataOracommento=" + DataOracommento + ", persona=" + persona
+				+ ", pubblicazione=" + pubblicazione + "]";
 	}
+
 
 	}

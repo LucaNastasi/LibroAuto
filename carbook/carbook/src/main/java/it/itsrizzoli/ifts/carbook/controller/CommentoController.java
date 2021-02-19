@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
 import it.itsrizzoli.ifts.carbook.model.Commento;
 import it.itsrizzoli.ifts.carbook.repository.CommentoRepository;
 
@@ -18,42 +19,43 @@ import it.itsrizzoli.ifts.carbook.repository.CommentoRepository;
 public class CommentoController {
 
 	@Autowired
-	private CommentoRepository repository; //proprietà
-	
-	@GetMapping("/commenti")	//api
+	private CommentoRepository repository; // proprietà
+
+	@GetMapping("/commenti") // api
 	public List<Commento> all() {
-	return repository.findAll();
+		return repository.findAll();
 	}
-	
-	@GetMapping("/commenti/{id_commento}")	//api
-	public Commento byID(@PathVariable String id_commento) {
-	return repository
-			.findById(id_commento)
-			.orElseThrow();	
+
+	@GetMapping("/commenti/{id}") // api
+	public Commento byID(@PathVariable Integer id) {
+		return repository.findById(id).orElseThrow(() -> new NotFoundException());
+
 	}
-	
-	@PostMapping("/commenti")	//api
+
+	@PostMapping("/commenti") // api
 	public Commento inserisci(@RequestBody Commento commento) {
 		return repository.save(commento);
 	}
-	
-	@PutMapping("/commenti/{id_commento}") //api
-	public Commento aggiorna(@RequestBody Commento commento, @PathVariable String id_commento)  {
-			repository
-				.findById(id_commento)
-				.ifPresentOrElse((c) -> {
-				c.setContenutoCommento(c.getContenutoCommento());
-			//	c.setMediaCommento(c.getMediaCommento());
-				c.setDataOracommento(c.getDataOracommento());
-					repository.save(c);
-				}, () -> {
-					repository.save(commento);
-				});
-		return repository.findById(id_commento).get();	}
-	
-		@DeleteMapping("/commenti/{id_commento}")
-		public void elimina( @PathVariable String id_commento) {
-			repository.deleteById(id_commento);
-		}
-}
 
+	@PutMapping("/commenti/{id}") // api
+	public Commento aggiorna(@RequestBody Commento commento, @PathVariable Integer id) {
+		return repository.findById(id).map(c -> {
+			c.setTestoCommento(commento.getTestoCommento());
+			c.setMediaCommento(commento.getMediaCommento());
+			c.setDataOracommento(commento.getDataOracommento());
+			c.setMiPiace(commento.getMiPiace());
+			c.setPersona(commento.getPersona());
+			c.setPubblicazione(commento.getPubblicazione());
+
+			return repository.save(c);
+		}).orElseGet(() -> {
+			commento.setIdCommento(id);
+			return repository.save(commento);
+		});
+	}
+
+	@DeleteMapping("/commenti/{id}")
+	public void elimina(@PathVariable Integer id) {
+		repository.delete(repository.findById(id).orElseThrow(() -> new NotFoundException()));
+	}
+}
