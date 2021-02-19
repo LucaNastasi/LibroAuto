@@ -9,6 +9,7 @@ import { DirettiveComponent } from './direttive/direttive.component';
 import { PasswordDimenticataComponent } from './password-dimenticata/password-dimenticata.component';
 import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-password.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-passw
   ],
   imports: [
       BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

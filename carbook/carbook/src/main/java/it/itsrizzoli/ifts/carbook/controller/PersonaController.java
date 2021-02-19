@@ -3,6 +3,7 @@ package it.itsrizzoli.ifts.carbook.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,7 @@ import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
 import it.itsrizzoli.ifts.carbook.model.Persona;
 import it.itsrizzoli.ifts.carbook.repository.PersonaRepository;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class PersonaController {
 
