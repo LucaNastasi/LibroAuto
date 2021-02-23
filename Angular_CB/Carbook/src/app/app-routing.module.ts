@@ -1,14 +1,18 @@
   
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { LoginComponent } from './login/login.component';
 import { PrimapaginaComponent } from './primapagina/primapagina.component';
-import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component'
+import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
+import { PUtenteComponent } from './p-utente/p-utente.component'
+  
 
 const routes: Routes = [
   {path: 'primapagina', component: PrimapaginaComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'paginaalert', component: PaginaAlertComponent}
+  {path: 'paginaalert', component: PaginaAlertComponent},
+  {path: 'putente', component: PUtenteComponent}
 ];
 
 

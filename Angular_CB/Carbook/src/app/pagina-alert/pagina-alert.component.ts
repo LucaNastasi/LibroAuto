@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaAlertComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+   
+   }
 
   ngOnInit(): void {
   }
 
+  
 }

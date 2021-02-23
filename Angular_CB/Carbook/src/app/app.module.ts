@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PrimapaginaComponent } from './primapagina/primapagina.component';
 import { DirettiveComponent } from './direttive/direttive.component';
-import { PasswordDimenticataComponent } from './password-dimenticata/password-dimenticata.component';
 import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-password.component';
 import { HttpClientModule } from '@angular/common/http'
@@ -17,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http'
     LoginComponent,
     PrimapaginaComponent,
     DirettiveComponent,
-    PasswordDimenticataComponent,
     PaginaAlertComponent,
     ReimpostaPasswordComponent
   ],
