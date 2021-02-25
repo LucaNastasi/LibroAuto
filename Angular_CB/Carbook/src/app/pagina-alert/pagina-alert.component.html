@@ -84,7 +84,7 @@
     <div class="col-sm-3 box" style="background-image: url(assets/sfondoutentepa.jpg);">
       <p class="username">Mio_Username</p>
    
-   <i class="fas fa-map-marker-alt" style="margin-top: 46%; margin-left: 5%; position: absolute;"></i>
+   <i class="fas fa-map-marker-alt" style="top: 80%; margin-left: 5%; position: absolute;"></i>
 
   <div id="postseguaciseguiti" style="position: absolute; margin-left: 43%; margin-top: 15%;">
     <ul class="list-group" style="background-color: lightblue; ">
@@ -102,8 +102,12 @@
       </li>
     </ul>
     </div>
-      <div id="immagine1" style="width: 180px; height: 180px; background-color: blue;border-radius: 50%; margin-top: 5%; position: absolute;">
-         <p style="color: white; text-align: center; vertical-align: middle; line-height: 180px; ">Immagine del profilo</p></div>
+     <!-- <div id="immagine" style="width: 180px; height: 180px; background-color: blue;border-radius: 50%; margin-top: 5%; position: absolute;"> -->
+      <img [src]="url ? url : 'assets/imgvuotaprofile.png'" style=" width: 38%; height: 60%; background-color: blue;border-radius: 50%; margin-top: 3%; border: blue solid; position: absolute; min-width: 38%; min-height: 40%;"> 
+ 
+      <label for="testo" class="btn" style=" background-color: blue; color: white; font-size: 80%; padding: 1%; top: 67%; margin-left: 5%; position: absolute;">Aggiungi immagine</label>
+      <input type='file' id="testo" (change)="onSelectFile($event)" style="visibility: hidden;">
+
     </div>
   
     <div class="col-sm-3 box" style="background-image: url(assets/sfondoutentepa.jpg);">
