@@ -1,33 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    
 
-    <style>
-      body {
-        color: rgb(255, 255, 255);
-      }
-      .titolo{
-        font-style: italic;
-      }
-      .ricerca {
-        padding: 7px;
-      }
-      .input-group {
-        width: 57%;
-        float: left;
-        left: 21%;
-      }
-      .btn-toolbar {
-        padding-top: 1%;
-      }
-      .btn-group{
-        float: left;
-        left: 19%;
-      }
-    </style>
+
   </head>
   <body>
     <!-- Just an image -->
@@ -35,7 +17,7 @@
       <div class="container-fluid">
         <div class="row col-12">
           <div class="col-4 text-center">
-            <h1 class="titolo">Carbook</h1>
+            <h1 class="titolo" style="color: white;">Carbook</h1>
           </div>
           <div class="col-4 ricerca">
             <div class="input-group">
@@ -56,18 +38,43 @@
             </div>
           </div>
           <div class="col-4">
-            <div
-              class="btn-toolbar"
-              role="toolbar"
-              aria-label="Toolbar with button groups"
-            >
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
               <div class="btn-group me-2" role="group" aria-label="First group">
                 <button type="button" class="btn btn-primary">
                   <i class="fas fa-home"></i>
                 </button>
-                <button type="button" class="btn btn-primary">
-                  <i class="fas fa-plus"></i>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postpiu">
+                   <i class="fas fa-plus"></i>
                 </button>
+                <!-- Modal -->
+                <div class="modal fade" id="postpiu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Crea post</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                    </div>
+                    <div class="modal-body">
+                      
+                    
+                     <img [src]="url ? url : 'assets/plusPost.jpg'" style=" width: 100%; height: 100%; border: 2px solid #000; border-radius: 1%;"> 
+                      <input type='file' (change)="onSelectFile($event)" style=" padding-top: 10px;">
+                      <label for="descrizione">Descrizione</label>
+                      <input type="text" class="form-control" id="descrizione" >
+                      <label for="example-date-input" class="col-4 col-form-label" style="font-size: 20px;">Data</label>
+                     <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                     <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Pubblica</button>
+                  </div>
+                    </div>
+                    </div>
+                 
+            </div>
+          </div>
+        
                 <button type="button" class="btn btn-primary">
                   <i class="far fa-newspaper"></i>
                 </button>
@@ -89,6 +96,10 @@
         </div>
       </div>
     </nav>
+
+
+
+
 
   </body>
 </html>

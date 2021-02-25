@@ -8,7 +8,8 @@ import { PrimapaginaComponent } from './primapagina/primapagina.component';
 import { DirettiveComponent } from './direttive/direttive.component';
 import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-password.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { PostComponent } from './post/post.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http'
     PrimapaginaComponent,
     DirettiveComponent,
     PaginaAlertComponent,
-    ReimpostaPasswordComponent
+    ReimpostaPasswordComponent,
+    PostComponent
   ],
   imports: [
       BrowserModule,
