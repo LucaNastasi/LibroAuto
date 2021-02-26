@@ -13,5 +13,6 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_baseline_notifications_24"
+        android:tint="@color/colorAccent"
         />
 </FrameLayout>

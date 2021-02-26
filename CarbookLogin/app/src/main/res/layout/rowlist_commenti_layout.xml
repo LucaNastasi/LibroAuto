@@ -22,7 +22,7 @@
         android:text="Luca Nastasi"
         android:textSize="18sp"
         android:fontFamily="sans-serif-black"
-        android:textColor="@color/purple_700"/>
+        android:textColor="@color/colorPrimary"/>
     <TextView
         android:id="@+id/textCommento"
         android:layout_width="wrap_content"
