@@ -21,35 +21,51 @@
           </div>
           <div class="col-4 ricerca">
             <div class="input-group">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Search"
-                aria-label="Recipient's username"
-                aria-describedby="button-addon2"
-              />
-              <button
-                class="btn btn-outline-secondary"
-                type="button"
-                id="button-addon2"
-              >
+              <input  type="search" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2" />
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">
                 <i class="fas fa-search"></i>
               </button>
             </div>
           </div>
           <div class="col-4">
-            <div
-              class="btn-toolbar"
-              role="toolbar"
-              aria-label="Toolbar with button groups"
-            >
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
               <div class="btn-group me-2" role="group" aria-label="First group">
-                <button type="button" class="btn btn-primary">
+                             
+                <a routerLink="/primapagina"><button type="button" class="btn btn-primary">
                   <i class="fas fa-home"></i>
+                </button></a>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postpiu">
+                   <i class="fas fa-plus"></i>
                 </button>
-                <button type="button" class="btn btn-primary">
-                  <i class="fas fa-plus"></i>
-                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="postpiu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Crea post</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                     </button>
+                    </div>
+                    <div class="modal-body">
+                      
+                    
+                     <img [src]="url ? url : 'assets/plusPost.jpg'" style=" width: 100%; height: 100%; border: 2px solid #000; border-radius: 1%;"> 
+                      <input type='file' (change)="onSelectFile($event)" style=" padding-top: 10px;">
+                      <label for="descrizione">Descrizione</label>
+                      <input type="text" class="form-control" id="descrizione" >
+                      <label for="example-date-input" class="col-4 col-form-label" style="font-size: 20px;">Data</label>
+                     <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                     <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Pubblica</button>
+                  </div>
+                    </div>
+                    </div>
+                 
+            </div>
+          </div>
+        
                 <button type="button" class="btn btn-primary">
                   <i class="far fa-newspaper"></i>
                 </button>
@@ -62,9 +78,11 @@
                 <button type="button" class="btn btn-primary">
                   <i class="far fa-paper-plane"></i>
                 </button>
-                <button type="button" class="btn btn-primary">
+
+                <a routerLink="/putente"> <button type="button" class="btn btn-primary">
                   <i class="far fa-user"></i>
-                </button>
+                </button></a>
+
               </div>
             </div>
           </div>
@@ -103,13 +121,15 @@
     </ul>
     </div>
      <!-- <div id="immagine" style="width: 180px; height: 180px; background-color: blue;border-radius: 50%; margin-top: 5%; position: absolute;"> -->
+     
       <img [src]="url ? url : 'assets/imgvuotaprofile.png'" style=" width: 38%; height: 60%; background-color: blue;border-radius: 50%; margin-top: 3%; border: blue solid; position: absolute; min-width: 38%; min-height: 40%;"> 
  
-      <label for="testo" class="btn" style=" background-color: blue; color: white; font-size: 80%; padding: 1%; top: 67%; margin-left: 5%; position: absolute;">Aggiungi immagine</label>
+      <label for="testo" class="btn" style=" background-color: rgb(119, 119, 245); color: white; font-size: 80%; padding: 1%; top: 67%; margin-left: 6%; position: absolute;">Aggiungi immagine</label>
       <input type='file' id="testo" (change)="onSelectFile($event)" style="visibility: hidden;">
 
     </div>
   
+    <!--*ngFor="let persona of persone"-->
     <div class="col-sm-3 box" style="background-image: url(assets/sfondoutentepa.jpg);">
         <img src="assets/sfondo.jpg" class="immagine">
           <p class="username">Altro_Username</p>

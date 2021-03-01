@@ -37,8 +37,10 @@ public class Pubblicazione {
 	@Column(length = 1000)
 	private String descrizione;
 	
+	@Column
+	private String media;
 	
-	private byte[] media; 
+	//private byte[] media; 
 	
 	@Temporal(TemporalType.DATE)
 	@Column(nullable = false)
@@ -82,14 +84,25 @@ public class Pubblicazione {
 	public void setPersona(Persona persona) {
 		this.persona = persona;
 	}
-
-	public byte[] getMedia() {
+	
+	//PROVA
+	public String getMedia() {
 		return media;
 	}
 
-	public void setMedia(byte[] media) {
+	public void setMedia(String media) {
 		this.media = media;
 	}
+	//PROVA
+	
+	
+//	public byte[] getMedia() {
+//		return media;
+//	}
+//
+//	public void setMedia(byte[] media) {
+//		this.media = media;
+//	}
 	public List<Commento> getCommenti() {
 		return commenti;
 	}
@@ -127,7 +140,7 @@ public class Pubblicazione {
 	@Override
 	public String toString() {
 		return "Pubblicazione [idPubblicazione=" + idPubblicazione + ", descrizione=" + descrizione + ", media="
-				+ Arrays.toString(media) + ", dataPubblicazione=" + dataPubblicazione + ", persona=" + persona
+				+ /*Arrays.toString(media)*/ media + ", dataPubblicazione=" + dataPubblicazione + ", persona=" + persona
 				+ ", evento=" + evento + ", commenti=" + commenti + "]";
 	}
 

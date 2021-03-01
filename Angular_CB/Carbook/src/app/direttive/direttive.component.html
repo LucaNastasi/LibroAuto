@@ -12,7 +12,7 @@
 
   </head>
   <body>
-    <!-- Just an image -->
+    
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
         <div class="row col-12">
@@ -21,18 +21,8 @@
           </div>
           <div class="col-4 ricerca">
             <div class="input-group">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Search"
-                aria-label="Recipient's username"
-                aria-describedby="button-addon2"
-              />
-              <button
-                class="btn btn-outline-secondary"
-                type="button"
-                id="button-addon2"
-              >
+              <input type="search" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2"/>
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2" >
                 <i class="fas fa-search"></i>
               </button>
             </div>
@@ -40,9 +30,10 @@
           <div class="col-4">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
               <div class="btn-group me-2" role="group" aria-label="First group">
-                <button type="button" class="btn btn-primary">
+
+              <a routerLink="/primapagina"><button type="button" class="btn btn-primary">
                   <i class="fas fa-home"></i>
-                </button>
+                </button></a>
 
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postpiu">
                    <i class="fas fa-plus"></i>
@@ -61,14 +52,17 @@
                       
                     
                      <img [src]="url ? url : 'assets/plusPost.jpg'" style=" width: 100%; height: 100%; border: 2px solid #000; border-radius: 1%;"> 
-                      <input type='file' (change)="onSelectFile($event)" style=" padding-top: 10px;">
+                     <label for="testo" class="btn" style=" background-color: rgb(119, 119, 245); color: white; font-size: 80%; padding-top:10px; margin-top: 3%;">Aggiungi file</label>
+                      <input type='file' id="testo" (change)="onSelectFile($event)" style="visibility: hidden;" #media>
+
                       <label for="descrizione">Descrizione</label>
-                      <input type="text" class="form-control" id="descrizione" >
+                      <input type="text" class="form-control" id="descrizione" #descrizione>
                       <label for="example-date-input" class="col-4 col-form-label" style="font-size: 20px;">Data</label>
-                     <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                     <input class="form-control" type="date" value="2011-08-19" id="example-date-input" #dataPubblicazione>
                      <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Pubblica</button>
-                  </div>
+                      <button type="button" class="btn btn-primary" (click)="aggiungi(media.value, descrizione.value, dataPubblicazione.value)">Pubblica</button>
+                  
+                    </div>
                     </div>
                     </div>
                  
@@ -87,9 +81,11 @@
                 <button type="button" class="btn btn-primary">
                   <i class="far fa-paper-plane"></i>
                 </button>
-                <button type="button" class="btn btn-primary">
+
+                <a routerLink="/putente"> <button type="button" class="btn btn-primary">
                   <i class="far fa-user"></i>
-                </button>
+                </button></a>
+
               </div>
             </div>
           </div>
@@ -97,6 +93,17 @@
       </div>
     </nav>
 
+
+
+    <div *ngFor="let post of pubblicazioni" id="container" style="margin: auto; height: 400px; width: 500px; background-color:white;" class="shadow p-3 mb-2 bg-white rounded">
+      <div id="nome" style="height: 55px;">
+        <img src="assets/imgvuotaprofile.png" style="border-radius: 20px; height: 40px; width: 40px; float: left; margin: 5px;">
+        <p style="margin: 10px; float: left; font-size: 20px; font-family:Arial, Helvetica, sans-serif">Mario_rossi88</p>
+       <!--<img src="" style="width: 100%; height: 300px;">-->
+      <div style="width: 300px; height: 300px;">{{post.media}}</div>
+        <p>{{post.descrizione}}, {{post.dataPubblicazione}}</p>
+      </div>
+    </div>
 
 
 

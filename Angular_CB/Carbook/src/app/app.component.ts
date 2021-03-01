@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 import { LoginComponent } from './login/login.component';
+//import { DirettiveComponent } from './direttive/direttive.component';
 
 
 @Component({

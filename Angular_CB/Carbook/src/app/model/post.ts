@@ -1,21 +1,12 @@
-export class PostModel {
-    
+import { Variable } from '@angular/compiler/src/render3/r3_ast';
+import { Url } from 'url';
 
-   // public data_ora_post: Date;
+export class Post {
 
-    public descrizione: string;
-  
-   // public media:
-    public mipiaceCount: number;
+
+        descrizione: string;
+        media: File;
+        dataPubblicazione:Date;
+   
+    //public mipiaceCount: number;
 }
-/*
-export class PostModel {
-    public profilePhoto: string;
-    public name: string;
-    public date: string;
-
-    public postText: string;
-    public postPhoto: string;
-
-    public likeCount: number;
-}*/
