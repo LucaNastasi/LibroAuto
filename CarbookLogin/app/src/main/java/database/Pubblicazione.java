@@ -1,12 +1,16 @@
 package database;
 
 import java.util.Date;
+import java.util.List;
 
 public class Pubblicazione {
 
-    int idPubblicazione;
-    String nomePersona;
-    String descrizione;
+    private int idPubblicazione;
+    private String descrizione;
+    private Date dataPubblicazione;
+    private byte[] media;
+    private String nomePersona;
+
 
     public Pubblicazione(String n, String descrizione){
         this.nomePersona = n;
@@ -21,14 +25,6 @@ public class Pubblicazione {
         this.idPubblicazione = idPubblicazione;
     }
 
-    public String getNomePersona() {
-        return nomePersona;
-    }
-
-    public void setNomePersona(String nomePersona) {
-        this.nomePersona = nomePersona;
-    }
-
     public String getDescrizione() {
         return descrizione;
     }
@@ -37,4 +33,27 @@ public class Pubblicazione {
         this.descrizione = descrizione;
     }
 
+    public Date getDataPubblicazione() {
+        return dataPubblicazione;
+    }
+
+    public void setDataPubblicazione(Date dataPubblicazione) {
+        this.dataPubblicazione = dataPubblicazione;
+    }
+
+    public byte[] getMedia() {
+        return media;
+    }
+
+    public void setMedia(byte[] media) {
+        this.media = media;
+    }
+
+    public String getNomePersona() {
+        return nomePersona;
+    }
+
+    public void setNomePersona(String nomePersona) {
+        this.nomePersona = nomePersona;
+    }
 }
