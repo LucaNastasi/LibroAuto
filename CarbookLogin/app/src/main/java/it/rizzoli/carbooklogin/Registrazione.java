@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import database.Persona;
+import model.Persona;
 import database.PersonaDbAdapter;
 
 public class Registrazione extends AppCompatActivity {

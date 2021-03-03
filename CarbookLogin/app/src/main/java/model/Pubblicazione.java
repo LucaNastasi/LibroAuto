@@ -1,20 +1,16 @@
-package database;
+package model;
 
 import java.util.Date;
 import java.util.List;
 
 public class Pubblicazione {
 
-    private int idPubblicazione;
+    private Integer idPubblicazione;
     private String descrizione;
     private Date dataPubblicazione;
-    private byte[] media;
-    private String nomePersona;
 
+    public Pubblicazione(){
 
-    public Pubblicazione(String n, String descrizione){
-        this.nomePersona = n;
-        this.descrizione = descrizione;
     }
 
     public int getIdPubblicazione() {
@@ -41,19 +37,7 @@ public class Pubblicazione {
         this.dataPubblicazione = dataPubblicazione;
     }
 
-    public byte[] getMedia() {
-        return media;
-    }
 
-    public void setMedia(byte[] media) {
-        this.media = media;
-    }
 
-    public String getNomePersona() {
-        return nomePersona;
-    }
 
-    public void setNomePersona(String nomePersona) {
-        this.nomePersona = nomePersona;
-    }
 }

@@ -1,29 +1,34 @@
-package database;
+package model;
 
 public class Persona {
-    private int id;
+    private Integer id;
     private String email;
     private String nome;
     private String cognome;
     private String username;
     private String password;
-    private int eta;
+    private String telefono;
     private String citta;
 
     public Persona() {
         this.nome = "";
         this.cognome = "";
-        this.eta = 0;
         this.email = "";
     }
 
-    public Persona(String nome, String cognome, int eta, String email) {
+    public Persona(String nome, String cognome,String email) {
         this.nome = nome;
         this.cognome = cognome;
-        this.eta = eta;
         this.email = email;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;
@@ -65,20 +70,12 @@ public class Persona {
         this.password = password;
     }
 
-    public int getEta() {
-        return eta;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setEta(int eta) {
-        this.eta = eta;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getCitta() {

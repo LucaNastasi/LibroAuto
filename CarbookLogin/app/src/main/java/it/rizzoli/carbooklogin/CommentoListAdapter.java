@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-import database.Commento;
+import model.Commento;
 
 
 public class CommentoListAdapter extends ArrayAdapter<Commento> {

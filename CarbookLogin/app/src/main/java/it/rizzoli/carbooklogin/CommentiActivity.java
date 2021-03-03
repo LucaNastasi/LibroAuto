@@ -7,8 +7,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import database.Commento;
-import database.Pubblicazione;
+import model.Commento;
 
 public class CommentiActivity extends AppCompatActivity {
 

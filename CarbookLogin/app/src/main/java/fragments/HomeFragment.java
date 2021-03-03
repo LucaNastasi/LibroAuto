@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-import database.Pubblicazione;
+import model.Pubblicazione;
 import it.rizzoli.carbooklogin.PubblicazioneListAdapter;
 import it.rizzoli.carbooklogin.R;
 
