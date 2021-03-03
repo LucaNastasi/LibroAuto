@@ -37,8 +37,6 @@ public class Pubblicazione {
 	@Column(length = 1000)
 	private String descrizione;
 	
-	@Column
-	private String media;
 	
 	//private byte[] media; 
 	
@@ -49,18 +47,15 @@ public class Pubblicazione {
 	@ManyToOne(cascade = CascadeType.ALL) 
 	private Persona persona;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	private Evento evento;
 	
-	@OneToMany(mappedBy = "pubblicazione", cascade = CascadeType.ALL)
-	private List<Commento> commenti;
+	@ManyToOne (cascade = CascadeType.ALL)
+	private Automobile automobile;
 
-	@OneToMany(mappedBy = "pubblicazione", cascade = CascadeType.ALL)
-	private List<MiPiace> miPiace;
-	
+
 	public Integer getIdPubblicazione() {
 		return idPubblicazione;
 	}
+
 
 	public void setIdPubblicazione(Integer idPubblicazione) {
 		this.idPubblicazione = idPubblicazione;
@@ -71,79 +66,48 @@ public class Pubblicazione {
 		return descrizione;
 	}
 
+
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
 
-	
-
-	public Persona getPersona() {
-		return persona;
-	}
-
-	public void setPersona(Persona persona) {
-		this.persona = persona;
-	}
-	
-	//PROVA
-	public String getMedia() {
-		return media;
-	}
-
-	public void setMedia(String media) {
-		this.media = media;
-	}
-	//PROVA
-	
-	
-//	public byte[] getMedia() {
-//		return media;
-//	}
-//
-//	public void setMedia(byte[] media) {
-//		this.media = media;
-//	}
-	public List<Commento> getCommenti() {
-		return commenti;
-	}
-
-	public void setCommenti(List<Commento> commenti) {
-		this.commenti = commenti;
-	}
 
 	public Date getDataPubblicazione() {
 		return dataPubblicazione;
 	}
 
+
 	public void setDataPubblicazione(Date dataPubblicazione) {
 		this.dataPubblicazione = dataPubblicazione;
 	}
 
-	public Evento getEvento() {
-		return evento;
+
+	public Persona getPersona() {
+		return persona;
 	}
 
-	public void setEvento(Evento evento) {
-		this.evento = evento;
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 
-	public List<MiPiace> getMiPiace() {
-		return miPiace;
+
+	public Automobile getAutomobile() {
+		return automobile;
 	}
 
-	public void setMiPiace(List<MiPiace> miPiace) {
-		this.miPiace = miPiace;
-	}
 
+	public void setAutomobile(Automobile automobile) {
+		this.automobile = automobile;
+	}
 
 
 	@Override
 	public String toString() {
-		return "Pubblicazione [idPubblicazione=" + idPubblicazione + ", descrizione=" + descrizione + ", media="
-				+ /*Arrays.toString(media)*/ media + ", dataPubblicazione=" + dataPubblicazione + ", persona=" + persona
-				+ ", evento=" + evento + ", commenti=" + commenti + "]";
+		return "Pubblicazione [idPubblicazione=" + idPubblicazione + ", descrizione=" + descrizione
+				+ ", dataPubblicazione=" + dataPubblicazione + ", persona=" + persona + ", automobile=" + automobile
+				+ "]";
 	}
-
 
 	
 }

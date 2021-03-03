@@ -43,8 +43,7 @@ public class CommentoController {
 			c.setTestoCommento(commento.getTestoCommento());
 			c.setMediaCommento(commento.getMediaCommento());
 			c.setDataOracommento(commento.getDataOracommento());
-			c.setMiPiace(commento.getMiPiace());
-			c.setPersona(commento.getPersona());
+			
 			c.setPubblicazione(commento.getPubblicazione());
 
 			return repository.save(c);

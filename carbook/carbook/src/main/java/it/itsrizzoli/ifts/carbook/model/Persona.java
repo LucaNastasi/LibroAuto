@@ -50,11 +50,99 @@ public class Persona {
 	@Column(nullable = false, length = 100)
 	private String password;
 	
-	private byte[]fotoProfilo;
 	
-	@Temporal(TemporalType.DATE)
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getCognome() {
+		return cognome;
+	}
+
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+
+	public String getCitta() {
+		return citta;
+	}
+
+
+	public void setCitta(String citta) {
+		this.citta = citta;
+	}
+
+
+	public List<Pubblicazione> getPubblicazioni() {
+		return pubblicazioni;
+	}
+
+
+	public void setPubblicazioni(List<Pubblicazione> pubblicazioni) {
+		this.pubblicazioni = pubblicazioni;
+	}
+
+
 	@Column(nullable = false) 
-	private Date dataNascita;
+	private String telefono;
 	
 	@Column(length = 100)
 	private String citta;
@@ -62,149 +150,18 @@ public class Persona {
 
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Pubblicazione> pubblicazioni;
-	
-	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
-	private List<Commento> commenti;
-	
-	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
-	private List<Evento> eventi;
-	
-	@OneToMany(mappedBy = "personaM", cascade = CascadeType.ALL)
-	private List<Messaggio> messaggiM;
-	
-	@OneToMany(mappedBy = "personaD", cascade = CascadeType.ALL)
-	private List<Messaggio> messaggiD;
-	
-	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
-	private List<MiPiace> miPiace;
-	
-	
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCognome() {
-		return cognome;
-	}
-
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
-	}
-
-	public Date getDataNascita() {
-		return dataNascita;
-	}
-
-	public void setDataNascita(Date data_nascita) {
-		this.dataNascita = data_nascita;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getCitta() {
-		return citta;
-	}
-
-	public void setCitta(String citta) {
-		this.citta = citta;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public List<Pubblicazione> getPubblicazioni() {
-		return pubblicazioni;
-	}
-	public void setPubblicazioni(List<Pubblicazione> pubblicazioni) {
-		this.pubblicazioni = pubblicazioni;
-	}
-
-	public List<Commento> getCommenti() {
-		return commenti;
-	}
-
-	public void setCommenti(List<Commento> commenti) {
-		this.commenti = commenti;
-	}
-
-	public List<Evento> getEventi() {
-		return eventi;
-	}
-
-	public void setEventi(List<Evento> eventi) {
-		this.eventi = eventi;
-	}
-
-	public List<Messaggio> getMessaggiM() {
-		return messaggiM;
-	}
-
-	public void setMessaggiM(List<Messaggio> messaggiM) {
-		this.messaggiM = messaggiM;
-	}
-
-	public List<Messaggio> getMessaggiD() {
-		return messaggiD;
-	}
-
-	public void setMessaggiD(List<Messaggio> messaggiD) {
-		this.messaggiD = messaggiD;
-	}
-
-	public byte[] getFotoProfilo() {
-		return fotoProfilo;
-	}
-
-	public void setFotoProfilo(byte[] fotoProfilo) {
-		this.fotoProfilo = fotoProfilo;
-	}
-	public List<MiPiace> getMiPiace() {
-		return miPiace;
-	}
-
-	public void setMiPiace(List<MiPiace> miPiace) {
-		this.miPiace = miPiace;
-	}
 
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", email=" + email + ", username="
-				+ username + ", password=" + password + ", dataNascita=" + dataNascita + ", citta=" + citta
-				+ ", pubblicazioni=" + pubblicazioni + ", commenti=" + commenti + ", eventi=" + eventi + ", messaggiM="
-				+ messaggiM + ", messaggiD=" + messaggiD + "]";
+				+ username + ", password=" + password + ", telefono=" + telefono + ", citta=" + citta
+				+ ", pubblicazioni=" + pubblicazioni + "]";
 	}
+	
 
+	
+	
 	
 	
 }

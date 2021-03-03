@@ -47,15 +47,8 @@ public class Commento {
 	
 
 	
-	@ManyToOne(cascade = CascadeType.ALL) 
-	private Persona persona;
 	
-	@ManyToOne (cascade = CascadeType.ALL) 
-	private Pubblicazione pubblicazione;
 	
-	@OneToMany(mappedBy = "commento", cascade = CascadeType.ALL)
-	private List<MiPiace> miPiace;
-
 	public Integer getIdCommento() {
 		return idCommento;
 	}
@@ -88,14 +81,6 @@ public class Commento {
 		DataOracommento = dataOracommento;
 	}
 
-	public Persona getPersona() {
-		return persona;
-	}
-
-	public void setPersona(Persona persona) {
-		this.persona = persona;
-	}
-
 	public Pubblicazione getPubblicazione() {
 		return pubblicazione;
 	}
@@ -103,22 +88,22 @@ public class Commento {
 	public void setPubblicazione(Pubblicazione pubblicazione) {
 		this.pubblicazione = pubblicazione;
 	}
-	
 
-	public List<MiPiace> getMiPiace() {
-		return miPiace;
-	}
+	@ManyToOne (cascade = CascadeType.ALL) 
+	private Pubblicazione pubblicazione;
 
-	public void setMiPiace(List<MiPiace> miPiace) {
-		this.miPiace = miPiace;
-	}
+
+
+
 
 	@Override
 	public String toString() {
 		return "Commento [idCommento=" + idCommento + ", mediaCommento=" + Arrays.toString(mediaCommento)
-				+ ", testoCommento=" + testoCommento + ", DataOracommento=" + DataOracommento + ", persona=" + persona
-				+ ", pubblicazione=" + pubblicazione + "]";
+				+ ", testoCommento=" + testoCommento + ", DataOracommento=" + DataOracommento + ", pubblicazione="
+				+ pubblicazione + "]";
 	}
+	
 
+	
 
 	}

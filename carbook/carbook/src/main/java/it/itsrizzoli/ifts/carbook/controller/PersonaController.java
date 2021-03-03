@@ -59,14 +59,8 @@ public class PersonaController {
 			p.setPassword(persona.getPassword());
 			p.setUsername(persona.getUsername());
 			p.setCitta(persona.getCitta());
-			p.setDataNascita(persona.getDataNascita());
-			p.setFotoProfilo(persona.getFotoProfilo());
-			p.setCommenti(persona.getCommenti());
-			p.setEventi(persona.getEventi());
-			p.setMiPiace(persona.getMiPiace());
-			p.setMessaggiD(persona.getMessaggiD());
-			p.setMessaggiM(persona.getMessaggiM());
-			p.setPubblicazioni(persona.getPubblicazioni());
+			p.setTelefono(persona.getTelefono());
+					p.setPubblicazioni(persona.getPubblicazioni());
  
 			return repository.save(p);
 		}).orElseGet(() -> {

@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,8 +15,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-import database.Persona;
-import database.Pubblicazione;
+import model.Pubblicazione;
 
 public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
     Context ctx;
@@ -62,9 +60,9 @@ public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
 
 
 
-        textProfilo.setText(p.getNomePersona());
+
         textDescrizione.setText(p.getDescrizione());
-        textPersona.setText(p.getNomePersona());
+
 
 
 
