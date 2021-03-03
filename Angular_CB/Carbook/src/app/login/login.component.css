@@ -1,8 +1,6 @@
-
-
 body {
 
-  
+  background-color: transparent;
   
   padding-top: 80px;
   
@@ -14,7 +12,7 @@ body {
 
 .titolo{
     font-style: italic;
-    color: gold;
+    color:black;
     margin-bottom: 40px;
     margin-top: -30px;
 }
@@ -66,7 +64,7 @@ body {
 .modal-title{
   font-size: 1.75rem;
   font-style: italic;
-  color: gold;
+  color:black;
 }
 
 .mb-3{
@@ -81,5 +79,3 @@ body {
   display: block;
   text-align: center;
 }
-
-
