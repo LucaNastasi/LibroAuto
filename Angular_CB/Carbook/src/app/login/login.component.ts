@@ -1,6 +1,5 @@
-import { compileNgModuleFromRender2 } from '@angular/compiler/src/render3/r3_module_compiler';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Persona } from '../model/persona';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 
@@ -11,20 +10,37 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 })
 export class LoginComponent implements OnInit {
  
+  email: String;
+  password: String;
+  
+
 
    constructor(
-     private http: HttpClient,
+     private http: HttpClient, private router:Router,
    ){}
 
-persone: Persona[];
+persone: any[];
 
   ngOnInit(): void {
   }
   
-  richestaHttp(){
-    this.http.get<Persona[]>('http://localhost:8080/persone').subscribe((persone) => {
-    this.persone = persone;})
+  richestaHttp(form: boolean){
+  console.log(this.email, this.password);
+    this.http.get<Persona[]>('http://localhost:8080/login?email=' +
+    this.email +'&password=' + this.password).subscribe((persone) => {
+      console.log(persone);
+
+      if(persone)
+      this.router.navigate(['paginaalert'])
+      else
+      this.router.navigate(['login'])
+
+      console.log})
   }
+
+  
+ 
+  
 
   aggiungi(nome: string, cognome: string, email: string, username: string, password: string, dataNascita: Date, citta: string){
     console.log(nome, cognome, email, username, password, dataNascita, citta);

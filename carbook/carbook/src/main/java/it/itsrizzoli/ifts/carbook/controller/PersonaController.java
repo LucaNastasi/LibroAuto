@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
@@ -22,6 +24,16 @@ public class PersonaController {
 
 	@Autowired
 	private PersonaRepository repository; // proprietà
+
+	@ResponseBody
+	@GetMapping("/login") // api
+	public boolean loginResponse(@RequestParam(value="email") String email, @RequestParam(value="password") String password) {
+	List<Persona> utenti = repository.match(email, password);
+	if(utenti.isEmpty())
+		return false;
+	else
+		return true;
+	}
 
 	@GetMapping("/persone") // api
 	public List<Persona> all() {
