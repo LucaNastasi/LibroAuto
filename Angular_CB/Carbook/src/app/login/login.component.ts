@@ -10,10 +10,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 })
 export class LoginComponent implements OnInit {
  
-  email: String;
-  password: String;
-  
-
+  email: String;      //email di login
+  password: String;   // password di login
 
    constructor(
      private http: HttpClient, private router:Router,
@@ -38,12 +36,8 @@ persone: any[];
       console.log})
   }
 
-  
- 
-  
-
-  aggiungi(nome: string, cognome: string, email: string, username: string, password: string, dataNascita: Date, citta: string){
-    console.log(nome, cognome, email, username, password, dataNascita, citta);
+  aggiungi(nome: string, cognome: string, email: string, username: string, password: string, telefono: string, citta: string){
+    console.log(nome, cognome, email, username, password, telefono, citta); //aggiungi persona del databse con registrati
 
     let persona = new Persona();
     persona.nome = nome;
@@ -51,15 +45,11 @@ persone: any[];
     persona.email = email;
     persona.username = username;
     persona.password = password; 
-    persona.dataNascita = dataNascita;
+    persona.telefono = telefono;
     persona.citta = citta;
     console.log(JSON.stringify(persona));
 
     this.http.post<Persona>('http://localhost:8080/persone', persona).subscribe(); 
 
   }
-
-  
-
-
 }
