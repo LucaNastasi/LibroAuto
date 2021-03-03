@@ -52,15 +52,19 @@
                     <div class="modal-body">
                       
                     
-                     <img [src]="url ? url : 'assets/plusPost.jpg'" style=" width: 100%; height: 100%; border: 2px solid #000; border-radius: 1%;"> 
-                      <input type='file' (change)="onSelectFile($event)" style=" padding-top: 10px;">
-                      <label for="descrizione">Descrizione</label>
-                      <input type="text" class="form-control" id="descrizione" >
-                      <label for="example-date-input" class="col-4 col-form-label" style="font-size: 20px;">Data</label>
-                     <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                     <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Pubblica</button>
-                  </div>
+                   
+                      <img [src]="url ? url : 'assets/plusPost.jpg'" style=" width: 100%; height: 100%; border: 2px solid #000; border-radius: 1%;"> 
+                      <label for="testo" class="btn" style=" background-color: rgb(119, 119, 245); color: white; font-size: 80%; padding-top:10px; margin-top: 3%;">Aggiungi file</label>
+                       <input type='file' id="testo" (change)="onSelectFile($event)" style="visibility: hidden;" #media>
+ 
+                       <label for="descrizione">Descrizione</label>
+                       <input type="text" class="form-control" id="descrizione" #descrizione>
+                       <label for="example-date-input" class="col-4 col-form-label" style="font-size: 20px;">Data</label>
+                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input" #dataPubblicazione>
+                      <div class="modal-footer">
+                       <button type="button" class="btn btn-primary" (click)="aggiungi(media.value, descrizione.value, dataPubblicazione.value)">Pubblica</button>
+                   
+                     </div>
                     </div>
                     </div>
                  
@@ -90,88 +94,40 @@
         </div>
       </div>
     </nav>
+
 <!--
-<div style= "background-color: transparent; margin-top: 10px; height: 100%;">
-
-        <div class="card" style="width: 30rem; margin: auto;">
-            <h5 class="card-title" style="margin: 2%;">Mario_Rossi87</h5>
-            <h6 class="card-subtitle mb-2 text-muted" style="margin: 2%; margin-top: -4px;">Cinisello Balsamo, Milano</h6>
-            <img src="assets/sfondo.jpg" class="card-img-top" style="width: 90%; height: 90%; margin: auto;">
-            <div class="card-body">
-              <p class="card-text">Questa è la descrizione del post</p>
-              <button type="button" class="btn btn-primary" style="background-color: transparent; margin-right: 5px;">
-              <a href="#" class="card-link"><i class="far fa-thumbs-up"></i></a>
-            </button>
-            <button type="button" class="btn btn-primary" style="background-color: transparent;">
-              <a href="#" class="card-link"><i class="far fa-comments"></i></a>
-            </button>
-          </div>
-        </div>   
-
-<div class="card" style="width: 30rem; margin: auto;">
-    <h5 class="card-title" style="margin: 2%;">Luigi_Bianchi72</h5>
-    <h6 class="card-subtitle mb-2 text-muted" style="margin: 2%; margin-top: -4px;">Rozzano, Milano</h6>
-    <img src="assets/pimpcar.jpg" class="card-img-top" style="width: 90%; height: 90%; margin: auto;">
-    <div class="card-body">
-      <p class="card-text">Questa è la descrizione del post</p>
-      <button type="button" class="btn btn-primary" style="background-color: transparent; margin-right: 5px;">
-      <a href="#" class="card-link"><i class="far fa-thumbs-up"></i></a>
-    </button>
-    <button type="button" class="btn btn-primary" style="background-color: transparent;">
-      <a href="#" class="card-link"><i class="far fa-comments"></i></a>
-    </button>
-  </div>
-</div>  
-
-<div class="card" style="width: 30rem; margin: auto;">
-    <h5 class="card-title" style="margin: 2%;">Fabrizio_Verdi91</h5>
-    <h6 class="card-subtitle mb-2 text-muted" style="margin: 2%; margin-top: -4px;">San Giuliano, Milano</h6>
-    <img src="assets/classiccar.jpg" class="card-img-top" style="width: 90%; height: 90%; margin: auto;">
-    <div class="card-body">
-      <p class="card-text">Questa è la descrizione del post</p>
-      <button type="button" class="btn btn-primary" style="background-color: transparent; margin-right: 5px;">
-      <a href="#" class="card-link"><i class="far fa-thumbs-up"></i></a>
-    </button>
-
-   
-            <button type="button" class="btn btn-primary" style="background-color: transparent;">
-              <a href="#" class="card-link"><i class="far fa-comments"></i></a>
-            </button>
-      
-</div>
-</div> 
-</div>
--->
-<!--
-<div class="container-fluid">
-  <div class="row" style="height: 400px;">
-    <div class="col-sm" style="background-color:transparent;">
-    </div>
-    <div class="col-sm" style="background-color: yellow;">
-      One of three columns
-    </div>
-    <div class="col-sm" style="background-color:transparent;">
-    </div>
-  </div>
-</div>
--->
-
-
 <div id="container" style="margin: auto; height: 400px; width: 500px; background-color:white;" class="shadow p-3 mb-2 bg-white rounded">
   <div id="nome" style="height: 55px;">
     <img src="assets/profiloMini.jpg" style="border-radius: 20px; height: 40px; width: 40px; float: left; margin: 5px;">
     <p style="margin: 10px; float: left; font-size: 20px; font-family:Arial, Helvetica, sans-serif">Mario_rossi88</p>
     <img src="assets/sfondo.jpg" style="width: 100%; height: 300px;">
-    <!--PER I COMMMENTI UTILIZZARE IL DISPLAY NONE-->
   </div>
 </div>
-<div id="container" style="margin:auto; height: 400px; width: 500px; background-color:white;" class="shadow p-3 mb-5 bg-white rounded">
-  <div id="nome" style="height: 55px; top: 0%;">
-    <img src="assets/profiloMini.jpg" style="border-radius: 20px; height: 40px; width: 40px; float: left; margin: 5px;">
-    <p style="margin: 10px; float: left; font-size: 20px; font-family:Arial, Helvetica, sans-serif">Mario_rossi90</p>
-    <img src="assets/sfondo.jpg" style="width: 100%; height: 300px;">
-    <!--PER I COMMMENTI UTILIZZARE IL DISPLAY NONE-->
-  </div>
+-->
+<div *ngFor="let post of pubblicazioni"> 
+  <div id="container" style="margin:auto; height: 400px; width: 60%; background-color:white; " class="shadow p-3 mb-2 bg-white rounded">
+  
+    <p style=" height: 25px; top: 0%; margin: 5px;  font-size: 20px; font-family:Arial, Helvetica, sans-serif"><strong>Nissan GT-900</strong></p>
+    <img src="assets/sfondo.jpg" style="margin: 5px; height: 80%; width: 30%; border-radius: 5px; float: left;">  
+  <p id="prezzo" style="position:relative; left: 5%; top: 5%; font-size: 30px;">1000€</p>
+ 
+  <div id="postseguaciseguiti" style="position: relative; float: left; left: 5%; top: 15%;">
+    <ul class="list-group" style="background-color: lightblue; ">
+      <li class="list-group-item d-flex justify-content-between align-items-center lista" >
+       Post
+        <span class="badge bg-light text-dark" style="color:white; font-size: 120%;">89</span>
+      </li>
+      <li class="list-group-item align-items-center lista ">
+       Follower
+        <span class="badge bg-light text-dark" style="color:white; font-size: 120%; ">11.590</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center lista" style="border-bottom: none;">
+        Following
+        <span class="badge bg-light text-dark" style="color:white;  font-size: 120%;">274</span>
+      </li>
+    </ul>
+    </div>
+</div>
 </div>
 
   </body>

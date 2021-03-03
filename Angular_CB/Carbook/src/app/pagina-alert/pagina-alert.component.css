@@ -29,7 +29,7 @@
 
 .box{ background-size:100%; border-width: thin; border-style: solid; border-color: blue; min-width: 350px; min-height: 300px;}
 
-.lista{border-top: none; border-left: none; border-right: none; background-color:#c5eef8}
+.lista{ background-color:#c5eef8}
 
 .follow{left:81%; top: 82%; position: absolute;}
 
