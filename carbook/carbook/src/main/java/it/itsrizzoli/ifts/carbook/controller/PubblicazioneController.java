@@ -21,50 +21,41 @@ import it.itsrizzoli.ifts.carbook.repository.PubblicazioneRepository;
 public class PubblicazioneController {
 
 	@Autowired
-	private PubblicazioneRepository repository; //proprietà
-	
-	@GetMapping("/pubblicazioni")	//api
+	private PubblicazioneRepository repository; // proprietà
+
+	@GetMapping("/pubblicazioni") // api
 	public List<Pubblicazione> all() {
-	return repository.findAll();
+		return repository.findAll();
 	}
+
 	@GetMapping("/pubblicazioni/{id}")
 	public Pubblicazione byID(@PathVariable Integer id) {
-		return repository
-				.findById(id)
-				.orElseThrow(() -> new NotFoundException());
+		return repository.findById(id).orElseThrow(() -> new NotFoundException());
 	}
-	
-	@PostMapping("/pubblicazioni")	//api
+
+	@PostMapping("/pubblicazioni") // api
 	public Pubblicazione inserisci(@RequestBody Pubblicazione pubblicazione) {
 		return repository.save(pubblicazione);
 	}
-	
-	@PutMapping("/pubblicazioni/{idPubblicazione}") //api
-	public Pubblicazione aggiorna(@RequestBody Pubblicazione pubblicazione, @PathVariable Integer id) {
-		return repository
-				.findById(id)
-				.map(pu -> {
-				pu.setEvento(pubblicazione.getEvento());
-				pu.setCommenti(pubblicazione.getCommenti());
-				pu.setPersona(pubblicazione.getPersona());
-				pu.setMiPiace(pubblicazione.getMiPiace());
-				pu.setDescrizione(pubblicazione.getDescrizione());
-				pu.setDataPubblicazione(pubblicazione.getDataPubblicazione());
-				pu.setMedia(pubblicazione.getMedia());
-				return repository.save(pu);
-				})
-				.orElseGet(() -> {
-					pubblicazione.setIdPubblicazione(id);
-					return repository.save(pubblicazione);
-				});
-		}
-	
-		@DeleteMapping("/pubblicazioni/{id}")
-		public void elimina( @PathVariable Integer id) {
-			repository.delete(repository
-					.findById(id)
-					.orElseThrow(() -> new NotFoundException())
-					);
-			}
-}
 
+	@PutMapping("/pubblicazioni/{idPubblicazione}") // api
+	public Pubblicazione aggiorna(@RequestBody Pubblicazione pubblicazione, @PathVariable Integer id) {
+		return repository.findById(id).map(pu -> {
+
+			pu.setAutomobile(pubblicazione.getAutomobile());
+			pu.setPersona(pubblicazione.getPersona());
+			pu.setDescrizione(pubblicazione.getDescrizione());
+			pu.setDataPubblicazione(pubblicazione.getDataPubblicazione());
+
+			return repository.save(pu);
+		}).orElseGet(() -> {
+			pubblicazione.setIdPubblicazione(id);
+			return repository.save(pubblicazione);
+		});
+	}
+
+	@DeleteMapping("/pubblicazioni/{id}")
+	public void elimina(@PathVariable Integer id) {
+		repository.delete(repository.findById(id).orElseThrow(() -> new NotFoundException()));
+	}
+}

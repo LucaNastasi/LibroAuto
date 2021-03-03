@@ -91,6 +91,17 @@ public class Commento {
 
 	@ManyToOne (cascade = CascadeType.ALL) 
 	private Pubblicazione pubblicazione;
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "Commento [idCommento=" + idCommento + ", mediaCommento=" + Arrays.toString(mediaCommento)
+				+ ", testoCommento=" + testoCommento + ", DataOracommento=" + DataOracommento + ", pubblicazione="
+				+ pubblicazione + "]";
+	}
 	
 
 	

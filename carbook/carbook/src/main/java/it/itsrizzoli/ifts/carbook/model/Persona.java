@@ -150,6 +150,14 @@ public class Persona {
 
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Pubblicazione> pubblicazioni;
+
+
+	@Override
+	public String toString() {
+		return "Persona [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", email=" + email + ", username="
+				+ username + ", password=" + password + ", telefono=" + telefono + ", citta=" + citta
+				+ ", pubblicazioni=" + pubblicazioni + "]";
+	}
 	
 
 	
