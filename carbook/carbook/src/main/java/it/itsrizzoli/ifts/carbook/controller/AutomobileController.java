@@ -51,7 +51,7 @@ public class AutomobileController {
 			a.setCavalli(automobile.getCavalli());
 			a.setChilometri(automobile.getChilometri());
 			a.setColore(automobile.getColore());
-		a.setFotoAuto(automobile.getFotoAuto());
+		//a.setfotoAuto(automobile.getfotoAuto());
 		a.setModello(automobile.getModello());
 		a.setPrezzo(automobile.getPrezzo());
 		a.setPubblicazioni(automobile.getPubblicazioni());

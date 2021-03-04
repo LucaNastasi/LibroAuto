@@ -49,8 +49,12 @@ public class Automobile {
 	@Column(nullable = false, length = 100)
 	private Integer Cavalli;
 	
-	@Column(nullable = false, length = 100)
+	/*@Column(nullable = false, length = 100)
 	private byte[] fotoAuto;
+	*/
+	
+	//@Column(length = 500, nullable = false)
+	//private String fotoAuto;
 	
 	@Column(nullable = false, length = 100)
 	private Integer Prezzo;
@@ -120,14 +124,22 @@ public class Automobile {
 		Cavalli = cavalli;
 	}
 
-	public byte[] getFotoAuto() {
+	/*public byte[] getFotoAuto() {
 		return fotoAuto;
 	}
 
 	public void setFotoAuto(byte[] fotoAuto) {
 		this.fotoAuto = fotoAuto;
+	}*/
+/*
+	public String getfotoAuto() {
+		return fotoAuto;
 	}
 
+	public void setfotoAuto(String fotoAuto) {
+		fotoAuto = fotoAuto;
+	}
+	*/
 	public Integer getPrezzo() {
 		return Prezzo;
 	}
@@ -148,7 +160,7 @@ public class Automobile {
 	public String toString() {
 		return "Automobile [idAutomobile=" + idAutomobile + ", Modello=" + Modello + ", Colore=" + Colore + ", Stato="
 				+ Stato + ", Chilometri=" + Chilometri + ", Alimentazione=" + Alimentazione + ", Cavalli=" + Cavalli
-				+ ", fotoAuto=" + Arrays.toString(fotoAuto) + ", Prezzo=" + Prezzo + ", pubblicazioni=" + pubblicazioni
+				+ ", fotoAuto=" + /*Arrays.toString(fotoAuto) fotoAuto +*/ ", Prezzo=" + Prezzo + ", pubblicazioni=" + pubblicazioni
 				+ "]";
 	}
 

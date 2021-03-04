@@ -2,6 +2,7 @@ import { compileNgModuleFromRender2 } from '@angular/compiler/src/render3/r3_mod
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from '../model/post';
+import { Automobile } from '../model/automobile'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 
 
@@ -29,6 +30,8 @@ export class DirettiveComponent implements OnInit {
    {}
 
    pubblicazioni:any[]
+   annunci:any[]
+   automobili:any[]
 
   ngOnInit(): void {
     this.http.get<any[]>('http://localhost:8080/pubblicazioni').subscribe((pubblicazioni) =>
@@ -37,17 +40,29 @@ export class DirettiveComponent implements OnInit {
     })
   }
 
-  aggiungi(media: File, descrizione: string, dataPubblcazione: Date){
-    console.log(media, descrizione, dataPubblcazione);
+  aggiungi(fotoAuto: File, alimentazione: string, cavalli: number, 
+    chilometri:number, colore:string, modello:string, prezzo: number,  
+    stato: string, descrizione: string, dataPubblicazione: Date){
+    console.log(fotoAuto, alimentazione, cavalli, chilometri, colore,
+    modello, prezzo, stato, descrizione, dataPubblicazione);
 
-    let pubblicazione = new Post();
-    pubblicazione.media = media;
-    pubblicazione.descrizione = descrizione;
-    pubblicazione.dataPubblicazione = dataPubblcazione;
-    console.log(JSON.stringify(pubblicazione));
+    let annuncio = new Post();
+    let automobile = new Automobile();
+    annuncio.descrizione = descrizione;
+    annuncio.dataPubblicazione = dataPubblicazione;
+    automobile.fotoAuto = fotoAuto;
+    automobile.alimentazione = alimentazione;
+    automobile.cavalli = cavalli;
+    automobile.chilometri = chilometri;
+    automobile.colore = colore;
+    automobile.modello = modello;
+    automobile.prezzo = prezzo;
+    automobile.stato = stato;
+    console.log(JSON.stringify(annuncio));
+    console.log(JSON.stringify(automobile));
 
-    this.http.post<Post>('http://localhost:8080/pubblicazioni', pubblicazione).subscribe(); 
-
+    this.http.post<Post>('http://localhost:8080/pubblicazioni', annuncio).subscribe(); 
+    this.http.post<Post>('http://localhost:8080/automobili', automobile).subscribe(); 
   }
 
 }

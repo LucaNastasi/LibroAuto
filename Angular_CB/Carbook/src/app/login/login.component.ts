@@ -10,8 +10,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 })
 export class LoginComponent implements OnInit {
  
-  email: String;      //email di login
-  password: String;   // password di login
+  email1: String;      //email di login
+  password1: String;   // password di login
 
    constructor(
      private http: HttpClient, private router:Router,
@@ -23,9 +23,9 @@ persone: any[];
   }
   
   richestaHttp(form: boolean){
-  console.log(this.email, this.password);
+  console.log(this.email1, this.password1);
     this.http.get<Persona[]>('http://localhost:8080/login?email=' +
-    this.email +'&password=' + this.password).subscribe((persone) => {
+    this.email1 +'&password=' + this.password1).subscribe((persone) => {
       console.log(persone);
 
       if(persone)
@@ -37,7 +37,7 @@ persone: any[];
   }
 
   aggiungi(nome: string, cognome: string, email: string, username: string, password: string, telefono: string, citta: string){
-    console.log(nome, cognome, email, username, password, telefono, citta); //aggiungi persona del databse con registrati
+    console.log(nome, cognome, email, username, password, telefono, citta); //aggiungi persona del database con registrati
 
     let persona = new Persona();
     persona.nome = nome;
