@@ -9,6 +9,7 @@ import { DirettiveComponent } from './direttive/direttive.component';
 import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-password.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PAnnuncioComponent } from './p-annuncio/p-annuncio.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     DirettiveComponent,
     PaginaAlertComponent,
     ReimpostaPasswordComponent,
+    PAnnuncioComponent,
   ],
   imports: [
       BrowserModule,
