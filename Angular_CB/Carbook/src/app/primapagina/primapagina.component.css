@@ -20,3 +20,8 @@ body{
     float: left;
     left: 19%;
   }
+
+  .attr{
+    background-color: darkcyan;
+    color: white;
+  }

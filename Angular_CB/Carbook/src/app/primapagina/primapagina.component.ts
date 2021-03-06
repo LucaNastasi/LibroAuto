@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from '../model/post';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { Automobile } from '../model/automobile'
 
 @Component({
   selector: 'app-primapagina',
@@ -27,11 +28,17 @@ export class PrimapaginaComponent implements OnInit {
   constructor(private http: HttpClient,) { }
 
   pubblicazioni:any[]
+  automobili:any[]
 
   ngOnInit(): void {
     this.http.get<any[]>('http://localhost:8080/pubblicazioni').subscribe((pubblicazioni) =>
     {
       this.pubblicazioni = pubblicazioni;
+    })
+
+    this.http.get<any[]>('http://localhost:8080/automobili').subscribe((automobili) =>
+    {
+      this.automobili = automobili;
     })
   }
 
