@@ -47,11 +47,14 @@ public class Automobile {
 	private String Alimentazione;
 	
 	@Column(nullable = false, length = 100)
+	private String Cambio;
+	
+	@Column(nullable = false, length = 100)
 	private Integer Cavalli;
 	
-	/*@Column(nullable = false, length = 100)
+	@Column( length = 100)
 	private byte[] fotoAuto;
-	*/
+	
 	
 	//@Column(length = 500, nullable = false)
 	//private String fotoAuto;
@@ -60,7 +63,6 @@ public class Automobile {
 	private Integer Prezzo;
 	
 	
-
 	@OneToMany(mappedBy = "automobile", cascade = CascadeType.ALL)
 	private List<Pubblicazione> pubblicazioni;
 		
@@ -82,6 +84,14 @@ public class Automobile {
 
 	public void setModello(String modello) {
 		Modello = modello;
+	}
+	
+	public String getCambio() {
+		return Cambio;
+	}
+
+	public void setCambio(String cambio) {
+		Cambio = cambio;
 	}
 
 	public String getColore() {
@@ -124,13 +134,13 @@ public class Automobile {
 		Cavalli = cavalli;
 	}
 
-	/*public byte[] getFotoAuto() {
+	public byte[] getFotoAuto() {
 		return fotoAuto;
 	}
 
 	public void setFotoAuto(byte[] fotoAuto) {
 		this.fotoAuto = fotoAuto;
-	}*/
+	}
 /*
 	public String getfotoAuto() {
 		return fotoAuto;
@@ -159,8 +169,8 @@ public class Automobile {
 	@Override
 	public String toString() {
 		return "Automobile [idAutomobile=" + idAutomobile + ", Modello=" + Modello + ", Colore=" + Colore + ", Stato="
-				+ Stato + ", Chilometri=" + Chilometri + ", Alimentazione=" + Alimentazione + ", Cavalli=" + Cavalli
-				+ ", fotoAuto=" + /*Arrays.toString(fotoAuto) fotoAuto +*/ ", Prezzo=" + Prezzo + ", pubblicazioni=" + pubblicazioni
+				+ Stato + ", Chilometri=" + Chilometri + ", Alimentazione=" + Alimentazione + ", Cambio=" + Cambio + ", Cavalli=" + Cavalli
+				+ ", fotoAuto=" + Arrays.toString(fotoAuto) + ", Prezzo=" + Prezzo + ", pubblicazioni=" + pubblicazioni
 				+ "]";
 	}
 
