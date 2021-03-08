@@ -6,6 +6,7 @@ import { PrimapaginaComponent } from './primapagina/primapagina.component';
 import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { PUtenteComponent } from './p-utente/p-utente.component';
 import { DirettiveComponent} from './direttive/direttive.component'
+import { PAnnuncioComponent } from './p-annuncio/p-annuncio.component';
   
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'paginaalert', component: PaginaAlertComponent},
   {path: 'putente', component: PUtenteComponent},
-  {path: 'direttive', component: DirettiveComponent}
+  {path: 'direttive', component: DirettiveComponent},
+  {path: 'pannuncio', component: PAnnuncioComponent}
 ];
 
 
