@@ -1,4 +1,4 @@
-package it.rizzoli.carbooklogin;
+package activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import it.rizzoli.carbooklogin.CommentoListAdapter;
+import it.rizzoli.carbooklogin.R;
 import model.Commento;
 
 public class CommentiActivity extends AppCompatActivity {

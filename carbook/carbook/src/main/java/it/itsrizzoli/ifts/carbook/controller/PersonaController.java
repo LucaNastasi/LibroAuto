@@ -27,13 +27,15 @@ public class PersonaController {
 
 	@ResponseBody
 	@GetMapping("/login") // api
-	public boolean loginResponse(@RequestParam(value="email") String email, @RequestParam(value="password") String password) {
+	public Persona loginResponse(@RequestParam(value="email") String email, @RequestParam(value="password") String password) {
 	List<Persona> utenti = repository.match(email, password);
 	if(utenti.isEmpty())
-		return false;
+		return null;
 	else
-		return true;
+		return utenti.get(0);
 	}
+	
+	
 
 	@GetMapping("/persone") // api
 	public List<Persona> all() {
@@ -45,13 +47,13 @@ public class PersonaController {
 		return repository.findById(id).orElseThrow(() -> new NotFoundException());
 	}
 
-	@PostMapping("/persone") // api
-	public Persona inserisci(@RequestBody Persona persona) {
+	@PostMapping("/nuovaPersona") // api
+	public Persona inserisci(Persona persona) {
 		return repository.save(persona);
 	}
 
 	@PutMapping("/persone/{id}") // api
-	public Persona aggiorna(@RequestBody Persona persona, @PathVariable Integer id) {
+	public Persona aggiorna(Persona persona, @PathVariable Integer id) {
 		return repository.findById(id).map(p -> {
 			p.setNome(persona.getNome());
 			p.setCognome(persona.getCognome());

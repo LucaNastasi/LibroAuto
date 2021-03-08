@@ -1,8 +1,10 @@
-package it.rizzoli.carbooklogin;
+package activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import it.rizzoli.carbooklogin.R;
 
 public class PasswordDimenticata extends AppCompatActivity {
 

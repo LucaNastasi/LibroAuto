@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+import activities.CommentiActivity;
 import model.Pubblicazione;
 
 public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
