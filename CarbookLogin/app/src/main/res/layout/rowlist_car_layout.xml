@@ -57,7 +57,7 @@
         android:layout_marginTop="15dp"
         android:textSize="18sp"
         android:textColor="@color/black"
-        android:text="127 km" />
+        android:text="127054 km" />
 
     <TextView
         android:id="@+id/textViewDescrizione"
