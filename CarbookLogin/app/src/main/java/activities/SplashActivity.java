@@ -1,17 +1,14 @@
-package it.rizzoli.carbooklogin;
+package activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-import database.DatabaseHelper;
-import database.PersonaDbAdapter;
+import it.rizzoli.carbooklogin.R;
 
 public class SplashActivity extends AppCompatActivity {
 

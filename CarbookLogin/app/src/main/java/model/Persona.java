@@ -10,16 +10,17 @@ public class Persona {
     private String telefono;
     private String citta;
 
-    public Persona() {
-        this.nome = "";
-        this.cognome = "";
-        this.email = "";
-    }
-
-    public Persona(String nome, String cognome,String email) {
+    public Persona(String email, String nome, String cognome, String username, String password, String telefono, String citta) {
+        this.email = email;
         this.nome = nome;
         this.cognome = cognome;
-        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.telefono = telefono;
+        this.citta = citta;
+    }
+
+    public Persona() {
     }
 
     public Integer getId() {
@@ -85,4 +86,6 @@ public class Persona {
     public void setCitta(String citta) {
         this.citta = citta;
     }
+
+
 }

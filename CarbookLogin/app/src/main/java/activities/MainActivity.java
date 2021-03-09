@@ -1,4 +1,4 @@
-package it.rizzoli.carbooklogin;
+package activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import fragments.HomeFragment;
 import fragments.NotificationFragment;
 import fragments.ProfileFragment;
 import fragments.SearchFragment;
+import it.rizzoli.carbooklogin.R;
 
 public class MainActivity extends AppCompatActivity {
 
