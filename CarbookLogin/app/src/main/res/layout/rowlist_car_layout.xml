@@ -23,6 +23,7 @@
         android:layout_marginBottom="92dp"
         android:layout_toEndOf="@+id/imageViewMain"
         android:textSize="18sp"
+        android:fontFamily="sans-serif-black"
         android:textColor="@color/black"
         android:text="BMW 320 Business Advantage Touring" />
 
@@ -54,9 +55,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageViewMain"
         android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/colorPrimary"
-    android:text="Luca Giovanni Nastasi" />
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="127 km" />
 
     <TextView
         android:id="@+id/textViewDescrizione"
