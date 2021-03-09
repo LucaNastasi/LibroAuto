@@ -3,7 +3,6 @@ package model;
 public class Automobile {
     private Integer idAutomobile;
     private String modello;
-    private String colore;
     private String stato;
     private Integer chilometri;
     private String alimentazione;
@@ -29,14 +28,6 @@ public class Automobile {
 
     public void setModello(String modello) {
         this.modello = modello;
-    }
-
-    public String getColore() {
-        return colore;
-    }
-
-    public void setColore(String colore) {
-        this.colore = colore;
     }
 
     public String getStato() {
