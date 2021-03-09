@@ -1,3 +1,5 @@
+
+
 export class Automobile{
     alimentazione: string;
     cavalli: number;
@@ -6,5 +8,7 @@ export class Automobile{
     modello: string;
     prezzo: number;
     stato: string;
+    cambio: string;
     fotoAuto: File;
+  
 }
