@@ -12,7 +12,6 @@ import android.widget.Toast;
 import api.Api;
 import api.RetrofitClient;
 import it.rizzoli.carbooklogin.R;
-import it.rizzoli.carbooklogin.ResObj;
 import model.Persona;
 import retrofit2.Call;
 import retrofit2.Callback;

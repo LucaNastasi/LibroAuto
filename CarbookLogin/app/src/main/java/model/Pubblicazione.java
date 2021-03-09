@@ -9,6 +9,7 @@ public class Pubblicazione {
     private String descrizione;
     private Date dataPubblicazione;
 
+
     public Pubblicazione(String d){
         this.descrizione = d;
     }
