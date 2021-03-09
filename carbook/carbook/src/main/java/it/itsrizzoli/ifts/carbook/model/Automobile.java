@@ -35,7 +35,7 @@ public class Automobile {
 	private String Modello ;
 	
 	@Column(nullable = false, length = 100)
-	private String Colore;
+	private String AnnoIMM;
 	
 	@Column(nullable = false, length = 100)
 	private String Stato;
@@ -48,6 +48,12 @@ public class Automobile {
 	
 	@Column(nullable = false, length = 100)
 	private String Cambio;
+	
+	@Column(nullable = false, length = 100)
+	private String Marca;
+	
+	@Column(nullable = false, length = 100)
+	private String Citta;
 	
 	@Column(nullable = false, length = 100)
 	private Integer Cavalli;
@@ -93,13 +99,29 @@ public class Automobile {
 	public void setCambio(String cambio) {
 		Cambio = cambio;
 	}
-
-	public String getColore() {
-		return Colore;
+	
+	public String getCittà() {
+		return Cambio;
 	}
 
-	public void setColore(String colore) {
-		Colore = colore;
+	public void setCittà(String citta) {
+		Citta = citta;
+	}
+	
+	public String getMarca() {
+		return Marca;
+	}
+
+	public void setMarca(String marca) {
+		Marca = marca;
+	}
+
+	public String getAnnoIMM() {
+		return AnnoIMM;
+	}
+
+	public void setAnnoIMM(String AnnoIMM) {
+		AnnoIMM = AnnoIMM;
 	}
 
 	public String getStato() {
@@ -168,7 +190,7 @@ public class Automobile {
 
 	@Override
 	public String toString() {
-		return "Automobile [idAutomobile=" + idAutomobile + ", Modello=" + Modello + ", Colore=" + Colore + ", Stato="
+		return "Automobile [idAutomobile=" + idAutomobile + ", Modello=" + Modello + ",Citta =" + Citta +",Marca =" + Marca +", AnnoIMM=" + AnnoIMM + ", Stato="
 				+ Stato + ", Chilometri=" + Chilometri + ", Alimentazione=" + Alimentazione + ", Cambio=" + Cambio + ", Cavalli=" + Cavalli
 				+ ", fotoAuto=" + Arrays.toString(fotoAuto) + ", Prezzo=" + Prezzo + ", pubblicazioni=" + pubblicazioni
 				+ "]";

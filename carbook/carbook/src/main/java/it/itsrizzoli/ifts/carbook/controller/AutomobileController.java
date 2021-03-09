@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+//import com.sun.org.apache.bcel.internal.generic.AALOAD;
+
 import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
 import it.itsrizzoli.ifts.carbook.model.Automobile;
 import it.itsrizzoli.ifts.carbook.model.Persona;
@@ -50,7 +52,9 @@ public class AutomobileController {
 			a.setAlimentazione(automobile.getAlimentazione());
 			a.setCavalli(automobile.getCavalli());
 			a.setChilometri(automobile.getChilometri());
-			a.setColore(automobile.getColore());
+			a.setMarca(automobile.getMarca());
+			a.setCittà(automobile.getCittà());
+		a.setAnnoIMM(automobile.getAnnoIMM());
 		a.setFotoAuto(automobile.getFotoAuto());
 		a.setModello(automobile.getModello());
 		a.setPrezzo(automobile.getPrezzo());
