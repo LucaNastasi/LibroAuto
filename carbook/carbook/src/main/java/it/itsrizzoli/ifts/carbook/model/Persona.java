@@ -50,6 +50,17 @@ public class Persona {
 	@Column(nullable = false, length = 100)
 	private String password;
 	
+
+	@Column(nullable = false) 
+	private String telefono;
+	
+	@Column(length = 100)
+	private String citta;
+	
+
+	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+	private List<Pubblicazione> pubblicazioni;
+
 	
 	public int getId() {
 		return id;
@@ -140,16 +151,6 @@ public class Persona {
 		this.pubblicazioni = pubblicazioni;
 	}
 
-
-	@Column(nullable = false) 
-	private String telefono;
-	
-	@Column(length = 100)
-	private String citta;
-	
-
-	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
-	private List<Pubblicazione> pubblicazioni;
 
 
 	@Override

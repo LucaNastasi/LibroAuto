@@ -32,28 +32,34 @@ public class Automobile {
 	private Integer idAutomobile; 
 	
 	@Column(nullable = false, length = 100)
-	private String Modello ;
+	private String modello ;
 	
 	@Column(nullable = false, length = 100)
-	private String Colore;
+	private String annoImmatricolazione;
 	
 	@Column(nullable = false, length = 100)
-	private String Stato;
+	private String stato;
 	
 	@Column(nullable = false, length = 100)
-	private Integer Chilometri;
+	private Integer chilometraggio;
 	
 	@Column(nullable = false, length = 100)
-	private String Alimentazione;
+	private String alimentazione;
 	
 	@Column(nullable = false, length = 100)
-	private String Cambio;
+	private String cambio;
 	
 	@Column(nullable = false, length = 100)
-	private Integer Cavalli;
+	private String marca;
 	
-	@Column( length = 100)
-	private byte[] fotoAuto;
+	@Column(nullable = false, length = 100)
+	private String citta;
+	
+	@Column(nullable = false, length = 100)
+	private Integer potenza;
+	
+	@Column( length = 1000)
+	private String fotoAuto;
 	
 	
 	//@Column(length = 500, nullable = false)
@@ -65,114 +71,151 @@ public class Automobile {
 	
 	@OneToMany(mappedBy = "automobile", cascade = CascadeType.ALL)
 	private List<Pubblicazione> pubblicazioni;
-		
-	
-	
-	
+
 
 	public Integer getIdAutomobile() {
 		return idAutomobile;
 	}
 
+
 	public void setIdAutomobile(Integer idAutomobile) {
 		this.idAutomobile = idAutomobile;
 	}
 
+
 	public String getModello() {
-		return Modello;
+		return modello;
 	}
+
 
 	public void setModello(String modello) {
-		Modello = modello;
-	}
-	
-	public String getCambio() {
-		return Cambio;
+		this.modello = modello;
 	}
 
-	public void setCambio(String cambio) {
-		Cambio = cambio;
+
+	public String getAnnoImmatricolazione() {
+		return annoImmatricolazione;
 	}
 
-	public String getColore() {
-		return Colore;
+
+	public void setAnnoImmatricolazione(String annoImmatricolazione) {
+		this.annoImmatricolazione = annoImmatricolazione;
 	}
 
-	public void setColore(String colore) {
-		Colore = colore;
-	}
 
 	public String getStato() {
-		return Stato;
+		return stato;
 	}
+
 
 	public void setStato(String stato) {
-		Stato = stato;
+		this.stato = stato;
 	}
 
-	public Integer getChilometri() {
-		return Chilometri;
+
+	public Integer getChilometraggio() {
+		return chilometraggio;
 	}
 
-	public void setChilometri(Integer chilometri) {
-		Chilometri = chilometri;
+
+	public void setChilometraggio(Integer chilometraggio) {
+		this.chilometraggio = chilometraggio;
 	}
+
 
 	public String getAlimentazione() {
-		return Alimentazione;
+		return alimentazione;
 	}
+
 
 	public void setAlimentazione(String alimentazione) {
-		Alimentazione = alimentazione;
+		this.alimentazione = alimentazione;
 	}
 
-	public Integer getCavalli() {
-		return Cavalli;
+
+	public String getCambio() {
+		return cambio;
 	}
 
-	public void setCavalli(Integer cavalli) {
-		Cavalli = cavalli;
+
+	public void setCambio(String cambio) {
+		this.cambio = cambio;
 	}
 
-	public byte[] getFotoAuto() {
+
+	public String getMarca() {
+		return marca;
+	}
+
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+
+	public String getCitta() {
+		return citta;
+	}
+
+
+	public void setCitta(String citta) {
+		this.citta = citta;
+	}
+
+
+	public Integer getPotenza() {
+		return potenza;
+	}
+
+
+	public void setPotenza(Integer potenza) {
+		this.potenza = potenza;
+	}
+
+
+	public String getFotoAuto() {
 		return fotoAuto;
 	}
 
-	public void setFotoAuto(byte[] fotoAuto) {
+
+	public void setFotoAuto(String fotoAuto) {
 		this.fotoAuto = fotoAuto;
 	}
-/*
-	public String getfotoAuto() {
-		return fotoAuto;
-	}
 
-	public void setfotoAuto(String fotoAuto) {
-		fotoAuto = fotoAuto;
-	}
-	*/
+
 	public Integer getPrezzo() {
 		return Prezzo;
 	}
+
 
 	public void setPrezzo(Integer prezzo) {
 		Prezzo = prezzo;
 	}
 
+
 	public List<Pubblicazione> getPubblicazioni() {
 		return pubblicazioni;
 	}
+
 
 	public void setPubblicazioni(List<Pubblicazione> pubblicazioni) {
 		this.pubblicazioni = pubblicazioni;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Automobile [idAutomobile=" + idAutomobile + ", Modello=" + Modello + ", Colore=" + Colore + ", Stato="
-				+ Stato + ", Chilometri=" + Chilometri + ", Alimentazione=" + Alimentazione + ", Cambio=" + Cambio + ", Cavalli=" + Cavalli
-				+ ", fotoAuto=" + Arrays.toString(fotoAuto) + ", Prezzo=" + Prezzo + ", pubblicazioni=" + pubblicazioni
-				+ "]";
+		return "Automobile [idAutomobile=" + idAutomobile + ", modello=" + modello + ", annoImmatricolazione="
+				+ annoImmatricolazione + ", stato=" + stato + ", chilometraggio=" + chilometraggio + ", alimentazione="
+				+ alimentazione + ", cambio=" + cambio + ", marca=" + marca + ", citta=" + citta + ", potenza="
+				+ potenza + ", fotoAuto=" + fotoAuto + ", Prezzo=" + Prezzo + ", pubblicazioni=" + pubblicazioni + "]";
 	}
+		
+	
+	
+	
+
+	
 
 
 

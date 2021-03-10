@@ -39,17 +39,18 @@ persone: any[];
   aggiungi(nome: string, cognome: string, email: string, username: string, password: string, telefono: string, citta: string){
     console.log(nome, cognome, email, username, password, telefono, citta); //aggiungi persona del database con registrati
 
-    let persona = new Persona();
-    persona.nome = nome;
-    persona.cognome = cognome;
-    persona.email = email;
-    persona.username = username;
-    persona.password = password; 
-    persona.telefono = telefono;
-    persona.citta = citta;
-    console.log(JSON.stringify(persona));
+    let postData = new FormData();
+    postData.append('cognome' , cognome);
+    postData.append('nome' , nome);
+    postData.append('email' , email);
+    postData.append('username' , username);
+    postData.append('password' , password);
+    postData.append('telefono' , telefono);
+    postData.append('citta' , citta);
+   
+   
 
-    this.http.post<Persona>('http://localhost:8080/persone', persona).subscribe(); 
+    this.http.post('http://localhost:8080/nuovaPersona', postData).subscribe(); 
 
   }
 }
