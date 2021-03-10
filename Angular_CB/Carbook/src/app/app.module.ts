@@ -11,6 +11,7 @@ import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-passw
 import { HttpClientModule } from '@angular/common/http';
 import { PUtenteComponent}  from'./p-utente/p-utente.component'
 import { FormsModule } from '@angular/forms';
+import { ModificadatiComponent } from './modificadati/modificadati.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     DirettiveComponent,
     PaginaAlertComponent,
     ReimpostaPasswordComponent,
-    PUtenteComponent
+    PUtenteComponent,
+    ModificadatiComponent
   ],
   imports: [
       BrowserModule,
