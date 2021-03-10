@@ -49,12 +49,12 @@ public class AutomobileController {
 	@PutMapping("/automobili/{id}") // api
 	public Automobile aggiorna(@RequestBody Automobile automobile, @PathVariable Integer id) {
 		return repository.findById(id).map(a -> {
-			a.setAlimentazione(automobile.getAlimentazione());
-			a.setCavalli(automobile.getCavalli());
-			a.setChilometri(automobile.getChilometri());
-			a.setMarca(automobile.getMarca());
-			a.setCittà(automobile.getCittà());
-		a.setAnnoIMM(automobile.getAnnoIMM());
+		a.setAlimentazione(automobile.getAlimentazione());
+		a.setPotenza(automobile.getPotenza());
+		a.setChilometraggio(automobile.getChilometraggio());
+		a.setMarca(automobile.getMarca());
+		a.setCitta(automobile.getCitta());
+		a.setAnnoImmatricolazione(automobile.getAnnoImmatricolazione());
 		a.setFotoAuto(automobile.getFotoAuto());
 		a.setModello(automobile.getModello());
 		a.setPrezzo(automobile.getPrezzo());

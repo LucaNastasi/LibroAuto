@@ -38,6 +38,8 @@ public interface Api {
             @Field("Alimentazione")String alimentazione,
             @Field("Cambio") String cambio,
             @Field("Cavalli")String cavalli,
-            @Field("Prezzo")String prezzo
+            @Field("Prezzo")String prezzo,
+            @Field("Marca")String marca;
+
     );
 }
