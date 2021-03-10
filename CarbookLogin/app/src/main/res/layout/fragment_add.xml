@@ -200,12 +200,31 @@
         android:layout_width="335dp"
         android:layout_height="40dp"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prezzo"
+        android:id="@+id/prezzo"
+        android:layout_below="@id/editTextStato"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/editTextPrezzo"
+        android:layout_below="@id/prezzo"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/editext_border"
+        android:layout_width="335dp"
+        android:layout_height="40dp"
+        />
     <Button
         android:layout_width="335dp"
         android:layout_height="40dp"
         android:text="Registra auto"
         android:id="@+id/buttonAuto"
-        android:layout_below="@id/editTextStato"
+        android:layout_below="@id/editTextPrezzo"
         android:layout_marginTop="10dp"
         />
 

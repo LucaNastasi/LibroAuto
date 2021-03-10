@@ -32,14 +32,16 @@ public interface Api {
     @FormUrlEncoded
     @POST("automobili")
     Call<Automobile> creaAutomobile(
-            @Field("Modello")String modello,
-            @Field("Stato")String stato,
-            @Field("Chilometri")String chilometri,
-            @Field("Alimentazione")String alimentazione,
-            @Field("Cambio") String cambio,
-            @Field("Cavalli")String cavalli,
-            @Field("Prezzo")String prezzo,
-            @Field("Marca")String marca;
+            @Field("modello")String modello,
+            @Field("stato")String stato,
+            @Field("chilometraggio")String chilometraggio,
+            @Field("alimentazione")String alimentazione,
+            @Field("cambio") String cambio,
+            @Field("potenza")String potenza,
+            @Field("costo")String costo,
+            @Field("marca")String marca,
+            @Field("annoImmatricolazione")String annoImmatricolazione,
+            @Field("citta") String citta
 
     );
 }

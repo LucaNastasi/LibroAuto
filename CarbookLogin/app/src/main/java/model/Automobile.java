@@ -4,11 +4,13 @@ public class Automobile {
     private Integer idAutomobile;
     private String modello;
     private String stato;
-    private Integer chilometri;
+    private Integer chilometraggio;
     private String alimentazione;
     private Integer potenza;
-    private byte [] fotoAuto;
+    private String fotoAuto;
     private Integer prezzo;
+    private String annoImmatricolazione;
+    private String citta;
 
     public Automobile(){
 
@@ -38,12 +40,12 @@ public class Automobile {
         this.stato = stato;
     }
 
-    public Integer getChilometri() {
-        return chilometri;
+    public Integer getChilometraggio() {
+        return chilometraggio;
     }
 
-    public void setChilometri(Integer chilometri) {
-        this.chilometri = chilometri;
+    public void setChilometraggio(Integer chilometraggio) {
+        this.chilometraggio = chilometraggio;
     }
 
     public String getAlimentazione() {
@@ -62,11 +64,11 @@ public class Automobile {
         this.potenza = potenza;
     }
 
-    public byte[] getFotoAuto() {
+    public String getFotoAuto() {
         return fotoAuto;
     }
 
-    public void setFotoAuto(byte[] fotoAuto) {
+    public void setFotoAuto(String fotoAuto) {
         this.fotoAuto = fotoAuto;
     }
 
@@ -76,5 +78,21 @@ public class Automobile {
 
     public void setPrezzo(Integer prezzo) {
         this.prezzo = prezzo;
+    }
+
+    public String getAnnoImmatricolazione() {
+        return annoImmatricolazione;
+    }
+
+    public void setAnnoImmatricolazione(String annoImmatricolazione) {
+        this.annoImmatricolazione = annoImmatricolazione;
+    }
+
+    public String getCitta() {
+        return citta;
+    }
+
+    public void setCitta(String citta) {
+        this.citta = citta;
     }
 }

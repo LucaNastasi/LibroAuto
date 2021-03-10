@@ -41,13 +41,13 @@ public class AutomobileController {
 }
 	
 	@PostMapping("/automobili") // api
-	public Automobile inserisci(@RequestBody Automobile automobile) {
+	public Automobile inserisci(Automobile automobile) {
 		return repository.save(automobile);
 	}
 	
 
 	@PutMapping("/automobili/{id}") // api
-	public Automobile aggiorna(@RequestBody Automobile automobile, @PathVariable Integer id) {
+	public Automobile aggiorna(Automobile automobile, @PathVariable Integer id) {
 		return repository.findById(id).map(a -> {
 		a.setAlimentazione(automobile.getAlimentazione());
 		a.setPotenza(automobile.getPotenza());
@@ -57,7 +57,7 @@ public class AutomobileController {
 		a.setAnnoImmatricolazione(automobile.getAnnoImmatricolazione());
 		a.setFotoAuto(automobile.getFotoAuto());
 		a.setModello(automobile.getModello());
-		a.setPrezzo(automobile.getPrezzo());
+		a.setCosto(automobile.getCosto());
 		a.setPubblicazioni(automobile.getPubblicazioni());
 		a.setStato(automobile.getStato());
 		a.setCambio(automobile.getCambio());

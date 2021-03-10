@@ -61,156 +61,126 @@ public class Automobile {
 	@Column( length = 1000)
 	private String fotoAuto;
 	
-	
-	//@Column(length = 500, nullable = false)
-	//private String fotoAuto;
-	
 	@Column(nullable = false, length = 100)
-	private Integer Prezzo;
-	
-	
+	private Integer costo;
+
 	@OneToMany(mappedBy = "automobile", cascade = CascadeType.ALL)
 	private List<Pubblicazione> pubblicazioni;
-
 
 	public Integer getIdAutomobile() {
 		return idAutomobile;
 	}
 
-
 	public void setIdAutomobile(Integer idAutomobile) {
 		this.idAutomobile = idAutomobile;
 	}
-
 
 	public String getModello() {
 		return modello;
 	}
 
-
 	public void setModello(String modello) {
 		this.modello = modello;
 	}
-
 
 	public String getAnnoImmatricolazione() {
 		return annoImmatricolazione;
 	}
 
-
 	public void setAnnoImmatricolazione(String annoImmatricolazione) {
 		this.annoImmatricolazione = annoImmatricolazione;
 	}
-
 
 	public String getStato() {
 		return stato;
 	}
 
-
 	public void setStato(String stato) {
 		this.stato = stato;
 	}
-
 
 	public Integer getChilometraggio() {
 		return chilometraggio;
 	}
 
-
 	public void setChilometraggio(Integer chilometraggio) {
 		this.chilometraggio = chilometraggio;
 	}
-
 
 	public String getAlimentazione() {
 		return alimentazione;
 	}
 
-
 	public void setAlimentazione(String alimentazione) {
 		this.alimentazione = alimentazione;
 	}
-
 
 	public String getCambio() {
 		return cambio;
 	}
 
-
 	public void setCambio(String cambio) {
 		this.cambio = cambio;
 	}
-
 
 	public String getMarca() {
 		return marca;
 	}
 
-
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-
 
 	public String getCitta() {
 		return citta;
 	}
 
-
 	public void setCitta(String citta) {
 		this.citta = citta;
 	}
-
 
 	public Integer getPotenza() {
 		return potenza;
 	}
 
-
 	public void setPotenza(Integer potenza) {
 		this.potenza = potenza;
 	}
-
 
 	public String getFotoAuto() {
 		return fotoAuto;
 	}
 
-
 	public void setFotoAuto(String fotoAuto) {
 		this.fotoAuto = fotoAuto;
 	}
 
-
-	public Integer getPrezzo() {
-		return Prezzo;
+	public Integer getCosto() {
+		return costo;
 	}
 
-
-	public void setPrezzo(Integer prezzo) {
-		Prezzo = prezzo;
+	public void setCosto(Integer costo) {
+		this.costo = costo;
 	}
-
 
 	public List<Pubblicazione> getPubblicazioni() {
 		return pubblicazioni;
 	}
 
-
 	public void setPubblicazioni(List<Pubblicazione> pubblicazioni) {
 		this.pubblicazioni = pubblicazioni;
 	}
-
 
 	@Override
 	public String toString() {
 		return "Automobile [idAutomobile=" + idAutomobile + ", modello=" + modello + ", annoImmatricolazione="
 				+ annoImmatricolazione + ", stato=" + stato + ", chilometraggio=" + chilometraggio + ", alimentazione="
 				+ alimentazione + ", cambio=" + cambio + ", marca=" + marca + ", citta=" + citta + ", potenza="
-				+ potenza + ", fotoAuto=" + fotoAuto + ", Prezzo=" + Prezzo + ", pubblicazioni=" + pubblicazioni + "]";
+				+ potenza + ", fotoAuto=" + fotoAuto + ", costo=" + costo + ", pubblicazioni=" + pubblicazioni + "]";
 	}
-		
+
+
+	
 	
 	
 	
