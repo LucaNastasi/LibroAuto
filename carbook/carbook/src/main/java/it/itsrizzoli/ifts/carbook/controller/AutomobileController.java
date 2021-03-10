@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+//import com.sun.org.apache.bcel.internal.generic.AALOAD;
+
 import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
 import it.itsrizzoli.ifts.carbook.model.Automobile;
 import it.itsrizzoli.ifts.carbook.model.Persona;
@@ -39,21 +41,23 @@ public class AutomobileController {
 }
 	
 	@PostMapping("/automobili") // api
-	public Automobile inserisci(@RequestBody Automobile automobile) {
+	public Automobile inserisci(Automobile automobile) {
 		return repository.save(automobile);
 	}
 	
 
 	@PutMapping("/automobili/{id}") // api
-	public Automobile aggiorna(@RequestBody Automobile automobile, @PathVariable Integer id) {
+	public Automobile aggiorna(Automobile automobile, @PathVariable Integer id) {
 		return repository.findById(id).map(a -> {
-			a.setAlimentazione(automobile.getAlimentazione());
-			a.setCavalli(automobile.getCavalli());
-			a.setChilometri(automobile.getChilometri());
-			a.setColore(automobile.getColore());
+		a.setAlimentazione(automobile.getAlimentazione());
+		a.setPotenza(automobile.getPotenza());
+		a.setChilometraggio(automobile.getChilometraggio());
+		a.setMarca(automobile.getMarca());
+		a.setCitta(automobile.getCitta());
+		a.setAnnoImmatricolazione(automobile.getAnnoImmatricolazione());
 		a.setFotoAuto(automobile.getFotoAuto());
 		a.setModello(automobile.getModello());
-		a.setPrezzo(automobile.getPrezzo());
+		a.setCosto(automobile.getCosto());
 		a.setPubblicazioni(automobile.getPubblicazioni());
 		a.setStato(automobile.getStato());
 		a.setCambio(automobile.getCambio());

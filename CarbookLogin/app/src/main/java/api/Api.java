@@ -1,5 +1,6 @@
 package api;
 
+import model.Automobile;
 import model.Persona;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -26,5 +27,21 @@ public interface Api {
     Call <Persona> login(
             @Query("email") String email,
             @Query("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("automobili")
+    Call<Automobile> creaAutomobile(
+            @Field("modello")String modello,
+            @Field("stato")String stato,
+            @Field("chilometraggio")String chilometraggio,
+            @Field("alimentazione")String alimentazione,
+            @Field("cambio") String cambio,
+            @Field("potenza")String potenza,
+            @Field("costo")String costo,
+            @Field("marca")String marca,
+            @Field("annoImmatricolazione")String annoImmatricolazione,
+            @Field("citta") String citta
+
     );
 }

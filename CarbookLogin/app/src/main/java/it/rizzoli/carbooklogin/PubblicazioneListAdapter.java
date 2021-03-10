@@ -42,11 +42,9 @@ public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
 
         ImageView imageViewMain = rowView.findViewById(R.id.imageViewMain);
         ImageView imageProfilo = rowView.findViewById(R.id.imageProfilo);
-        TextView textProfilo = rowView.findViewById(R.id.textProfilo);
-        Button buttonSegui = rowView.findViewById(R.id.buttonSegui);
+
         Button buttonCommenti = rowView.findViewById(R.id.buttonCommenti);
-        TextView textPersona = rowView.findViewById(R.id.textViewPersona);
-        TextView textDescrizione = rowView.findViewById(R.id.textViewDescrizione);
+        //TextView textDescrizione = rowView.findViewById(R.id.textViewDescrizione);
 
         Pubblicazione p = getItem(position);
 
@@ -62,7 +60,7 @@ public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
 
 
 
-        textDescrizione.setText(p.getDescrizione());
+       // textDescrizione.setText(p.getDescrizione());
 
 
 

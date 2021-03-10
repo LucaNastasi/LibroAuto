@@ -1,11 +1,9 @@
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="p-annuncio.component.css" rel="stylesheet">
+    
     </head>
 
-    <body>
+    <body> 
         <nav class="navbar navbar-dark bg-primary">
             <div class="container-fluid">
                 <div class="row col-12">
@@ -14,38 +12,21 @@
                 </div>
                     <div class="col-4 ricerca">
                         <div class="input-group">
-                        <input
-                            type="search"
-                            class="form-control"
-                            placeholder="Search"
-                            aria-label="Recipient's username"
-                            aria-describedby="button-addon2"
-                        />
-                        <button
-                            class="btn btn-outline-secondary"
-                            type="button"
-                            id="button-addon2"
-                        >
+                        <input type="search" class="form-control" placeholder="Search"  aria-label="Recipient's username" aria-describedby="button-addon2"/>
+                        <button  class="btn btn-outline-secondary" type="button" id="button-addon2"  >
                             <i class="fas fa-search"></i>
                         </button>
                         </div>
                     </div>
                     <div class="col-4">
-                        <div
-                        class="btn-toolbar"
-                        role="toolbar"
-                        aria-label="Toolbar with button groups">
-
+                        <div  class="btn-toolbar"  role="toolbar"  aria-label="Toolbar with button groups">
                             <div class="btn-group me-2" role="group" aria-label="First group">
-
                                 <button type="button" class="btn btn-primary">
                                 <i class="fas fa-home"></i>
                                 </button>
-
                                 <button type="button" class="btn btn-primary">
                                 <i class="fas fa-plus"></i>
                                 </button>
-
                                 <button type="button" class="btn btn-primary">
                                 <i class="far fa-user"></i>
                                 </button>
@@ -222,5 +203,85 @@
         
 
 
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="min-width:700px; max-width: 50%; margin: auto;" >
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+    <div class="carousel-inner" style="margin: auto; height: 500px; width: 100%; border: black solid;">
+      <div class="carousel-item active" style="height: 500px; width: 100%; ">
+        <img class="immagine" src="../assets/logo-2.png" alt="First slide">
+      </div> 
+      <div class="carousel-item" style="height: 100%; width: 100%;">
+        <img class="immagine" src="../assets/classiccar.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item" style="height: 100%; width: 100%;">
+        <img class="immagine" src="../assets/pimpcar.jpg" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<div class="container" style="margin: auto; width: 400px;">
+    <div class="row" >
+        <div class="col-sm" style="padding: 10px; height: 70px; width: 50px;">
+            <img src="../assets/pimpcar.jpg" class="immagine">
+        </div>
+        <div class="col-sm" style="padding: 10px; height: 70px; width: 50px;">
+            <img src="../assets/classiccar.jpg" class="immagine">
+        </div>
+        <div class="col-sm" style="padding: 10px; height: 70px; width: 50px;">
+            <img src="../assets/logo-2.png" class="immagine">
+        </div>
+    </div>
+</div>
+    <h1 id = "inizio">Link, immagini, URLs, ecc.</h1>
+    
+    
+    
+        <ul>
+            <li>Vai al <a href = "#pannello-1">Dati principali</a></li>
+            <li>Vai al <a href = "#pannello-2">Equipaggiamento</a></li>
+            <li>Vai al <a href = "#pannello-3">Descrizione</a></li>
+            
+        </ul>
+
+        <div id = "pannello-1">
+
+            <h1>Dati principali</h1>
+            <p>Questo paragrafo è contenuto in un pannello DIV</p>
+            <img src = "immagini/Logo_ITSAR.png">
+            <p>Torna <a href = "#inizio">su</a></p>
+
+        </div>
+
+        <div id = "pannello-2">
+
+            <h2>Pannello 2</h2>
+            <p>Questo paragrafo è contenuto in un pannello DIV</p>
+            <img src = "immagini/Musgravite.png">
+            <p>Torna <a href = "#inizio">su</a></p>
+ 
+        </div> 
+
+        <div id = "pannello-3">
+
+            <h3>Pannello 3</h3>
+            <p>Questo paragrafo è contenuto in un pannello DIV</p>
+            <img src = "https://images-na.ssl-images-amazon.com/images/I/51IVn5HvDdL._AC_UX522_.jpg">
+
+        </div>
+
+            <ul>
+                <div style = "align-content: center">
+                </div>
+            </ul>
     </body>
 </html>
