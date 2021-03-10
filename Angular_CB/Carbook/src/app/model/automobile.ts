@@ -9,6 +9,9 @@ export class Automobile{
     prezzo: number;
     stato: string;
     cambio: string;
+    marca: string;
+    citta: string;
+    annoIMM: number;
     fotoAuto: File;
   
 }

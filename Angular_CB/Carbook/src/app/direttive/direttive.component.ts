@@ -15,7 +15,7 @@ import { Immagine } from '../model/immagine'
 })
 export class DirettiveComponent implements OnInit {
 
- /*
+ 
   url = '';
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
@@ -29,26 +29,13 @@ export class DirettiveComponent implements OnInit {
     }
   }
 
-*/
+
 
  /* public onSelectFile(event) {
     //Select File
     this.selectedFile = event.target.files[0];
   }*/
-  public onSelectFile(event) {
-    //Select File
-    this.selectedFile = event.target.files[0];
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
-
-      reader.readAsDataURL(event.target.files[0]); 
-
-      reader.onload = (event) => { 
-        this.url = event.target.result as string;
-      }
-    }
-    
-  }
+ 
 
  /* onUpload() {
     console.log(this.selectedFile);
@@ -66,17 +53,17 @@ export class DirettiveComponent implements OnInit {
   constructor(private http: HttpClient,) 
    {}
 
-   immagini: any[]
+ 
    pubblicazioni:any[]
    annunci:any[]
    automobili:any[]
-   url='';
-   selectedFile: File;
+
+  /* selectedFile: File;
   retrievedImage: any;
   base64Data: any;
   retrieveResonse: any;
   message: string;
-  //imageName: any
+   immagini: any[]*/
 
   ngOnInit(): void {
     this.http.get<any[]>('http://localhost:8080/pubblicazioni').subscribe((pubblicazioni) =>
@@ -85,41 +72,59 @@ export class DirettiveComponent implements OnInit {
     })
   }
 
-  aggiungi(picByte:Byte, alimentazione: string, cavalli: number, 
-    chilometri:number, colore:string, modello:string, prezzo: number,  
-    stato: string, cambio:string, descrizione: string, dataPubblicazione: Date){
-    console.log( picByte, alimentazione, cavalli, chilometri, colore,
-    modello, prezzo, stato, cambio, descrizione, dataPubblicazione);
+  aggiungi(/*picByte:Byte,*/ fotoAuto: File, alimentazione: string, cavalli: number,
+    chilometri:number, modello:string, prezzo: number,  
+    stato: string, cambio:string, marca:string, annoIMM:number, citta:string, descrizione: string, dataPubblicazione: Date){
+    console.log(  alimentazione, alimentazione, citta, cavalli, chilometri, prezzo,
+    modello, stato, cambio, descrizione, dataPubblicazione);
 
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.selectedFile);
+   // const uploadImageData = new FormData();
+   // uploadImageData.append('imageFile', this.selectedFile);
     let annuncio = new Post();
     let automobile = new Automobile();
     annuncio.descrizione = descrizione;
     annuncio.dataPubblicazione = dataPubblicazione;
-    let immagine = new Immagine();
+    //let immagine = new Immagine();
 
-    immagine.picByte = picByte;
+    /*automobile.fotoAuto = fotoAuto;
     automobile.alimentazione = alimentazione;
     automobile.cavalli = cavalli;
     automobile.chilometri = chilometri;
-    automobile.colore = colore;
+   
     automobile.modello = modello;
     automobile.prezzo = prezzo;
     automobile.stato = stato;
     automobile.cambio = cambio;
+    automobile.marca = marca;
+    automobile.AnnoIMM = AnnoIMM;*/
+    
+    //console.log(JSON.stringify(immagine));
+
+    let DataAuto = new FormData();
+    DataAuto.append('fotoAuto' , fotoAuto);
+    DataAuto.append('alimentazione' , alimentazione);
+    DataAuto.append('cavalli' , cavalli.toString());
+    DataAuto.append('chilometri' , chilometri.toString());
+    DataAuto.append('modello' , modello);
+    DataAuto.append('prezzo' , prezzo.toString());
+    DataAuto.append('stato' , stato);
+    DataAuto.append('cambio' , cambio);
+    DataAuto.append('marca' , marca);
+    DataAuto.append('citta' , citta);
+    DataAuto.append('annoIMM' , annoIMM.toString());
+   
     console.log(JSON.stringify(annuncio));
     console.log(JSON.stringify(automobile));
-    console.log(JSON.stringify(immagine));
 
-   
+    this.http.post('http://localhost:8080/automobili', DataAuto).subscribe(); 
+
   
     //Make a call to the Spring Boot Application to save the image
     //this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
-    this.http.post<Immagine>('http://localhost:8080/imgupload', uploadImageData).subscribe();
+    //this.http.post<Immagine>('http://localhost:8080/imgupload', uploadImageData).subscribe();
 
     this.http.post<Post>('http://localhost:8080/pubblicazioni', annuncio).subscribe(); 
-    this.http.post<Post>('http://localhost:8080/automobili', automobile).subscribe(); 
+   // this.http.post<Automobile>('http://localhost:8080/automobili', automobile).subscribe(); 
   }
 
 }
