@@ -8,7 +8,9 @@ import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { PUtenteComponent } from './p-utente/p-utente.component';
 import { DirettiveComponent} from './direttive/direttive.component'
 import { PAnnuncioComponent} from './p-annuncio/p-annuncio.component'
-  
+import { ModificadatiComponent} from './modificadati/modificadati.component'
+
+
 
 const routes: Routes = [
   {path: 'primapagina', component: PrimapaginaComponent},
@@ -16,7 +18,8 @@ const routes: Routes = [
   {path: 'paginaalert', component: PaginaAlertComponent},
   {path: 'putente', component: PUtenteComponent},
   {path: 'direttive', component: DirettiveComponent},
-  {path: 'pannuncio', component: PAnnuncioComponent}
+  {path: 'pannuncio', component: PAnnuncioComponent},
+  {path: 'modificadati', component: ModificadatiComponent}
 ];
 
 

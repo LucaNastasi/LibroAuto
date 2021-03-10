@@ -58,26 +58,50 @@
         android:textSize="18sp"
         android:textColor="@color/black"
         android:text="127054 km" />
+    <TextView
+        android:id="@+id/textStato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_toEndOf="@+id/textViewKm"
+        android:layout_below="@id/imageViewMain"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Usato" />
+    <TextView
+        android:id="@+id/textAlimentazione"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textStato"
+        android:layout_toEndOf="@+id/textCavalli"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Diesel" />
+
 
     <TextView
-        android:id="@+id/textViewDescrizione"
+        android:id="@+id/textCavalli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         android:layout_below="@+id/textViewKm"
-        android:text="Commento" />
+        android:layout_marginTop="8dp"
+        android:text="117 CV" />
 
     <Button
         android:id="@+id/buttonCommenti"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewDescrizione"
+        android:layout_below="@+id/textCavalli"
         android:layout_marginTop="1dp"
         android:text="Vizualizza tutti i commenti"
         android:textColor="@color/black" />
-
 
 
 
