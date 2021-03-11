@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import activities.Login;
+import activities.RegistraAutoSplash;
 import activities.Registrazione;
 import api.RetrofitClient;
 import it.rizzoli.carbooklogin.R;
@@ -110,8 +111,9 @@ public class AddFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onResponse(retrofit2.Call<Automobile> call, Response<Automobile> response) {
                 Automobile s = response.body();
-                //Toast.makeText(AddFragment.this, "L'auto è stata registrata", Toast.LENGTH_LONG).show();
-
+                Toast.makeText(getActivity(), "L'auto è stata registrata", Toast.LENGTH_LONG).show();
+                Intent splashRegistra = new Intent(getActivity(), RegistraAutoSplash.class);
+                startActivity(splashRegistra);
             }
 
             @Override
