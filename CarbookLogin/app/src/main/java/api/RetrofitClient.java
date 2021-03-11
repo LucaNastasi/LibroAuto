@@ -23,4 +23,5 @@ public class RetrofitClient{
     public Api getApi(){
         return retrofit.create(Api.class);
     }
+    public ApiPubblicazione getApiPubblicazione(){ return retrofit.create(ApiPubblicazione.class);}
 }

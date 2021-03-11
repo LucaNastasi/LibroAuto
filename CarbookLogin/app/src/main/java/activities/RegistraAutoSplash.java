@@ -9,6 +9,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import fragments.HomeFragment;
+import it.rizzoli.carbooklogin.AnnuncioRegistrazione;
 import it.rizzoli.carbooklogin.R;
 
 public class RegistraAutoSplash extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class RegistraAutoSplash extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent DescrizioneAnnuncioIntent = new Intent(RegistraAutoSplash.this, MainActivity.class);
+                Intent DescrizioneAnnuncioIntent = new Intent(RegistraAutoSplash.this, AnnuncioRegistrazione.class);
                 startActivity(DescrizioneAnnuncioIntent);
                 finish();
             }

@@ -8,6 +8,8 @@ public class Pubblicazione {
     private Integer idPubblicazione;
     private String descrizione;
     private Date dataPubblicazione;
+    private Integer idAutomobile;
+    private Integer idPersona;
 
 
     public Pubblicazione(String d){

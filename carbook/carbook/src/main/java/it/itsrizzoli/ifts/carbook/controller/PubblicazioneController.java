@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
+import it.itsrizzoli.ifts.carbook.model.Persona;
 import it.itsrizzoli.ifts.carbook.model.Pubblicazione;
+import it.itsrizzoli.ifts.carbook.repository.PersonaRepository;
 import it.itsrizzoli.ifts.carbook.repository.PubblicazioneRepository;
 
 @CrossOrigin(origins = "*")
@@ -22,6 +24,7 @@ public class PubblicazioneController {
 
 	@Autowired
 	private PubblicazioneRepository repository; // proprietà
+	
 
 	@GetMapping("/pubblicazioni") // api
 	public List<Pubblicazione> all() {
@@ -34,12 +37,12 @@ public class PubblicazioneController {
 	}
 
 	@PostMapping("/pubblicazioni") // api
-	public Pubblicazione inserisci(@RequestBody Pubblicazione pubblicazione) {
+	public Pubblicazione inserisci(Pubblicazione pubblicazione) {
 		return repository.save(pubblicazione);
 	}
-
+	
 	@PutMapping("/pubblicazioni/{idPubblicazione}") // api
-	public Pubblicazione aggiorna(@RequestBody Pubblicazione pubblicazione, @PathVariable Integer id) {
+	public Pubblicazione aggiorna( Pubblicazione pubblicazione, @PathVariable Integer id) {
 		return repository.findById(id).map(pu -> {
 
 			pu.setAutomobile(pubblicazione.getAutomobile());
