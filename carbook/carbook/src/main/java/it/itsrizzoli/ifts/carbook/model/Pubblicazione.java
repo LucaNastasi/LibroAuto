@@ -29,7 +29,6 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 			
 		generator = ObjectIdGenerators.PropertyGenerator.class,
 		property = "idPubblicazione"
-		
 		)
 public class Pubblicazione {
 	
@@ -48,12 +47,12 @@ public class Pubblicazione {
 	private Date dataPubblicazione;
 	
 	
-	@ManyToOne(cascade = CascadeType.ALL) 
+	@ManyToOne
 	@JoinColumn(name = "id_persona")
 	private Persona persona;
 	
 	
-	@ManyToOne (cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "id_automobile")
 	private Automobile automobile;
 

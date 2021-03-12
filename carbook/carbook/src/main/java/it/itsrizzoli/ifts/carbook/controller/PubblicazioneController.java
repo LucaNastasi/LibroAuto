@@ -1,6 +1,9 @@
 package it.itsrizzoli.ifts.carbook.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,9 +38,29 @@ public class PubblicazioneController {
 	public Pubblicazione byID(@PathVariable Integer id) {
 		return repository.findById(id).orElseThrow(() -> new NotFoundException());
 	}
+	
+	@GetMapping("/listPubllicazioni")
+	public ArrayList<HashMap<String, String>> listaPubllicazione () {
+		//HASHMAP E COME UNA PUBBLICAZIONE, FAI UN ARRAYLIST DI HASHMAP (E COME FARE UN ARRAYLIST DI PUBBLICAIZONI)
+		ArrayList<HashMap<String, String>> risposta = new ArrayList<HashMap<String,String>>();
+		
+		List<Pubblicazione> listaPubblicazioni = repository.findAll();
+		for (Pubblicazione p : listaPubblicazioni) {
+			HashMap<String, String> pubblicazione = new HashMap<String, String>();
+			//AGGIUNGERE TUTTI LE COLLONE CHE TI SERVONO
+			pubblicazione.put("marca", p.getAutomobile().getMarca());
+			pubblicazione.put("username", p.getPersona().getUsername());
+			pubblicazione.put("descrizione", p.getDescrizione());
+			pubblicazione.put("dataPubblicazione", p.getDataPubblicazione().toString());
+			
+			risposta.add(pubblicazione);
+		}
+		return risposta;
+	}
 
 	@PostMapping("/pubblicazioni") // api
-	public Pubblicazione inserisci(Pubblicazione pubblicazione) {
+	public Pubblicazione inserisci(@RequestBody Pubblicazione pubblicazione) {
+		
 		return repository.save(pubblicazione);
 	}
 	

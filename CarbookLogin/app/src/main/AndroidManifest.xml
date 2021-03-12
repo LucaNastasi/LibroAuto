@@ -13,14 +13,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".AnnuncioRegistrazione"></activity>
-        <activity android:name="activities.RegistraAutoSplash" />
-        <activity android:name="activities.CommentiActivity" />
-        <activity android:name="activities.PasswordDimenticata" />
-        <activity android:name="activities.MainActivity" />
-        <activity android:name="activities.Login" />
-        <activity android:name="activities.Registrazione" />
+        <activity android:name="it.rizzoli.carbooklogin.activities.RegistraAutoSplash" />
+        <activity android:name="it.rizzoli.carbooklogin.activities.CommentiActivity" />
+        <activity android:name="it.rizzoli.carbooklogin.activities.PasswordDimenticata" />
+        <activity android:name="it.rizzoli.carbooklogin.activities.MainActivity" />
+        <activity android:name="it.rizzoli.carbooklogin.activities.Login" />
+        <activity android:name="it.rizzoli.carbooklogin.activities.Registrazione" />
         <activity
-            android:name="activities.SplashActivity"
+            android:name="it.rizzoli.carbooklogin.activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

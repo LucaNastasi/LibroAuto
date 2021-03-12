@@ -1,6 +1,6 @@
-package api;
+package it.rizzoli.carbooklogin.api;
 
-import model.Pubblicazione;
+import it.rizzoli.carbooklogin.model.Pubblicazione;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

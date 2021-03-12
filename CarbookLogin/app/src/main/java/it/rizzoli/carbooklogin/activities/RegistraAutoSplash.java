@@ -1,4 +1,4 @@
-package activities;
+package it.rizzoli.carbooklogin.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import fragments.HomeFragment;
 import it.rizzoli.carbooklogin.AnnuncioRegistrazione;
 import it.rizzoli.carbooklogin.R;
 

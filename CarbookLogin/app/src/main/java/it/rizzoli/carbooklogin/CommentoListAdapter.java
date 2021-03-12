@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-import model.Commento;
+import it.rizzoli.carbooklogin.model.Commento;
 
 
 public class CommentoListAdapter extends ArrayAdapter<Commento> {

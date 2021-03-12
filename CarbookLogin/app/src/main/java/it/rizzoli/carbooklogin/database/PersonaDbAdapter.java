@@ -1,4 +1,4 @@
-package database;
+package it.rizzoli.carbooklogin.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import model.Persona;
+import it.rizzoli.carbooklogin.model.Persona;
 
 public class PersonaDbAdapter {
     public static final String PERSONA_TABLE_KEY = "Persona";

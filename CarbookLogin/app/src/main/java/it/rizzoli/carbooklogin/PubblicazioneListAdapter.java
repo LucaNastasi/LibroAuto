@@ -8,15 +8,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-import activities.CommentiActivity;
-import model.Pubblicazione;
+import it.rizzoli.carbooklogin.activities.CommentiActivity;
+import it.rizzoli.carbooklogin.model.Pubblicazione;
 
 public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
     Context ctx;

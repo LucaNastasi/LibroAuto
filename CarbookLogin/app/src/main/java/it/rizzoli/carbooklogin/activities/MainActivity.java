@@ -1,4 +1,4 @@
-package activities;
+package it.rizzoli.carbooklogin.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +10,11 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import fragments.AddFragment;
-import fragments.HomeFragment;
-import fragments.NotificationFragment;
-import fragments.ProfileFragment;
-import fragments.SearchFragment;
+import it.rizzoli.carbooklogin.fragments.AddFragment;
+import it.rizzoli.carbooklogin.fragments.HomeFragment;
+import it.rizzoli.carbooklogin.fragments.NotificationFragment;
+import it.rizzoli.carbooklogin.fragments.ProfileFragment;
+import it.rizzoli.carbooklogin.fragments.SearchFragment;
 import it.rizzoli.carbooklogin.R;
 
 public class MainActivity extends AppCompatActivity {

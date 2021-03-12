@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +30,7 @@ public class PersonaController {
 	private PubblicazioneRepository genereRepository; // proprietà
 	
 
+	/*
 	@ResponseBody
 	@GetMapping("/login") // api
 	public Persona loginResponse(@RequestParam(value="email") String email, @RequestParam(value="password") String password) {
@@ -38,8 +40,15 @@ public class PersonaController {
 	else
 		return utenti.get(0);
 	}
+	*/
 	
-	
+	//LOGIN DELLA PERSONA
+	@PostMapping("/accesso") 
+	public Persona login (@RequestBody Persona p) {
+		return repository.match(p.getEmail(), p.getPassword()).map(persona -> {
+			return persona;
+		}).orElseThrow(() -> new NotFoundException());
+	}
 
 	@GetMapping("/persone") // api
 	public List<Persona> all() {
@@ -52,7 +61,7 @@ public class PersonaController {
 	}
 
 	@PostMapping("/nuovaPersona") // api
-	public Persona inserisci(Persona persona) {
+	public Persona inserisci(@RequestBody Persona persona) {
 		return repository.save(persona);
 	}
 	@PostMapping(path = "/persone/{id}/pubblicazioni", consumes = {"application/json"})
