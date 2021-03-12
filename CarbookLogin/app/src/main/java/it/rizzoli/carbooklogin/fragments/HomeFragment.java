@@ -51,10 +51,12 @@ public class HomeFragment extends Fragment {
                 if (response.code() == 200) {
                     ArrayList<listaPubblicazione> listRisposta = response.body();
                     list.addAll(listRisposta);
+                    
                     /*
                     PubblicazioneListAdapter pubblicazioneListAdapter1 = new PubblicazioneListAdapter(getActivity(), R.layout.rowlist_car_layout, list);
                     pubblicazioneListView.setAdapter(pubblicazioneListAdapter1);
                     */
+
                     Toast.makeText(getContext(), list.toString(), Toast.LENGTH_LONG).show();
                 }
             }
