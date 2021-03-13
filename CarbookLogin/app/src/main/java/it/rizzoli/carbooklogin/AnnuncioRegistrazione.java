@@ -12,7 +12,7 @@ import java.text.DateFormat;
 import java.util.Calendar;
 
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
-import it.rizzoli.carbooklogin.Retrofit.api.RegistazioneInferface;
+import it.rizzoli.carbooklogin.Retrofit.api.PubblicazioneApi;
 import it.rizzoli.carbooklogin.model.Pubblicazione;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -46,12 +46,12 @@ public class AnnuncioRegistrazione extends AppCompatActivity implements View.OnC
         Pubblicazione pubblicazione = new Pubblicazione();
         pubblicazione.setDataPubblicazione("2021-03-12");
         pubblicazione.setDescrizione(descrizione);
-        pubblicazione.setAutomobile(CoseCondivise.automobileInserito);
-        pubblicazione.setPersona(CoseCondivise.personaLoggato);
+        pubblicazione.setAutomobile(CoseCondivise.automobileInserita);
+        pubblicazione.setPersona(CoseCondivise.personaLoggata);
 
-        RegistazioneInferface ri = RetrofitManager.retrofit.create(RegistazioneInferface.class);
-        Call<Pubblicazione> nuovoPubblicazione = ri.nuovaPubblicazioni(pubblicazione);
-        nuovoPubblicazione.enqueue(new Callback<Pubblicazione>() {
+        PubblicazioneApi pa = RetrofitManager.retrofit.create(PubblicazioneApi.class);
+        Call<Pubblicazione> nuovaPubblicazione = pa.nuovaPubblicazione(pubblicazione);
+        nuovaPubblicazione.enqueue(new Callback<Pubblicazione>() {
             @Override
             public void onResponse(Call<Pubblicazione> call, Response<Pubblicazione> response) {
                 if (response.code() == 200) {

@@ -10,8 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
-import it.rizzoli.carbooklogin.Retrofit.api.RegistazioneInferface;
-import it.rizzoli.carbooklogin.api.RetrofitClient;
+import it.rizzoli.carbooklogin.Retrofit.api.PersonaApi;
 import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.model.Persona;
 import it.rizzoli.carbooklogin.database.PersonaDbAdapter;
@@ -45,6 +44,7 @@ public class Registrazione extends AppCompatActivity implements View.OnClickList
         String password = passwordEt.getText().toString().trim();
         String telefono = telefonoEt.getText().toString().trim();
         String citta = cittaEt.getText().toString().trim();
+
         if (email.isEmpty()) {
             emailEt.setError("L'email è obbligatoria");
             emailEt.requestFocus();
@@ -100,7 +100,7 @@ public class Registrazione extends AppCompatActivity implements View.OnClickList
         p.setTelefono(telefono);
         p.setUsername(username);
 
-        RegistazioneInferface ri = RetrofitManager.retrofit.create(RegistazioneInferface.class);
+        PersonaApi ri = RetrofitManager.retrofit.create(PersonaApi.class);
         Call<Persona> nuovaPersona = ri.nuovaPersona(p);
         nuovaPersona.enqueue(new Callback<Persona>() {
             @Override

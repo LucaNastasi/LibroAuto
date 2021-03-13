@@ -13,7 +13,8 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
-import it.rizzoli.carbooklogin.Retrofit.api.RegistazioneInferface;
+import it.rizzoli.carbooklogin.Retrofit.api.PersonaApi;
+import it.rizzoli.carbooklogin.Retrofit.api.PubblicazioneApi;
 import it.rizzoli.carbooklogin.model.Pubblicazione;
 import it.rizzoli.carbooklogin.PubblicazioneListAdapter;
 import it.rizzoli.carbooklogin.R;
@@ -43,8 +44,8 @@ public class HomeFragment extends Fragment {
 
         ArrayList<listaPubblicazione> list = new ArrayList<>();
 
-        RegistazioneInferface ri = RetrofitManager.retrofit.create(RegistazioneInferface.class);
-        Call<ArrayList<listaPubblicazione>> call = ri.list();
+        PubblicazioneApi pa = RetrofitManager.retrofit.create(PubblicazioneApi.class);
+        Call<ArrayList<listaPubblicazione>> call = pa.list();
         call.enqueue(new Callback<ArrayList<listaPubblicazione>>() {
             @Override
             public void onResponse(Call<ArrayList<listaPubblicazione>> call, Response<ArrayList<listaPubblicazione>> response) {

@@ -7,6 +7,6 @@ import it.rizzoli.carbooklogin.model.Persona;
 
 public class CoseCondivise extends Application {
 
-    public static Persona personaLoggato;
-    public static Automobile automobileInserito;
+    public static Persona personaLoggata;
+    public static Automobile automobileInserita;
 }

@@ -64,7 +64,7 @@ public class PersonaController {
 	public Persona inserisci(@RequestBody Persona persona) {
 		return repository.save(persona);
 	}
-	@PostMapping(path = "/persone/{id}/pubblicazioni", consumes = {"application/json"})
+	/*@PostMapping(path = "/persone/{id}/pubblicazioni", consumes = {"application/json"})
 	public Pubblicazione inserisciPubblicazione(@PathVariable Integer id,  Pubblicazione pubblicazione) {
 		return repository
 			.findById(id)
@@ -74,7 +74,7 @@ public class PersonaController {
 				return pubblicazione;
 			})
 			.orElseThrow(() -> new NotFoundException());
-	}
+	}*/
 	@PutMapping("/persone/{id}") // api
 	public Persona aggiorna(Persona persona, @PathVariable Integer id) {
 		return repository.findById(id).map(p -> {

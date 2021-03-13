@@ -11,9 +11,8 @@ import android.widget.Toast;
 
 import it.rizzoli.carbooklogin.CoseCondivise;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
-import it.rizzoli.carbooklogin.Retrofit.api.RegistazioneInferface;
+import it.rizzoli.carbooklogin.Retrofit.api.PersonaApi;
 import it.rizzoli.carbooklogin.api.Api;
-import it.rizzoli.carbooklogin.api.RetrofitClient;
 import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.model.Persona;
 import retrofit2.Call;
@@ -79,7 +78,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         Persona p = new Persona();
         p.setEmail(email);
         p.setPassword(password);
-        RegistazioneInferface ri = RetrofitManager.retrofit.create(RegistazioneInferface.class);
+        PersonaApi ri = RetrofitManager.retrofit.create(PersonaApi.class);
         Call<Persona> accesso = ri.accesso(p);
         accesso.enqueue(new Callback<Persona>() {
             @Override
@@ -88,7 +87,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Persona personaLoggata = response.body();
                     if(personaLoggata != null){
                         //login start main activity
-                        CoseCondivise.personaLoggato = personaLoggata;
+                        CoseCondivise.personaLoggata = personaLoggata;
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         intent.putExtra("email", email);
                         startActivity(intent);
@@ -117,6 +116,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.buttonRegistrazione:
                 Intent registratiIntent = new Intent(Login.this, Registrazione.class);
                 startActivity(registratiIntent);
+                break;
         }
     }
 }

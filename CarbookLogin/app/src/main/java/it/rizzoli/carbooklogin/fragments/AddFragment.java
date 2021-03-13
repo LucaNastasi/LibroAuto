@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import it.rizzoli.carbooklogin.CoseCondivise;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
-import it.rizzoli.carbooklogin.Retrofit.api.RegistazioneInferface;
+import it.rizzoli.carbooklogin.Retrofit.api.AutomobileApi;
 import it.rizzoli.carbooklogin.activities.RegistraAutoSplash;
 import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.model.Automobile;
@@ -115,14 +115,14 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         a.setCambio(cambio);
         a.setMarca(marca);
 
-        RegistazioneInferface ri = RetrofitManager.retrofit.create(RegistazioneInferface.class);
-        Call<Automobile> nuovoAUTOMOBILE = ri.nuovoAutomobile(a);
-        nuovoAUTOMOBILE.enqueue(new Callback<Automobile>() {
+        AutomobileApi autoApi = RetrofitManager.retrofit.create(AutomobileApi.class);
+        Call<Automobile> nuovaAutomobile = autoApi.nuovaAutomobile(a);
+        nuovaAutomobile.enqueue(new Callback<Automobile>() {
             @Override
             public void onResponse(retrofit2.Call<Automobile> call, Response<Automobile> response) {
                 if (response.code() == 200) {
-                    Automobile s = response.body();
-                    CoseCondivise.automobileInserito = s;
+                    Automobile a = response.body();
+                    CoseCondivise.automobileInserita = a;
                     Toast.makeText(getActivity(), "L'auto è stata registrata", Toast.LENGTH_LONG).show();
                     Intent splashRegistra = new Intent(getActivity(), RegistraAutoSplash.class);
                     startActivity(splashRegistra);
