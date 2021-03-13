@@ -48,10 +48,13 @@ public class PubblicazioneController {
 			//AGGIUNGERE TUTTIE LE COLLONE CHE TI SERVONO
 			pubblicazione.put("marca", p.getAutomobile().getMarca());
 			pubblicazione.put("modello", p.getAutomobile().getModello());
-			pubblicazione.put("prezzo", p.getAutomobile().getCosto().toString());
-			pubblicazione.put("username", p.getPersona().getUsername());
-			pubblicazione.put("descrizione", p.getDescrizione());
+			pubblicazione.put("costo", p.getAutomobile().getCosto().toString());
+			pubblicazione.put("chilometraggio", p.getAutomobile().getChilometraggio().toString());
 			pubblicazione.put("dataPubblicazione", p.getDataPubblicazione().toString());
+			pubblicazione.put("potenza", p.getAutomobile().getPotenza().toString());
+			pubblicazione.put("stato", p.getAutomobile().getStato());
+			pubblicazione.put("username", p.getPersona().getUsername());
+			
 			
 			risposta.add(pubblicazione);
 		}
