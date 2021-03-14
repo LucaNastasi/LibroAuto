@@ -9,10 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import it.rizzoli.carbooklogin.CoseCondivise;
+import it.rizzoli.carbooklogin.ClasseCondivisa;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.PersonaApi;
-import it.rizzoli.carbooklogin.api.Api;
 import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.model.Persona;
 import retrofit2.Call;
@@ -22,7 +21,7 @@ import retrofit2.Response;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private EditText emailEditText, passwordEditText;
-    private Api api;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +86,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Persona personaLoggata = response.body();
                     if(personaLoggata != null){
                         //login start main activity
-                        CoseCondivise.personaLoggata = personaLoggata;
+                        ClasseCondivisa.personaLoggata = personaLoggata;
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         intent.putExtra("email", email);
                         startActivity(intent);

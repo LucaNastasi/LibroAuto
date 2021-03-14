@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AnnuncioRegistrazione"></activity>
+        <activity android:name=".activities.AnnuncioRegistrazione"></activity>
         <activity android:name="it.rizzoli.carbooklogin.activities.RegistraAutoSplash" />
         <activity android:name="it.rizzoli.carbooklogin.activities.CommentiActivity" />
         <activity android:name="it.rizzoli.carbooklogin.activities.PasswordDimenticata" />

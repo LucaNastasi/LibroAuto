@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import it.rizzoli.carbooklogin.CoseCondivise;
+import it.rizzoli.carbooklogin.ClasseCondivisa;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.AutomobileApi;
 import it.rizzoli.carbooklogin.activities.RegistraAutoSplash;
@@ -122,7 +122,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
             public void onResponse(retrofit2.Call<Automobile> call, Response<Automobile> response) {
                 if (response.code() == 200) {
                     Automobile a = response.body();
-                    CoseCondivise.automobileInserita = a;
+                    ClasseCondivisa.automobileInserita = a;
                     Toast.makeText(getActivity(), "L'auto è stata registrata", Toast.LENGTH_LONG).show();
                     Intent splashRegistra = new Intent(getActivity(), RegistraAutoSplash.class);
                     startActivity(splashRegistra);

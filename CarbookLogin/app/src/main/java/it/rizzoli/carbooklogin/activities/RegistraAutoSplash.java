@@ -8,7 +8,6 @@ import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import it.rizzoli.carbooklogin.AnnuncioRegistrazione;
 import it.rizzoli.carbooklogin.R;
 
 public class RegistraAutoSplash extends AppCompatActivity {

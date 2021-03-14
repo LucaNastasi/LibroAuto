@@ -1,4 +1,4 @@
-package it.rizzoli.carbooklogin;
+package it.rizzoli.carbooklogin.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,8 +9,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import it.rizzoli.carbooklogin.ClasseCondivisa;
+import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.PubblicazioneApi;
 import it.rizzoli.carbooklogin.model.Pubblicazione;
@@ -33,8 +36,8 @@ public class AnnuncioRegistrazione extends AppCompatActivity implements View.OnC
 
     }
     private void registraAnnuncio(){
-        Calendar calendar = Calendar.getInstance();
-        String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDate = df.format(Calendar.getInstance().getTime());
         textDate.setText(currentDate);
         String descrizione = editTextDescrivi.getText().toString().trim();
 
@@ -44,10 +47,10 @@ public class AnnuncioRegistrazione extends AppCompatActivity implements View.OnC
         }
 
         Pubblicazione pubblicazione = new Pubblicazione();
-        pubblicazione.setDataPubblicazione("2021-03-12");
+        pubblicazione.setDataPubblicazione(currentDate);
         pubblicazione.setDescrizione(descrizione);
-        pubblicazione.setAutomobile(CoseCondivise.automobileInserita);
-        pubblicazione.setPersona(CoseCondivise.personaLoggata);
+        pubblicazione.setAutomobile(ClasseCondivisa.automobileInserita);
+        pubblicazione.setPersona(ClasseCondivisa.personaLoggata);
 
         PubblicazioneApi pa = RetrofitManager.retrofit.create(PubblicazioneApi.class);
         Call<Pubblicazione> nuovaPubblicazione = pa.nuovaPubblicazione(pubblicazione);
