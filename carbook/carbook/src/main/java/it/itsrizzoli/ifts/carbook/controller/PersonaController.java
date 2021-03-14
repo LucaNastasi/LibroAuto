@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
 import it.itsrizzoli.ifts.carbook.model.Persona;
+import it.itsrizzoli.ifts.carbook.model.Pubblicazione;
 import it.itsrizzoli.ifts.carbook.repository.PersonaRepository;
+import it.itsrizzoli.ifts.carbook.repository.PubblicazioneRepository;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -24,7 +26,11 @@ public class PersonaController {
 
 	@Autowired
 	private PersonaRepository repository; // proprietà
+	@Autowired
+	private PubblicazioneRepository genereRepository; // proprietà
+	
 
+	/*
 	@ResponseBody
 	@GetMapping("/login") // api
 	public Persona loginResponse(@RequestParam(value="email") String email, @RequestParam(value="password") String password) {
@@ -34,8 +40,15 @@ public class PersonaController {
 	else
 		return utenti.get(0);
 	}
+	*/
 	
-	
+	//LOGIN DELLA PERSONA
+	@PostMapping("/accesso") 
+	public Persona login (@RequestBody Persona p) {
+		return repository.match(p.getEmail(), p.getPassword()).map(persona -> {
+			return persona;
+		}).orElseThrow(() -> new NotFoundException());
+	}
 
 	@GetMapping("/persone") // api
 	public List<Persona> all() {
@@ -48,10 +61,20 @@ public class PersonaController {
 	}
 
 	@PostMapping("/nuovaPersona") // api
-	public Persona inserisci(Persona persona) {
+	public Persona inserisci(@RequestBody Persona persona) {
 		return repository.save(persona);
 	}
-
+	/*@PostMapping(path = "/persone/{id}/pubblicazioni", consumes = {"application/json"})
+	public Pubblicazione inserisciPubblicazione(@PathVariable Integer id,  Pubblicazione pubblicazione) {
+		return repository
+			.findById(id)
+			.map(p -> {
+				p.addPubblicazione(pubblicazione);;
+				repository.save(p);
+				return pubblicazione;
+			})
+			.orElseThrow(() -> new NotFoundException());
+	}*/
 	@PutMapping("/persone/{id}") // api
 	public Persona aggiorna(Persona persona, @PathVariable Integer id) {
 		return repository.findById(id).map(p -> {

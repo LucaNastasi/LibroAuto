@@ -11,8 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -58,7 +57,7 @@ public class Automobile {
 	@Column(nullable = false, length = 100)
 	private Integer potenza;
 	
-	@Column( length = 1000)
+	@Column(length = 1000)
 	private String fotoAuto;
 	
 	@Column(nullable = false, length = 100)
@@ -178,16 +177,7 @@ public class Automobile {
 				+ alimentazione + ", cambio=" + cambio + ", marca=" + marca + ", citta=" + citta + ", potenza="
 				+ potenza + ", fotoAuto=" + fotoAuto + ", costo=" + costo + ", pubblicazioni=" + pubblicazioni + "]";
 	}
-
-
-	
-	
-	
 	
 
-	
-
-
-
-	
 }
+

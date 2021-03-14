@@ -1,4 +1,4 @@
-package activities;
+package it.rizzoli.carbooklogin.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,10 +9,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import api.Api;
-import api.RetrofitClient;
+import it.rizzoli.carbooklogin.ClasseCondivisa;
+import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
+import it.rizzoli.carbooklogin.Retrofit.api.PersonaApi;
 import it.rizzoli.carbooklogin.R;
-import model.Persona;
+import it.rizzoli.carbooklogin.model.Persona;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,7 +21,7 @@ import retrofit2.Response;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private EditText emailEditText, passwordEditText;
-    private Api api;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             emailEditText.requestFocus();
             return;
         }
-        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             emailEditText.setError("Inserisci email valida");
             emailEditText.requestFocus();
             return;
@@ -73,17 +74,19 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         return true;
     }
     private void doLogin(final String email,final String password){
-        Call<Persona> call = RetrofitClient
-                .getInstance()
-                .getApi()
-                .login(email,password);
-        call.enqueue(new Callback<Persona>() {
+        Persona p = new Persona();
+        p.setEmail(email);
+        p.setPassword(password);
+        PersonaApi ri = RetrofitManager.retrofit.create(PersonaApi.class);
+        Call<Persona> accesso = ri.accesso(p);
+        accesso.enqueue(new Callback<Persona>() {
             @Override
             public void onResponse(Call<Persona> call, Response<Persona> response) {
-                if(response.isSuccessful()){
+                if(response.code() == 200){
                     Persona personaLoggata = response.body();
                     if(personaLoggata != null){
                         //login start main activity
+                        ClasseCondivisa.personaLoggata = personaLoggata;
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         intent.putExtra("email", email);
                         startActivity(intent);
@@ -112,6 +115,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.buttonRegistrazione:
                 Intent registratiIntent = new Intent(Login.this, Registrazione.class);
                 startActivity(registratiIntent);
+                break;
         }
     }
 }

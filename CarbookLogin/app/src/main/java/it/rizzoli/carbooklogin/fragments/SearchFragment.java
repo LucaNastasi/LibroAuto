@@ -1,4 +1,4 @@
-package fragments;
+package it.rizzoli.carbooklogin.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

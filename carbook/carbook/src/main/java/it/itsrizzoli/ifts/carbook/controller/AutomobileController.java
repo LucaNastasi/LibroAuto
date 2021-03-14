@@ -41,7 +41,7 @@ public class AutomobileController {
 }
 	
 	@PostMapping("/automobili") // api
-	public Automobile inserisci(Automobile automobile) {
+	public Automobile inserisci(@RequestBody Automobile automobile) {
 		return repository.save(automobile);
 	}
 	
