@@ -1,17 +1,17 @@
 
 
 export class Automobile{
+    idAutomobile:number;
     alimentazione: string;
-    cavalli: number;
-    chilometri: number;
-    colore: string;
+    potenza: number;
+    chilometraggio: number;
     modello: string;
-    prezzo: number;
+    costo: number;
     stato: string;
     cambio: string;
     marca: string;
     citta: string;
-    annoIMM: number;
+    annoImmatricolazione: number;
     fotoAuto: File;
   
 }

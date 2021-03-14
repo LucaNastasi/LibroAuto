@@ -4,7 +4,7 @@ import { Post } from '../model/post';
 import { Automobile } from '../model/automobile'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { Byte } from '@angular/compiler/src/util';
-import { Immagine } from '../model/immagine'
+
 
 import { Component, OnInit } from '@angular/core';
 
@@ -86,41 +86,59 @@ export class ModificadatiComponent implements OnInit {
     })
   }
 
-  aggiungi(picByte:Byte, alimentazione: string, cavalli: number, 
-    chilometri:number, colore:string, modello:string, prezzo: number,  
-    stato: string, cambio:string, descrizione: string, dataPubblicazione: Date){
-    console.log( picByte, alimentazione, cavalli, chilometri, colore,
-    modello, prezzo, stato, cambio, descrizione, dataPubblicazione);
+  aggiungi(/*picByte:Byte,*/ fotoAuto: File, alimentazione: string, potenza: number,
+    chilometraggio:number, modello:string, costo: number,  
+    stato: string, cambio:string, marca:string, annoImmatricolazione:number, citta:string, descrizione: string, dataPubblicazione: Date){
+    console.log(  alimentazione, alimentazione, citta, potenza, chilometraggio, costo,
+    modello, stato, cambio, descrizione, dataPubblicazione);
 
-    const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.selectedFile);
+   // const uploadImageData = new FormData();
+   // uploadImageData.append('imageFile', this.selectedFile);
     let annuncio = new Post();
     let automobile = new Automobile();
     annuncio.descrizione = descrizione;
     annuncio.dataPubblicazione = dataPubblicazione;
-    let immagine = new Immagine();
+    //let immagine = new Immagine();
 
-    immagine.picByte = picByte;
+    /*automobile.fotoAuto = fotoAuto;
     automobile.alimentazione = alimentazione;
     automobile.cavalli = cavalli;
     automobile.chilometri = chilometri;
-    automobile.colore = colore;
+   
     automobile.modello = modello;
     automobile.prezzo = prezzo;
     automobile.stato = stato;
     automobile.cambio = cambio;
+    automobile.marca = marca;
+    automobile.AnnoIMM = AnnoIMM;*/
+    
+    //console.log(JSON.stringify(immagine));
+
+    let DataAuto = new FormData();
+    DataAuto.append('fotoAuto' , fotoAuto);
+    DataAuto.append('alimentazione' , alimentazione);
+    DataAuto.append('potenza' , potenza.toString());
+    DataAuto.append('chilometraggio' , chilometraggio.toString());
+    DataAuto.append('modello' , modello);
+    DataAuto.append('costo' , costo.toString());
+    DataAuto.append('stato' , stato);
+    DataAuto.append('cambio' , cambio);
+    DataAuto.append('marca' , marca);
+    DataAuto.append('citta' , citta);
+    DataAuto.append('annoImmatricolazione' , annoImmatricolazione.toString());
+   
     console.log(JSON.stringify(annuncio));
     console.log(JSON.stringify(automobile));
-    console.log(JSON.stringify(immagine));
 
-   
+    this.http.post('http://localhost:8080/automobili', DataAuto).subscribe(); 
+
   
     //Make a call to the Spring Boot Application to save the image
     //this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
-    this.http.post<Immagine>('http://localhost:8080/imgupload', uploadImageData).subscribe();
+    //this.http.post<Immagine>('http://localhost:8080/imgupload', uploadImageData).subscribe();
 
     this.http.post<Post>('http://localhost:8080/pubblicazioni', annuncio).subscribe(); 
-    this.http.post<Post>('http://localhost:8080/automobili', automobile).subscribe(); 
+   // this.http.post<Automobile>('http://localhost:8080/automobili', automobile).subscribe(); 
   }
 
 }

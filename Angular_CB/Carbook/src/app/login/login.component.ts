@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   email1: String;      //email di login
   password1: String;   // password di login
 
+
    constructor(
      private http: HttpClient, private router:Router,
    ){}
@@ -24,17 +25,20 @@ persone: any[];
   
   richestaHttp(form: boolean){
   console.log(this.email1, this.password1);
+          //post
     this.http.get<Persona[]>('http://localhost:8080/login?email=' +
     this.email1 +'&password=' + this.password1).subscribe((persone) => {
       console.log(persone);
 
       if(persone)
-      this.router.navigate(['paginaalert'])
+      this.router.navigate(['primapagina'])
       else
       this.router.navigate(['login'])
 
       console.log})
   }
+
+
 
   aggiungi(nome: string, cognome: string, email: string, username: string, password: string, telefono: string, citta: string){
     console.log(nome, cognome, email, username, password, telefono, citta); //aggiungi persona del database con registrati
