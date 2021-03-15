@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from '../model/persona';
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http'
+
 
 @Component({
   selector: 'app-login',
@@ -10,47 +11,65 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 })
 export class LoginComponent implements OnInit {
  
-  email1: String;      //email di login
+  email1: string;      //email di login
   password1: String;   // password di login
+  
 
    constructor(
-     private http: HttpClient, private router:Router,
+     private http: HttpClient, private router:Router
    ){}
 
-persone: any[];
+
 
   ngOnInit(): void {
   }
-  
-  richestaHttp(form: boolean){
+
+       
+/*  richestaHttp(form: boolean){
   console.log(this.email1, this.password1);
+          //post
     this.http.get<Persona[]>('http://localhost:8080/login?email=' +
     this.email1 +'&password=' + this.password1).subscribe((persone) => {
       console.log(persone);
 
       if(persone)
-      this.router.navigate(['paginaalert'])
+      this.router.navigate(['primapagina'])
       else
       this.router.navigate(['login'])
 
       console.log})
-  }
+  } */
+
+
 
   aggiungi(nome: string, cognome: string, email: string, username: string, password: string, telefono: string, citta: string){
-    console.log(nome, cognome, email, username, password, telefono, citta); //aggiungi persona del database con registrati
+    console.log(nome, cognome, email, username, password, telefono, citta); 
 
-    let postData = new FormData();
-    postData.append('cognome' , cognome);
-    postData.append('nome' , nome);
-    postData.append('email' , email);
-    postData.append('username' , username);
-    postData.append('password' , password);
-    postData.append('telefono' , telefono);
-    postData.append('citta' , citta);
+    let persona = new Persona();
+    persona.username = username;
+    persona.citta = citta;
+    persona.cognome = cognome;
+    persona.email = email;
+    persona.password = password;
+    persona.telefono = telefono;
+    persona.nome = nome;
    
-   
-
-    this.http.post('http://localhost:8080/nuovaPersona', postData).subscribe(); 
+    this.http.post<Persona>('http://localhost:8080/nuovaPersona', persona).subscribe(); 
 
   }
+
+  loginUser(email1: string, password1: string){
+    //post
+    let personaLogin = new Persona();
+    personaLogin.email= email1;
+    personaLogin.password = password1;
+    this.http.post<Persona>('http://localhost:8080/accesso', personaLogin, {observe: 'response'} ).subscribe(response => {
+      if(response.status == 200){
+        this.router.navigate(['primapagina'])
+      }
+    }) 
+
+  }
+
+
 }

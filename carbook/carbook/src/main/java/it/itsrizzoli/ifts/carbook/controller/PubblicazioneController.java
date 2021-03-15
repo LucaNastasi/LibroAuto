@@ -87,4 +87,11 @@ public class PubblicazioneController {
 	public void elimina(@PathVariable Integer id) {
 		repository.delete(repository.findById(id).orElseThrow(() -> new NotFoundException()));
 	}
+	
+	@DeleteMapping("/pubblicazioni/")
+	public void deleteAll() {
+	 repository.deleteAll();
+
+	} 
+
 }

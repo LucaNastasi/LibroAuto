@@ -30,3 +30,17 @@ body{
     border: darkcyan;
     
   }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+  
+  }
+  
+  td, th, tr {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  
