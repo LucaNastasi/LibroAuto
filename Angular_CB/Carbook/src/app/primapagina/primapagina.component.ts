@@ -1,7 +1,7 @@
 import { compileNgModuleFromRender2 } from '@angular/compiler/src/render3/r3_module_compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Post } from '../model/post';
+import { Pubblicazione } from '../model/pubblicazione';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { Automobile } from '../model/automobile'
 
@@ -14,8 +14,6 @@ export class PrimapaginaComponent implements OnInit {
   DataOra = new Date();
   url = '';
   
-      
- 
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -33,7 +31,6 @@ export class PrimapaginaComponent implements OnInit {
 
   pubblicazioni:any[]
   automobili:any[]
-  idA:number;
   ngOnInit(): void {
   
     this.http.get<any[]>('http://localhost:8080/pubblicazioni').subscribe((pubblicazioni) =>
@@ -52,13 +49,11 @@ export class PrimapaginaComponent implements OnInit {
     //console.log(  alimentazione, alimentazione, citta, potenza, chilometraggio, costo,
    // modello, stato, cambio, descrizione, dataPubblicazione);
 
-   // const uploadImageData = new FormData();
-   // uploadImageData.append('imageFile', this.selectedFile);
-    let annuncio = new Post();
+ 
+    let pubblicazione = new Pubblicazione();
     let automobile = new Automobile();
-    annuncio.descrizione = descrizione;
-    annuncio.dataPubblicazione = dataPubblicazione;
-    //let immagine = new Immagine();
+    pubblicazione.descrizione = descrizione;
+    pubblicazione.dataPubblicazione = dataPubblicazione;
 
     automobile.fotoAuto = fotoAuto;
     automobile.alimentazione = alimentazione;
@@ -72,8 +67,6 @@ export class PrimapaginaComponent implements OnInit {
     automobile.cambio = cambio;
     automobile.marca = marca;
     automobile.annoImmatricolazione = annoImmatricolazione;
-   
-    //console.log(JSON.stringify(immagine));
 
 
 /*
@@ -92,28 +85,17 @@ export class PrimapaginaComponent implements OnInit {
     */
 
 
-   console.log(JSON.stringify(annuncio));
+   console.log(JSON.stringify(pubblicazione));
    console.log(JSON.stringify(automobile));
 
 
     this.http.post<Automobile>('http://localhost:8080/automobili', automobile).subscribe((dati) => {
      
-    this.idA = dati.idAutomobile;
-      
+ 
     });
-
     
+    this.http.post<Pubblicazione>('http://localhost:8080/pubblicazioni', pubblicazione).subscribe();
   
-    //Make a call to the Spring Boot Application to save the image
-    //this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
-    //this.http.post<Immagine>('http://localhost:8080/imgupload', uploadImageData).subscribe();
-
-    this.http.post<Post>('http://localhost:8080/pubblicazioni', annuncio).subscribe((dati) => {
-     dati.automobile_idAutomobile = this.idA;
-    } );
-  
-  
-   // this.http.post<Automobile>('http://localhost:8080/automobili', automobile).subscribe();  
   }
 
 }

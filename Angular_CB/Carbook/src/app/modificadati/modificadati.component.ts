@@ -1,6 +1,6 @@
 
 import { Router, ActivatedRoute } from '@angular/router';
-import { Post } from '../model/post';
+import { Pubblicazione } from '../model/pubblicazione';
 import { Automobile } from '../model/automobile'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { Byte } from '@angular/compiler/src/util';
@@ -67,16 +67,13 @@ export class ModificadatiComponent implements OnInit {
   constructor(private http: HttpClient,) 
    {}
 
-   immagini: any[]
+ 
    pubblicazioni:any[]
    annunci:any[]
    automobili:any[]
    url='';
    selectedFile: File;
-  retrievedImage: any;
-  base64Data: any;
-  retrieveResonse: any;
-  message: string;
+ 
   //imageName: any
 
   ngOnInit(): void {
@@ -86,18 +83,17 @@ export class ModificadatiComponent implements OnInit {
     })
   }
 
-  aggiungi(/*picByte:Byte,*/ fotoAuto: File, alimentazione: string, potenza: number,
-    chilometraggio:number, modello:string, costo: number,  
+  aggiungi( fotoAuto: File, alimentazione: string, potenza: number, chilometraggio:number, modello:string, costo: number,  
     stato: string, cambio:string, marca:string, annoImmatricolazione:number, citta:string, descrizione: string, dataPubblicazione: Date){
     console.log(  alimentazione, alimentazione, citta, potenza, chilometraggio, costo,
     modello, stato, cambio, descrizione, dataPubblicazione);
 
    // const uploadImageData = new FormData();
    // uploadImageData.append('imageFile', this.selectedFile);
-    let annuncio = new Post();
+    let pubblicazione = new Pubblicazione();
     let automobile = new Automobile();
-    annuncio.descrizione = descrizione;
-    annuncio.dataPubblicazione = dataPubblicazione;
+    pubblicazione.descrizione = descrizione;
+    pubblicazione.dataPubblicazione = dataPubblicazione;
     //let immagine = new Immagine();
 
     /*automobile.fotoAuto = fotoAuto;
@@ -127,7 +123,7 @@ export class ModificadatiComponent implements OnInit {
     DataAuto.append('citta' , citta);
     DataAuto.append('annoImmatricolazione' , annoImmatricolazione.toString());
    
-    console.log(JSON.stringify(annuncio));
+    console.log(JSON.stringify(pubblicazione));
     console.log(JSON.stringify(automobile));
 
     this.http.post('http://localhost:8080/automobili', DataAuto).subscribe(); 
@@ -137,7 +133,7 @@ export class ModificadatiComponent implements OnInit {
     //this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
     //this.http.post<Immagine>('http://localhost:8080/imgupload', uploadImageData).subscribe();
 
-    this.http.post<Post>('http://localhost:8080/pubblicazioni', annuncio).subscribe(); 
+    this.http.post<Pubblicazione>('http://localhost:8080/pubblicazioni', pubblicazione).subscribe(); 
    // this.http.post<Automobile>('http://localhost:8080/automobili', automobile).subscribe(); 
   }
 
