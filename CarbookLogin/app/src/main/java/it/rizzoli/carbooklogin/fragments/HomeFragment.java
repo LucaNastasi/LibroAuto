@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        PubblicazioneListAdapter pubblicazioneListAdapter = new PubblicazioneListAdapter(getActivity(), R.layout.rowlist_car_layout, lista);
+        PubblicazioneListAdapter pubblicazioneListAdapter = new PubblicazioneListAdapter(getActivity(), R.layout.rowlist_car_layout, list);
         pubblicazioneListView.setAdapter(pubblicazioneListAdapter);
         return view;
     }
