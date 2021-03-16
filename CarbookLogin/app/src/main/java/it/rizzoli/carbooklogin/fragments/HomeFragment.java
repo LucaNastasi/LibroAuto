@@ -13,12 +13,11 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
-import it.rizzoli.carbooklogin.Retrofit.api.PersonaApi;
 import it.rizzoli.carbooklogin.Retrofit.api.PubblicazioneApi;
 import it.rizzoli.carbooklogin.model.Pubblicazione;
-import it.rizzoli.carbooklogin.PubblicazioneListAdapter;
+import it.rizzoli.carbooklogin.ListaPubblicazioneListAdapter;
 import it.rizzoli.carbooklogin.R;
-import it.rizzoli.carbooklogin.model.listaPubblicazione;
+import it.rizzoli.carbooklogin.model.ListaPubblicazione;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -36,40 +35,31 @@ public class HomeFragment extends Fragment {
 
         ListView pubblicazioneListView = view.findViewById(R.id.pubblicazioneListView);
 
-        ArrayList<Pubblicazione> lista = new ArrayList<>();
-        lista.add(new Pubblicazione("Lamborghini miura fantastica ad un prezzo stracciato non fartela scappare!!!"));
-        lista.add(new Pubblicazione("Ferrari enzo fiammante, non perdere l'occasione"));
-        lista.add(new Pubblicazione("Fiat 500, super offerta!!!"));
-        lista.add(new Pubblicazione("Mercedes classe AMG, fantastica"));
-
-        ArrayList<listaPubblicazione> list = new ArrayList<>();
+        ArrayList<ListaPubblicazione> list = new ArrayList<>();
 
         PubblicazioneApi pa = RetrofitManager.retrofit.create(PubblicazioneApi.class);
-        Call<ArrayList<listaPubblicazione>> call = pa.list();
-        call.enqueue(new Callback<ArrayList<listaPubblicazione>>() {
+        Call<ArrayList<ListaPubblicazione>> call = pa.list();
+        call.enqueue(new Callback<ArrayList<ListaPubblicazione>>() {
             @Override
-            public void onResponse(Call<ArrayList<listaPubblicazione>> call, Response<ArrayList<listaPubblicazione>> response) {
+            public void onResponse(Call<ArrayList<ListaPubblicazione>> call, Response<ArrayList<ListaPubblicazione>> response) {
                 if (response.code() == 200) {
-                    ArrayList<listaPubblicazione> listRisposta = response.body();
+                    ArrayList<ListaPubblicazione> listRisposta = response.body();
                     list.addAll(listRisposta);
-                    
-                    /*
-                    PubblicazioneListAdapter pubblicazioneListAdapter1 = new PubblicazioneListAdapter(getActivity(), R.layout.rowlist_car_layout, list);
-                    pubblicazioneListView.setAdapter(pubblicazioneListAdapter1);
-                    */
-
                     Toast.makeText(getContext(), list.toString(), Toast.LENGTH_LONG).show();
+
+                    ListaPubblicazioneListAdapter listaPubblicazioneListAdapter = new ListaPubblicazioneListAdapter(getActivity(), R.layout.rowlist_car_layout, list);
+                    pubblicazioneListView.setAdapter(listaPubblicazioneListAdapter);
+
                 }
             }
 
             @Override
-            public void onFailure(Call<ArrayList<listaPubblicazione>> call, Throwable t) {
-
+            public void onFailure(Call<ArrayList<ListaPubblicazione>> call, Throwable t) {
+                Toast.makeText(getContext(), list.toString(), Toast.LENGTH_LONG).show();
             }
         });
 
-        PubblicazioneListAdapter pubblicazioneListAdapter = new PubblicazioneListAdapter(getActivity(), R.layout.rowlist_car_layout, list);
-        pubblicazioneListView.setAdapter(pubblicazioneListAdapter);
+
         return view;
     }
 

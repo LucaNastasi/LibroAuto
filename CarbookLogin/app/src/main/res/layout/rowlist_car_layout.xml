@@ -16,7 +16,7 @@
         android:src="@drawable/auto2" />
 
     <TextView
-        android:id="@+id/autoCaratteristiche"
+        android:id="@+id/marca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
@@ -27,8 +27,8 @@
         android:text="BMW" />
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_toEndOf="@+id/autoCaratteristiche"
+        android:id="@+id/modello"
+        android:layout_toEndOf="@+id/marca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
@@ -37,15 +37,27 @@
         android:textSize="18sp"
         android:text="320 sportback s line " />
     <TextView
-        android:id="@+id/prezzo"
+        android:id="@+id/euro"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_toEndOf="@+id/imageViewMain"
+        android:layout_marginStart="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:text="€" />
+
+    <TextView
+        android:id="@+id/prezzo"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="23dp"
         android:layout_marginTop="70dp"
         android:layout_toEndOf="@+id/imageViewMain"
         android:textSize="18sp"
         android:textColor="@color/black"
-        android:text="€ 30 0000" />
+        android:text="30 0000" />
 
     <TextView
         android:id="@+id/offerta"
@@ -60,16 +72,26 @@
 
     <TextView
         android:id="@+id/textViewKm"
+        android:layout_width="120dp"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewMain"
+        android:layout_marginTop="15dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="127054" />
+    <TextView
+        android:id="@+id/Km"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageViewMain"
         android:layout_marginTop="15dp"
         android:textSize="18sp"
         android:textColor="@color/black"
-        android:text="127054 km" />
+        android:text="KM" />
     <TextView
         android:id="@+id/textStato"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_toEndOf="@+id/textViewKm"
@@ -80,11 +102,11 @@
         android:text="Usato" />
     <TextView
         android:id="@+id/textAlimentazione"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textStato"
         android:layout_toEndOf="@+id/textCavalli"
-        android:layout_marginStart="132dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="8dp"
         android:textSize="18sp"
         android:textColor="@color/black"
@@ -93,6 +115,17 @@
 
     <TextView
         android:id="@+id/textCavalli"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/textViewKm"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="8dp"
+        android:text="117 " />
+    <TextView
+        android:id="@+id/cv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -100,7 +133,7 @@
         android:textColor="@color/black"
         android:layout_below="@+id/textViewKm"
         android:layout_marginTop="8dp"
-        android:text="117 CV" />
+        android:text="CV" />
 
     <Button
         android:id="@+id/buttonCommenti"
@@ -108,17 +141,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textCavalli"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="40dp"
         android:text="Vizualizza tutti i commenti"
         android:textColor="@color/black" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Date"
         android:layout_alignParentEnd="true"
         android:layout_alignBottom="@+id/buttonCommenti"/>
+
+    <TextView
+        android:id="@+id/textViewPersona"
+        android:layout_width="120dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="Luca Nastasi"
+        android:layout_below="@id/textCavalli"/>
+    <TextView
+        android:id="@+id/textViewTelefono"
+        android:layout_width="120dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="34567689008"
+        android:layout_marginStart="130dp"
+        android:layout_toEndOf="@id/textViewPersona"
+        android:layout_below="@id/textCavalli"/>
 
 
 </RelativeLayout>

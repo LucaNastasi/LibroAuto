@@ -3,7 +3,7 @@ package it.rizzoli.carbooklogin.Retrofit.api;
 import java.util.ArrayList;
 
 import it.rizzoli.carbooklogin.model.Pubblicazione;
-import it.rizzoli.carbooklogin.model.listaPubblicazione;
+import it.rizzoli.carbooklogin.model.ListaPubblicazione;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -16,5 +16,5 @@ public interface PubblicazioneApi {
 
     @GET("/listaPubllicazioni")
         //Call<COSA DEVO RICEVERE> nome (COSA DEVO MANDARE);
-    Call<ArrayList<listaPubblicazione>> list ();
+    Call<ArrayList<ListaPubblicazione>> list ();
 }
