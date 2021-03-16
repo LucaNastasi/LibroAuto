@@ -1,235 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="2000dp"
-    android:layout_margin="@dimen/margin20"
-    >
+    android:layout_marginBottom="56dp"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin20">
 
 
-    <ImageView
-        android:id="@+id/imgVendiAuto"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:src="@drawable/vendiauto"
-        />
-    <TextView
-        android:id="@+id/textTitolo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Inserisci i dati della tua auto"
-        android:layout_below="@+id/imgVendiAuto"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Marca"
-        android:id="@+id/marca"
-        android:layout_below="@id/textTitolo"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <ImageView
+                android:id="@+id/imgVendiAuto"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/vendiauto" />
 
-    <EditText
-        android:id="@+id/editTextMarca"
-        android:layout_below="@id/marca"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Anno di immatricolazione"
-        android:id="@+id/immatricolazione"
-        android:layout_below="@id/editTextMarca"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <TextView
+                android:id="@+id/textTitolo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgVendiAuto"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Inserisci i dati della tua auto"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
 
-    <EditText
-        android:id="@+id/editTextImmatricolazione"
-        android:layout_below="@id/immatricolazione"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Modello"
-        android:id="@+id/modello"
-        android:layout_below="@id/editTextImmatricolazione"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <TextView
+                android:id="@+id/marca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textTitolo"
+                android:layout_marginTop="10dp"
+                android:text="Marca"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextModello"
-        android:layout_below="@id/modello"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cambio"
-        android:id="@+id/cambio"
-        android:layout_below="@id/editTextModello"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <EditText
+                android:id="@+id/editTextMarca"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/marca"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
 
-    <EditText
-        android:id="@+id/editTextCambio"
-        android:layout_below="@id/cambio"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Carburante"
-        android:id="@+id/carburante"
-        android:layout_below="@id/editTextCambio"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <TextView
+                android:id="@+id/immatricolazione"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextMarca"
+                android:layout_marginTop="10dp"
+                android:text="Anno di immatricolazione"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextCarburante"
-        android:layout_below="@id/carburante"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Potenza CV"
-        android:id="@+id/potenza"
-        android:layout_below="@id/editTextCarburante"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <EditText
+                android:id="@+id/editTextImmatricolazione"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/immatricolazione"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
 
-    <EditText
-        android:id="@+id/editTextPotenza"
-        android:layout_below="@id/potenza"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chilometraggio"
-        android:id="@+id/chilometraggio"
-        android:layout_below="@id/editTextPotenza"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <TextView
+                android:id="@+id/modello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextImmatricolazione"
+                android:layout_marginTop="10dp"
+                android:text="Modello"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextChilometraggio"
-        android:layout_below="@id/chilometraggio"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Città"
-        android:id="@+id/citta"
-        android:layout_below="@id/editTextChilometraggio"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <EditText
+                android:id="@+id/editTextModello"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/modello"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
 
-    <EditText
-        android:id="@+id/editTextCitta"
-        android:layout_below="@id/citta"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stato"
-        android:id="@+id/stato"
-        android:layout_below="@id/editTextCitta"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <TextView
+                android:id="@+id/cambio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextModello"
+                android:layout_marginTop="10dp"
+                android:text="Cambio"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editTextStato"
-        android:layout_below="@id/stato"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Prezzo"
-        android:id="@+id/prezzo"
-        android:layout_below="@id/editTextStato"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        />
+            <EditText
+                android:id="@+id/editTextCambio"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/cambio"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
 
-    <EditText
-        android:id="@+id/editTextPrezzo"
-        android:layout_below="@id/prezzo"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/editext_border"
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        />
-    <Button
-        android:layout_width="335dp"
-        android:layout_height="40dp"
-        android:text="Registra auto"
-        android:id="@+id/buttonAuto"
-        android:layout_below="@id/editTextPrezzo"
-        android:layout_marginTop="10dp"
-        />
+            <TextView
+                android:id="@+id/carburante"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextCambio"
+                android:layout_marginTop="10dp"
+                android:text="Carburante"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextCarburante"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/carburante"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
+
+            <TextView
+                android:id="@+id/potenza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextCarburante"
+                android:layout_marginTop="10dp"
+                android:text="Potenza CV"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextPotenza"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/potenza"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
+
+            <TextView
+                android:id="@+id/chilometraggio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextPotenza"
+                android:layout_marginTop="10dp"
+                android:text="Chilometraggio"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextChilometraggio"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/chilometraggio"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
+
+            <TextView
+                android:id="@+id/citta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextChilometraggio"
+                android:layout_marginTop="10dp"
+                android:text="Città"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextCitta"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/citta"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
+
+            <TextView
+                android:id="@+id/stato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextCitta"
+                android:layout_marginTop="10dp"
+                android:text="Stato"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextStato"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/stato"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
+
+            <TextView
+                android:id="@+id/prezzo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editTextStato"
+                android:layout_marginTop="10dp"
+                android:text="Prezzo"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextPrezzo"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/prezzo"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/editext_border" />
+
+            <Button
+                android:id="@+id/buttonAuto"
+                android:layout_width="335dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/editTextPrezzo"
+                android:layout_marginTop="20dp"
+                android:text="Registra auto"
+                android:layout_marginBottom="56dp"/>
 
 
-
-
-</RelativeLayout>
-</ScrollView>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

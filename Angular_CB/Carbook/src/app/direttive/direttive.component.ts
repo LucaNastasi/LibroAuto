@@ -1,21 +1,23 @@
 import { compileNgModuleFromRender2 } from '@angular/compiler/src/render3/r3_module_compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Post } from '../model/post';
+import { Pubblicazione } from '../model/pubblicazione';
 import { Automobile } from '../model/automobile'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { Byte } from '@angular/compiler/src/util';
-import { Immagine } from '../model/immagine'
+
+import { DatePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-direttive',
   templateUrl: './direttive.component.html',
-  styleUrls: ['./direttive.component.css']
+  styleUrls: ['./direttive.component.css'],
+  
 })
 export class DirettiveComponent implements OnInit {
 
- 
+  currentDate = new Date();
   url = '';
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
@@ -72,18 +74,18 @@ export class DirettiveComponent implements OnInit {
     })
   }
 
-  aggiungi(/*picByte:Byte,*/ fotoAuto: File, alimentazione: string, cavalli: number,
-    chilometri:number, modello:string, prezzo: number,  
-    stato: string, cambio:string, marca:string, annoIMM:number, citta:string, descrizione: string, dataPubblicazione: Date){
-    console.log(  alimentazione, alimentazione, citta, cavalli, chilometri, prezzo,
+  aggiungi(/*picByte:Byte,*/ fotoAuto: File, alimentazione: string, potenza: number,
+    chilometraggio:number, modello:string, costo: number,  
+    stato: string, cambio:string, marca:string, annoImmatricolazione:number, citta:string, descrizione: string, dataPubblicazione: Date){
+    console.log(  alimentazione, alimentazione, citta, potenza, chilometraggio, costo,
     modello, stato, cambio, descrizione, dataPubblicazione);
 
    // const uploadImageData = new FormData();
    // uploadImageData.append('imageFile', this.selectedFile);
-    let annuncio = new Post();
+    let pubblicazione = new Pubblicazione();
     let automobile = new Automobile();
-    annuncio.descrizione = descrizione;
-    annuncio.dataPubblicazione = dataPubblicazione;
+    pubblicazione.descrizione = descrizione;
+    pubblicazione.dataPubblicazione = dataPubblicazione;
     //let immagine = new Immagine();
 
     /*automobile.fotoAuto = fotoAuto;
@@ -103,17 +105,17 @@ export class DirettiveComponent implements OnInit {
     let DataAuto = new FormData();
     DataAuto.append('fotoAuto' , fotoAuto);
     DataAuto.append('alimentazione' , alimentazione);
-    DataAuto.append('cavalli' , cavalli.toString());
-    DataAuto.append('chilometri' , chilometri.toString());
+    DataAuto.append('potenza' , potenza.toString());
+    DataAuto.append('chilometraggio' , chilometraggio.toString());
     DataAuto.append('modello' , modello);
-    DataAuto.append('prezzo' , prezzo.toString());
+    DataAuto.append('costo' , costo.toString());
     DataAuto.append('stato' , stato);
     DataAuto.append('cambio' , cambio);
     DataAuto.append('marca' , marca);
     DataAuto.append('citta' , citta);
-    DataAuto.append('annoIMM' , annoIMM.toString());
+    DataAuto.append('annoImmatricolazione' , annoImmatricolazione.toString());
    
-    console.log(JSON.stringify(annuncio));
+    console.log(JSON.stringify(pubblicazione));
     console.log(JSON.stringify(automobile));
 
     this.http.post('http://localhost:8080/automobili', DataAuto).subscribe(); 
@@ -123,7 +125,7 @@ export class DirettiveComponent implements OnInit {
     //this.httpClient.post('http://localhost:8080/image/upload', uploadImageData, { observe: 'response' })
     //this.http.post<Immagine>('http://localhost:8080/imgupload', uploadImageData).subscribe();
 
-    this.http.post<Post>('http://localhost:8080/pubblicazioni', annuncio).subscribe(); 
+    this.http.post<Pubblicazione>('http://localhost:8080/pubblicazioni', pubblicazione).subscribe(); 
    // this.http.post<Automobile>('http://localhost:8080/automobili', automobile).subscribe(); 
   }
 

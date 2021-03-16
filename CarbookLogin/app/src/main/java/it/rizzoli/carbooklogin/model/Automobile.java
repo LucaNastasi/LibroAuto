@@ -1,4 +1,4 @@
-package model;
+package it.rizzoli.carbooklogin.model;
 
 public class Automobile {
     private Integer idAutomobile;
@@ -8,9 +8,11 @@ public class Automobile {
     private String alimentazione;
     private Integer potenza;
     private String fotoAuto;
-    private Integer prezzo;
+    private Integer costo;
+    private String cambio;
     private String annoImmatricolazione;
     private String citta;
+    private String marca;
 
     public Automobile(){
 
@@ -72,12 +74,12 @@ public class Automobile {
         this.fotoAuto = fotoAuto;
     }
 
-    public Integer getPrezzo() {
-        return prezzo;
+    public Integer getCosto() {
+        return costo;
     }
 
-    public void setPrezzo(Integer prezzo) {
-        this.prezzo = prezzo;
+    public void setCosto(Integer costo) {
+        this.costo = costo;
     }
 
     public String getAnnoImmatricolazione() {
@@ -88,11 +90,45 @@ public class Automobile {
         this.annoImmatricolazione = annoImmatricolazione;
     }
 
+    public String getCambio() {
+        return cambio;
+    }
+
+    public void setCambio(String cambio) {
+        this.cambio = cambio;
+    }
+
     public String getCitta() {
         return citta;
     }
 
     public void setCitta(String citta) {
         this.citta = citta;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    @Override
+    public String toString() {
+        return "Automobile{" +
+                "idAutomobile=" + idAutomobile +
+                ", modello='" + modello + '\'' +
+                ", stato='" + stato + '\'' +
+                ", chilometraggio=" + chilometraggio +
+                ", alimentazione='" + alimentazione + '\'' +
+                ", potenza=" + potenza +
+                ", fotoAuto='" + fotoAuto + '\'' +
+                ", costo=" + costo +
+                ", cambio='" + cambio + '\'' +
+                ", annoImmatricolazione='" + annoImmatricolazione + '\'' +
+                ", citta='" + citta + '\'' +
+                ", marca='" + marca + '\'' +
+                '}';
     }
 }

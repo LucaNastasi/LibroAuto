@@ -42,32 +42,36 @@
                    <img [src]="url ? url : 'assets/plusPost.jpg'" style=" width: 100%; height: 100%; border: 2px solid #000; border-radius: 1%;"> 
                    <label for="testo" class="btn" style=" background-color: rgb(119, 119, 245); color: white; font-size: 80%; padding-top:10px; margin-top: 3%;">Aggiungi file</label>
                                          <!--(change)="onSelectFile($event)"-->
-                   <input type='file' id="testo" (change)="onSelectFile($event)" style="visibility: hidden;" #picByte>
-                    <label for="descrizione">Descrizione</label>
-                    <input type="text" class="form-control" id="descrizione" #descrizione>
-                    <label for="descrizione">Alimentazione</label>
-                    <input type="text" class="form-control" id="alimentazione" #alimentazione>
-                    <label for="descrizione">Cavalli</label>
-                    <input type="text" class="form-control" id="cavalli" #cavalli>
-                    <label for="descrizione">Chilometri</label>
-                    <input type="text" class="form-control" id="chilometri" #chilometri>
-                    <label for="descrizione">Colore</label>
-                    <input type="text" class="form-control" id="colore" #colore>
-                    <label for="descrizione">Modello</label>
-                    <input type="text" class="form-control" id="modello" #modello>
-                    <label for="descrizione">Prezzo</label>
-                    <input type="text" class="form-control" id="prezzo" #prezzo>
-                    <label for="descrizione">Stato</label>
-                    <input type="text" class="form-control" id="stato" #stato>
-                    <label for="descrizione">Cambio</label>
-                    <input type="text" class="form-control" id="stato" #cambio>
-                    <label for="example-date-input" class="col-4 col-form-label" style="font-size: 20px;">Data</label>
-                   <input class="form-control" type="date" value="2011-08-19" id="example-date-input" #dataPubblicazione>
-                   <div class="modal-footer">
-                    <button type="button" class="btn btn-primary"  (click)="aggiungi(picByte.value, alimentazione.value, cavalli.value, 
-                    chilometri.value, colore.value, modello.value, prezzo.value,  
-                    stato.value, cambio.value, descrizione.value, dataPubblicazione.value)">Pubblica</button>
-                
+                   <input type='file' id="testo" (change)="onSelectFile($event)" style="visibility: hidden;" #fotoAuto>
+                   <label for="descrizione">Descrizione</label>
+                   <input type="text" class="form-control" id="descrizione" #descrizione>
+                   <label for="descrizione">Alimentazione</label>
+                   <input type="text" class="form-control" id="alimentazione" #alimentazione>
+                   <label for="descrizione">Potenza</label>
+                   <input type="text" class="form-control" id="potenza" #potenza>
+                   <label for="descrizione">Chilometraggio</label>
+                   <input type="text" class="form-control" id="chilometraggio" #chilometraggio>
+                   <label for="descrizione">Marca</label>
+                   <input type="text" class="form-control" id="marca" #marca>
+                   <label for="descrizione">Anno Immatricolazione</label>
+                   <input type="text" class="form-control" id="annoImmatricolazione" #annoImmatricolazione>
+                   <label for="descrizione">Modello</label>
+                   <input type="text" class="form-control" id="modello" #modello>
+                   <label for="descrizione">Costo</label>
+                   <input type="text" class="form-control" id="costo" #costo>
+                   <label for="descrizione">Stato</label>
+                   <input type="text" class="form-control" id="stato" #stato>
+                   <label for="descrizione">Città</label>
+                   <input type="text" class="form-control" id="citta" #citta>
+                   <label for="descrizione">Cambio</label>
+                   <input type="text" class="form-control" id="cambio" #cambio>
+                   <label for="example-date-input" class="col-4 col-form-label" style="font-size: 20px;">Data</label>
+                  <input class="form-control" type="date" value="2011-08-19" id="example-date-input" #dataPubblicazione>
+                  <div class="modal-footer">
+                   <button type="button" class="btn btn-primary"  (click)="aggiungi(fotoAuto.value, alimentazione.value, potenza.value, 
+                   chilometraggio.value, modello.value, costo.value, stato.value, cambio.value, 
+                   marca.value, annoImmatricolazione.value, citta.value, descrizione.value, dataPubblicazione.value)">Pubblica</button>
+               
                   </div>
                   </div>
                   </div>

@@ -1,4 +1,4 @@
-package model;
+package it.rizzoli.carbooklogin.model;
 
 public class Persona {
     private Integer id;

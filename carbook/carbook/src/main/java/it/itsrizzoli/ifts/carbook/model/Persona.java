@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 		
 		generator = ObjectIdGenerators.PropertyGenerator.class,
 		property = "id"
-		
 		)
 public class Persona {
 
@@ -61,7 +60,11 @@ public class Persona {
 	@OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
 	private List<Pubblicazione> pubblicazioni;
 
-	
+	public void addPubblicazione(Pubblicazione pu) {
+		pubblicazioni.add(pu);
+		pu.setPersona(this);
+	}
+
 	public int getId() {
 		return id;
 	}

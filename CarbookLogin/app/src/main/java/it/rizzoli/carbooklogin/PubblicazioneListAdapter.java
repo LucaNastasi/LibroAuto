@@ -8,23 +8,23 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-import activities.CommentiActivity;
-import model.Pubblicazione;
+import it.rizzoli.carbooklogin.activities.CommentiActivity;
+import it.rizzoli.carbooklogin.model.Pubblicazione;
+import it.rizzoli.carbooklogin.model.listaPubblicazione;
 
-public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
+public class PubblicazioneListAdapter extends ArrayAdapter<listaPubblicazione> {
     Context ctx;
     int res;
 
-    public PubblicazioneListAdapter(@NonNull Context context, int resource, ArrayList<Pubblicazione> pubblicazioni) {
+    public PubblicazioneListAdapter(@NonNull Context context, int resource, ArrayList<listaPubblicazione> listaPubblicazioni) {
         super(context, resource);
-        addAll(pubblicazioni);
+        addAll(listaPubblicazioni);
 
         ctx = context;
         res = resource;
@@ -46,7 +46,7 @@ public class PubblicazioneListAdapter extends ArrayAdapter<Pubblicazione> {
         Button buttonCommenti = rowView.findViewById(R.id.buttonCommenti);
         //TextView textDescrizione = rowView.findViewById(R.id.textViewDescrizione);
 
-        Pubblicazione p = getItem(position);
+        listaPubblicazione list = getItem(position);
 
 
         buttonCommenti.setOnClickListener(new View.OnClickListener() {

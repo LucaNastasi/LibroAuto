@@ -1,4 +1,4 @@
-package fragments;
+package it.rizzoli.carbooklogin.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +10,12 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import activities.Login;
-import activities.Registrazione;
-import api.RetrofitClient;
+import it.rizzoli.carbooklogin.ClasseCondivisa;
+import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
+import it.rizzoli.carbooklogin.Retrofit.api.AutomobileApi;
+import it.rizzoli.carbooklogin.activities.RegistraAutoSplash;
 import it.rizzoli.carbooklogin.R;
-import model.Automobile;
-import model.Persona;
+import it.rizzoli.carbooklogin.model.Automobile;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -102,16 +102,31 @@ public class AddFragment extends Fragment implements View.OnClickListener {
             editTextCitta.setError("Compila questo campo");
             editTextCitta.requestFocus();
         }
-        Call<Automobile> call = RetrofitClient
-                .getInstance()
-                .getApi()
-                .creaAutomobile(modello, stato, chilometraggioStr, alimentazione, cambio, potenzaStr, prezzoStr, marca, annoImmatricolazione, citta);
-        call.enqueue(new Callback<Automobile>() {
+
+        Automobile a = new Automobile();
+        a.setAlimentazione(alimentazione);
+        a.setAnnoImmatricolazione(annoImmatricolazione);
+        a.setChilometraggio(chilometraggio);
+        a.setCitta(citta);
+        a.setModello(modello);
+        a.setPotenza(potenza);
+        a.setCosto(prezzo);
+        a.setStato(stato);
+        a.setCambio(cambio);
+        a.setMarca(marca);
+
+        AutomobileApi autoApi = RetrofitManager.retrofit.create(AutomobileApi.class);
+        Call<Automobile> nuovaAutomobile = autoApi.nuovaAutomobile(a);
+        nuovaAutomobile.enqueue(new Callback<Automobile>() {
             @Override
             public void onResponse(retrofit2.Call<Automobile> call, Response<Automobile> response) {
-                Automobile s = response.body();
-                //Toast.makeText(AddFragment.this, "L'auto è stata registrata", Toast.LENGTH_LONG).show();
-
+                if (response.code() == 200) {
+                    Automobile a = response.body();
+                    ClasseCondivisa.automobileInserita = a;
+                    Toast.makeText(getActivity(), "L'auto è stata registrata", Toast.LENGTH_LONG).show();
+                    Intent splashRegistra = new Intent(getActivity(), RegistraAutoSplash.class);
+                    startActivity(splashRegistra);
+                }
             }
 
             @Override

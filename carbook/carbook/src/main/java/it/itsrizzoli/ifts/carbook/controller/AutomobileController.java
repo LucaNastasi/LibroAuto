@@ -41,7 +41,7 @@ public class AutomobileController {
 }
 	
 	@PostMapping("/automobili") // api
-	public Automobile inserisci(Automobile automobile) {
+	public Automobile inserisci(@RequestBody Automobile automobile) {
 		return repository.save(automobile);
 	}
 	
@@ -74,6 +74,12 @@ public class AutomobileController {
 		public void elimina (@PathVariable Integer id) {
 			repository.delete(repository.findById(id).orElseThrow(() -> new NotFoundException())); ;
 		}
+		
+		@DeleteMapping("/automobili/")
+		public void deleteAll() {
+		 repository.deleteAll();
+
+		} 
 	}
 
 	

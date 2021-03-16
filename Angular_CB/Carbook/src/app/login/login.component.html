@@ -22,9 +22,9 @@
         </div>
         <h1>Accedi</h1>
         <label for="inputEmail" class="sr-only">E-mail</label>
-        <input [(ngModel)]="email1" name="inputEmail" type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus >
+        <input [(ngModel)]="email1" name="inputEmail" type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus #email2 >
         <label for="inputPassword" class="sr-only">Password</label>
-        <input [(ngModel)]="password1" name="inputPassword" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input [(ngModel)]="password1" name="inputPassword" type="password" id="inputPassword" class="form-control" placeholder="Password" required #password2>
       
         <div class="forgot">
           <p><a href="" data-toggle="modal" data-target="#PWDforgot">Password dimenticata?</a></p>
@@ -134,6 +134,30 @@
             </ul>
             -->
               
+<<<<<<< HEAD
+=======
+                </div>
+      
+              </div>
+              <div class="modal-footer">          <!-- (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, dataNascita.value, citta.value)" -->
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, telefono.value, citta.value)">Registrati</button>
+              </div>
+       
+            </div>
+          </div>
+        </div>      
+                                                                                <!-- richestaHttp(loginform.value)-->
+        <button class="btn btn-lg btn-danger btn-block" type="submit" (click)="loginUser(email2.value, password2.value)">Accedi</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+       
+    </form>
+    <!--  <button class="btn btn-primary" type="submit" (click)="richestaHttp()">Persone</button>
+    
+      <ul>
+        <li *ngFor="let persona of persone">Nome:{{persona.nome}}; Cognome:{{persona.cognome}}</li>
+        </ul>-->
+      
+>>>>>>> 813743ad4e8a8b29ad2223025a25148184d1b2a0
      
 
 </body>

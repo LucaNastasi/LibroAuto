@@ -1,4 +1,4 @@
-package activities;
+package it.rizzoli.carbooklogin.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,24 +10,23 @@ import java.util.TimerTask;
 
 import it.rizzoli.carbooklogin.R;
 
-public class SplashActivity extends AppCompatActivity {
-
+public class RegistraAutoSplash extends AppCompatActivity {
     private final static int SPLASH_TIMER = 3000;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_registra_auto_splash);
 
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
 
-                Intent loginIntent = new Intent(SplashActivity.this, Login.class);
-                startActivity(loginIntent);
+                Intent DescrizioneAnnuncioIntent = new Intent(RegistraAutoSplash.this, AnnuncioRegistrazione.class);
+                startActivity(DescrizioneAnnuncioIntent);
                 finish();
             }
         }, SPLASH_TIMER);
+
     }
 }

@@ -8,7 +8,7 @@
     android:background="#FDFCFC"
     android:backgroundTint="#00FDFCFC"
     android:orientation="vertical"
-    tools:context="activities.Login">
+    tools:context="it.rizzoli.carbooklogin.activities.Login">
 
 
     <ImageView
