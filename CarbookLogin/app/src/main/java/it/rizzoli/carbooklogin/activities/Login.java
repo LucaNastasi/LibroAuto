@@ -2,7 +2,9 @@ package it.rizzoli.carbooklogin.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -19,7 +21,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
-
+    private final static String MY_PREFERENCES = "AuthPrefs";
+    private final static String EMAIL_KEY = "email";
+    private final static String PASSWORD_KEY = "password";
     private EditText emailEditText, passwordEditText;
 
 
@@ -73,6 +77,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }
         return true;
     }
+
+
     private void doLogin(final String email,final String password){
         Persona p = new Persona();
         p.setEmail(email);
@@ -86,10 +92,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Persona personaLoggata = response.body();
                     if(personaLoggata != null){
                         //login start main activity
+
                         ClasseCondivisa.personaLoggata = personaLoggata;
                         Intent intent = new Intent(Login.this, MainActivity.class);
-                        intent.putExtra("email", email);
                         startActivity(intent);
+                        savePreferencesData();
 
                     } else {
                         Toast.makeText(Login.this, "The email or password is incorrect", Toast.LENGTH_SHORT).show();
@@ -104,6 +111,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(Login.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void savePreferencesData() {
+        // Otteniamo il riferimento alle Preferences
+        SharedPreferences prefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
+        // Otteniamo il corrispondente Editor
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(EMAIL_KEY, emailEditText.getText().toString());
+        editor.putString(PASSWORD_KEY, passwordEditText.getText().toString());
+        editor.commit();
     }
     @Override
     public void onClick(View v) {

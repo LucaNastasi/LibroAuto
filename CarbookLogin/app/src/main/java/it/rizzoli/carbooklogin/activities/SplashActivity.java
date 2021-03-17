@@ -11,8 +11,13 @@ import java.util.TimerTask;
 import it.rizzoli.carbooklogin.R;
 
 public class SplashActivity extends AppCompatActivity {
-
+    private final static String MY_PREFERENCES = "AuthPrefs";
+    public final static String USERNAME_KEY = "username";
+    public final static String PASSWORD_KEY = "password";
     private final static int SPLASH_TIMER = 3000;
+
+    String username;
+    String password;
 
 
     @Override
