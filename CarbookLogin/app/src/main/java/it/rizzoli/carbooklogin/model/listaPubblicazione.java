@@ -1,6 +1,6 @@
 package it.rizzoli.carbooklogin.model;
 
-public class listaPubblicazione {
+public class ListaPubblicazione {
 
     private String marca;
     private String modello;
@@ -10,6 +10,9 @@ public class listaPubblicazione {
     private Integer potenza;
     private String stato;
     private String username;
+    private String telefono;
+    private String alimentazione;
+
 
 
     public String getMarca() {
@@ -75,6 +78,22 @@ public class listaPubblicazione {
     public void setUsername(String username) {
         this.username = username;
     }
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getAlimentazione() {
+        return alimentazione;
+    }
+
+    public void setAlimentazione(String alimentazione) {
+        this.alimentazione = alimentazione;
+    }
+
+
 
     @Override
     public String toString() {

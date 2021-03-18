@@ -54,6 +54,8 @@ public class PubblicazioneController {
 			pubblicazione.put("potenza", p.getAutomobile().getPotenza().toString());
 			pubblicazione.put("stato", p.getAutomobile().getStato());
 			pubblicazione.put("username", p.getPersona().getUsername());
+			pubblicazione.put("telefono", p.getPersona().getTelefono());
+			pubblicazione.put("alimentazione", p.getAutomobile().getAlimentazione());
 			
 			
 			risposta.add(pubblicazione);
