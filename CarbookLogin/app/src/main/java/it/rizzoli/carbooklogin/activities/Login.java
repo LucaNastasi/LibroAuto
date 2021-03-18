@@ -99,7 +99,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         savePreferencesData();
 
                     } else {
-                        Toast.makeText(Login.this, "The email or password is incorrect", Toast.LENGTH_SHORT).show();
+                        emailEditText.setError("L'email o la password non è corretta");
+                        passwordEditText.requestFocus();
                     }
                 } else {
                     Toast.makeText(Login.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
