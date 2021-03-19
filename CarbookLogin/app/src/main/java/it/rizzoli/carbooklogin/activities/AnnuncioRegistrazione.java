@@ -12,7 +12,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import it.rizzoli.carbooklogin.ClasseCondivisa;
+import it.rizzoli.carbooklogin.model.ClasseCondivisa;
 import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.PubblicazioneApi;

@@ -1,190 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment"
     >
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="#D5008577"/>
 
     <ImageView
-        android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:src="@drawable/profilo"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
+        android:layout_gravity="center"
+        android:src="@drawable/profilo" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text="Luca Nastasi"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.168" />
+        android:text="Luchetto"
+        android:id="@+id/username"
+        android:fontFamily="sans-serif-black"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        />
+</FrameLayout>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:text="55"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
-
+        android:layout_marginTop="155dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-black"
+        android:textSize="25dp"
+        android:text="Infomazioni" />
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:text="Post"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.008" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Follower"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.008" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Seguiti"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button"
+        android:id="@+id/nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="modifica il profilo"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.575"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.317" />
-
+        android:text="Luca"
+        android:layout_margin="@dimen/margin20"
+        android:layout_marginRight="0dp"
+        android:layout_below="@+id/info"
+        android:textSize="25dp"/>
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/cognome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:text="369"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
-
+        android:text="Nastasi"
+        android:layout_marginTop="@dimen/margin20"
+        android:textSize="25dp"
+        android:layout_below="@id/info"
+        android:layout_toEndOf="@id/nome"/>
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="200"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/gridLayout"
-        android:layout_marginTop="180dp"
-        android:columnCount="3"
-        android:rowCount="5"
-        >
-
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/auto2"
-            android:id="@+id/image1"/>
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/lambo612"
-            android:id="@+id/image2"/>
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/lambo612x612"
-            android:id="@+id/image3"/>
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/ferrari"
-            android:id="@+id/image4"/>
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/auto2"
-            android:id="@+id/image5"/>
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/auto"
-            android:id="@+id/image6"/>
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/lambo612x612"
-            android:id="@+id/image7"/>
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/ferrari"
-            android:id="@+id/image8"/>
-        <ImageView
-            android:layout_gravity="fill"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_margin="2sp"
-            android:src="@drawable/lambo612"
-            android:id="@+id/image9"/>
+        android:text="luca@nastasi.com"
+        android:layout_margin="@dimen/margin20"
+        android:textSize="25dp"
+        android:layout_below="@id/nome"/>
+    <TextView
+        android:id="@+id/telefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3456776534"
+        android:layout_margin="@dimen/margin20"
+        android:textSize="25dp"
+        android:layout_below="@id/email"/>
+    <TextView
+        android:id="@+id/citta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Roma"
+        android:layout_margin="@dimen/margin20"
+        android:textSize="25dp"
+        android:layout_below="@id/telefono"/>
 
 
-
-
-    </GridLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

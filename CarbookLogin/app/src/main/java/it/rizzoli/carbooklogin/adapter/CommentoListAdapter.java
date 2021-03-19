@@ -1,4 +1,4 @@
-package it.rizzoli.carbooklogin;
+package it.rizzoli.carbooklogin.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.model.Commento;
 
 

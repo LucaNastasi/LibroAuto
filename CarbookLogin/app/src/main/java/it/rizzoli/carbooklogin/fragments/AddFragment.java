@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import it.rizzoli.carbooklogin.ClasseCondivisa;
+import it.rizzoli.carbooklogin.model.ClasseCondivisa;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.AutomobileApi;
 import it.rizzoli.carbooklogin.activities.RegistraAutoSplash;
@@ -62,6 +62,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         Integer prezzo = Integer.parseInt(prezzoStr);
         String citta = editTextCitta.getText().toString().trim();
 
+
         if(modello.isEmpty()){
             editTextModello.setError("Compila questo campo");
             editTextModello.requestFocus();
@@ -102,6 +103,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
             editTextCitta.setError("Compila questo campo");
             editTextCitta.requestFocus();
         }
+
 
         Automobile a = new Automobile();
         a.setAlimentazione(alimentazione);
