@@ -24,8 +24,7 @@ he permette di rimanere aggiornati sulle novità del momento e che dà la possib
 <li><a href="https://wireframe.cc/AJ9ykL">Wireframe Eventi</a></li>
 <li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/UseCase.png">Use Case</a></li>
 <li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/diagramma-er-auto.png">Diagramma ER</a></li>
-<li><a href = "https://github.com/LucaNastasi/LibroAuto/blob/main/Carbook.sql">Database</a></li>
-<li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/sito/wireframe/Login%20(2).bmpr">Wreframe web</a></li>
+<li><a href="https://github.com/LucaNastasi/LibroAuto/tree/main/wireframeWeb">Wireframe web</a></li>
  
 
 </ul>
