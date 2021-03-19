@@ -1,20 +1,18 @@
 Consonni, Nastasi, Picuno, Venegoni.
 <hr>
 
-<h1>TITOLO</h1>
+<h1>Carbook/h1>
 
-<h2>Intro: </h2>
+<h2>Presentazione: </h2>
 <p>
-È un’applicazione nata per informare gli utenti sugli eventi e sulle novità riguardanti il mondo automobilistico, concretizzando anche i legami social fra gli users, che saranno liberi di usufruire di chat e di commentare i post degli altri utenti.
-L’applicazione permette agli utenti di visualizzare la mappa del Belpaese, accessoriata con la presenza di “pin”, che segnaleranno all’utilizzatore tutte le città in cui sono in programma eventi, fiere e manifestazioni sportive.
-Viene implementata inoltre una funzione informativa “news” che verrà consultata dagli users, ma completata dai “giornalisti”, ovvero una classe con opportuni privilegi, capaci di creare contenuti, arricchiti di trafiletti, foto e video.
-
-<h2>Scopo e motivazione:</h2>
-
-Lo scopo è quello di creare una community per riunire gli utenti appassionati di automobilismo su questo social, c
-he permette di rimanere aggiornati sulle novità del momento e che dà la possibilità di organizzare degli incontri. 
-
-
+Benvenuto in Carbook, la nuova app dove mettere il tuo annuncio per vendere o comprare un’auto!
+ 
+Visualizza le offerte del rivenditore di auto vicino a casa, troverai senz’altro quello che potrebbe diventare il tuo prossimo acquisto. Che si tratti di auto usate o nuove, auto eco-sostenibili o potenti vetture sportive, grazie ad Carbook, troverai velocemente l’auto dei tuoi desideri a prezzi convenienti.
+Nel nostro mercato on-line di autoveicoli puoi trovare auto usate o nuove in pochi clic, proprio con le caratteristiche che cercavi e sempre con un contatto diretto con venditori o concessionari.
+ 
+Nell’annuncio vi sarà presente anche una sezione “Descrizione” dove il venditore si occuperà di fornire una dettagliata presentazione, raccontando la propria vettura nei particolari; più approfondita sarà la descrizione, più possibilità avrai di fare conoscere il tuo annuncio e di vendere il veicolo.
+ 
+Ti auguriamo una buona permanenza sulla piattaforma e buona compravendita!
 
 <ul>
 <li><a href="https://wireframe.cc/w54CQa">Wireframe Social</a></li>
