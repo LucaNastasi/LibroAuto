@@ -28,7 +28,7 @@ export class PrimapaginaComponent implements OnInit {
  
 
   constructor(private http: HttpClient,) { }
-
+  idAuto:number;
   pubblicazioni:any[]
   automobili:any[]
   ngOnInit(): void {
@@ -43,7 +43,14 @@ export class PrimapaginaComponent implements OnInit {
       this.automobili = automobili;
     })
   }
-  aggiungi(/*picByte:Byte,*/ fotoAuto: File, alimentazione: string, potenza: number,
+
+  /*getAllTableDataById(tableName:string, idColumn:string, idValue:string): Promise<Object[]> {
+    return this.http.get(`${'http://localhost:8080/automobili'}/${tableName}(${idColumn}='${idValue}')`)
+    .toPromise()
+    .then(response => response = JSON.parse('[' + response['_body'] + ']'));
+    }*/
+
+  aggiungi(fotoAuto: File, alimentazione: string, potenza: number,
     chilometraggio:number, modello:string, costo: number,  
     stato: string, cambio:string, marca:string, annoImmatricolazione:number, citta:string, descrizione: string, dataPubblicazione: Date){
     //console.log(  alimentazione, alimentazione, citta, potenza, chilometraggio, costo,
@@ -54,6 +61,8 @@ export class PrimapaginaComponent implements OnInit {
     let automobile = new Automobile();
     pubblicazione.descrizione = descrizione;
     pubblicazione.dataPubblicazione = dataPubblicazione;
+
+  //  pubblicazione.id_automobile = id_automobile;
 
     automobile.fotoAuto = fotoAuto;
     automobile.alimentazione = alimentazione;
@@ -90,15 +99,18 @@ export class PrimapaginaComponent implements OnInit {
 
 
     this.http.post<Automobile>('http://localhost:8080/automobili', automobile).subscribe((dati) => {
-     
  
+      console.log(dati.idAutomobile)
     });
+  
+
+/*
+    
+*/
     
     this.http.post<Pubblicazione>('http://localhost:8080/pubblicazioni', pubblicazione).subscribe();
-  
-  }
 
 }
-
+}
 
 

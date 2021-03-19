@@ -1,7 +1,5 @@
-
 <html>
 <body>
-
 <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
       <div class="row col-12">
@@ -19,11 +17,9 @@
         <div class="col-4">
           <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group me-2" role="group" aria-label="First group">
-
             <a routerLink="/primapagina"><button type="button" class="btn btn-primary">
                 <i class="fas fa-home"></i>
               </button></a>
-
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postpiu">
                  <i class="fas fa-plus"></i>
               </button>
@@ -71,28 +67,12 @@
                    <button type="button" class="btn btn-primary"  (click)="aggiungi(fotoAuto.value, alimentazione.value, potenza.value, 
                    chilometraggio.value, modello.value, costo.value, stato.value, cambio.value, 
                    marca.value, annoImmatricolazione.value, citta.value, descrizione.value, dataPubblicazione.value)">Pubblica</button>
-               
                   </div>
                   </div>
                   </div>
-               
           </div>
         </div>
-      
-              <button type="button" class="btn btn-primary">
-                <i class="far fa-newspaper"></i>
-              </button>
-              <button type="button" class="btn btn-primary">
-                <i class="far fa-bell"></i>
-              </button>
-              <button type="button" class="btn btn-primary">
-                <i class="far fa-calendar-alt"></i>
-              </button>
-              <button type="button" class="btn btn-primary">
-                <i class="far fa-paper-plane"></i>
-              </button>
-
-              <a routerLink="/putente"> <button type="button" class="btn btn-primary">
+              <a routerLink="/modificadati"> <button type="button" class="btn btn-primary">
                 <i class="far fa-user"></i>
               </button></a>
 
@@ -102,163 +82,49 @@
       </div>
     </div>
   </nav>
- 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-  <div class="container" style="background-color: white;" >
-  <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-          <div class="panel panel-white profile-widget">
-              <div class="row">
-                  
-                  <div class="col-sm-12">
-                      <div class="details">
-                          <h4>Luca Nastasu <i class="fa fa-sheild"></i></h4>
-                          <div>Lavora a Bootdey.com</div>
-                          <div>Ha studiato presso Rizzoli</div>
-                          <div>Milano</div> 
-                          <div class="mg-top-10">
-                                                        </div>
-                      </div>
-                  </div>
   
+  <div class="container-fluid" style="margin: 1%; background-color: transparent;">
+        <div class="row">
+            <div class="panel panel-info shadow p-2 bg-white " style="border:black solid; padding: 5px; border-radius: 5px;">
+              <div class="panel-heading">
+                <h3 class="panel-title">Nome utente</h3>
               </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class=" col-md-9 col-lg-9 "> 
+                    <table class="table table-user-information">
+                      <tbody>
+                        <tr>
+                          <td>Città</td>
+                          <td>Milano</td>
+                        </tr>
+                        <tr>
+                          <td>Username</td>
+                          <td>nome user</td>
+                        </tr>
+                        <tr>
+                          <td>Telefono</td>
+                          <td>364950485</td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td><a href="#">mia@email.com</a></td>
+                        </tr>
+                        <tr>
+                          <td>Password</td>
+                          <td>******</td>
+                        </tr> 
+                      
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
           </div>
-          
-          <div class="row">
-              
-              <div class="col-sm-6">
-                  
-                  
-                   
-                  <div class="panel panel-white border-top-light-blue">
-                     <div class="panel-heading">
-                          <h3 class="panel-title">I miei annunci</h3>
-                          <div class="controls pull-right">
-                              <span class="pull-right clickable">
-                                  <i class="fa fa-chevron-up"></i>
-                              </span>
-                          </div>
-                      </div>
-                      <div class="panel-body"> 
-                          <div class="body-section">
-                              <h5 class="section-heading">Modifica i tuoi Annunci</h5>
-                              <p>modifica le informazioni del tuo annuncio</p>
-                              <div class="container">
-                                <div class="body-section">
-                                    <h5 class="section-heading">Annuncio</h5>
-                                    <p class="section-content">Opel Corsa 2020</p>
-                                </div> 
-        
-                                <div class="body-section">
-                                    <h5 class="section-heading">Annuncio</h5>
-                                    <p class="section-content">Opel Meriva</p>
-                                </div> 
-        
-                                  <div class="body-section">
-                                      <h5 class="section-heading">Annuncio </h5>
-                                      <p class="section-content">Pegeout 107 </p>
-                                  </div>
-                                  <div class="body-section">
-                                    <a href="" class="btn btn-blue btn-sm">Edit</a>
-                                </div>
-
-                              </div>
-                          </div>
-                          
-                      </div>
-                  </div>
-                   
-                              
-              </div>
-              
-              <div class="col-sm-6">
-                   
-                  <div class="panel panel-white border-top-green">
-                     <div class="panel-heading">
-                          <h3 class="panel-title">User Info</h3>
-                          <div class="controls pull-right">
-                              <span class="pull-right clickable">
-                                  <i class="fa fa-chevron-up"></i>
-                              </span>
-                          </div>
-                      </div>
-                      <div class="panel-body"> 
-                          <div class="body-section">
-                              <h5 class="section-heading">Nome</h5>
-                              <p class="section-content">Luca Nastasi</p>
-                          </div>
-
-                          <div class="body-section">
-                            <h5 class="section-heading">Username</h5>
-                            <p class="section-content">lucaopazz</p>
-                        </div> 
-
-                        <div class="body-section">
-                            <h5 class="section-heading">Password</h5>
-                            <p class="section-content">*********</p>
-                        </div> 
-
-                          <div class="body-section">
-                              <h5 class="section-heading">Indirizzo</h5>
-                              <p class="section-content">Via Franklin 56, Roma </p>
-                          </div>
-                          <div class="body-section">
-                              <h5 class="section-heading">Telefono</h5>
-                              <p class="section-content">023456789</p>
-                          </div>
-                          <div class="body-section">
-                              <h5 class="section-heading">Email</h5>
-                              <p class="section-content">lucaopazz@napoli.com</p>
-                          </div> 
-
-                        
-                        
-                          <div class="body-section">
-                              <a href="#" class="btn btn-green btn-sm">Edit</a>
-                          </div>
-                          
-                          <!---- 
-                      </div>
-                  </div>
-
-                  
-                   
-                  <div class="panel panel-white border-top-orange" >
-                     <div class="panel-heading">
-                          <h3 class="panel-title">Le tue Statistiche</h3>
-                          <div class="controls pull-right">
-                              <span class="pull-right clickable">
-                                  <i class="fa fa-chevron-up"></i>
-                              </span>
-                          </div>
-                      </div>
-                      <div class="panel-body"> 
-                                                    <div class="body-section">
-                              <h5 class="section-heading">Annunci</h5>
-                              <p class="section-content">2240</p>
-                          </div> 
-                          <div class="body-section">
-                              <h5 class="section-heading">Immagini</h5>
-                              <p class="section-content">18</p>
-                          </div>  
-
-                        -->
-                        </div>
-                    
-                  </div>
-                
-          
-                  
-              </div>
-              
-          </div>
-          
       </div>
-  
-  </div>
-  </div>
-
-
 
 </body>
 </html>

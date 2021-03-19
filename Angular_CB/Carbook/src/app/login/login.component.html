@@ -55,7 +55,7 @@
                 </div>
               </div>
             </div>
-
+              <div *ngIf="messageError"><h1>Tutto sbagliato</h1></div>
                 <div>
                     <label>
                       <input type="checkbox" value="remember-me"> Ricorda il mio ID CarBook
@@ -115,31 +115,8 @@
                         </div>
               
                       </div>
-                      <div class="modal-footer">          <!-- (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, dataNascita.value, citta.value)" -->
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, telefono.value, citta.value)">Registrati</button>
-                      </div>
-              
-                    </div>
-                  </div>
-                </div>      
-                                                                            
-                <button class="btn btn-lg btn-danger btn-block" type="submit" (click)="richestaHttp(loginform.value)">Accedi</button>
-                <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
-              
-            </form>
-            <!--  <button class="btn btn-primary" type="submit" (click)="richestaHttp()">Persone</button>
-            
-            <ul>
-              <li *ngFor="let persona of persone">Nome:{{persona.nome}}; Cognome:{{persona.cognome}}</li>
-            </ul>
-            -->
-              
-<<<<<<< HEAD
-=======
-                </div>
-      
-              </div>
-              <div class="modal-footer">          <!-- (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, dataNascita.value, citta.value)" -->
+                      
+              <div class="modal-footer">         
                 <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, telefono.value, citta.value)">Registrati</button>
               </div>
        
@@ -157,7 +134,6 @@
         <li *ngFor="let persona of persone">Nome:{{persona.nome}}; Cognome:{{persona.cognome}}</li>
         </ul>-->
       
->>>>>>> 813743ad4e8a8b29ad2223025a25148184d1b2a0
      
 
 </body>
