@@ -1,7 +1,7 @@
 Consonni, Nastasi, Picuno, Venegoni.
 <hr>
 
-<h1>Carbook/h1>
+<h1>Carbook</h1>
 
 <h2>Presentazione: </h2>
 <p>
