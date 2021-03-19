@@ -9,7 +9,6 @@ import { DirettiveComponent } from './direttive/direttive.component';
 import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-password.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PUtenteComponent}  from'./p-utente/p-utente.component'
 import { FormsModule } from '@angular/forms';
 import { ModificadatiComponent } from './modificadati/modificadati.component';
 
@@ -21,7 +20,6 @@ import { ModificadatiComponent } from './modificadati/modificadati.component';
     DirettiveComponent,
     PaginaAlertComponent,
     ReimpostaPasswordComponent,
-    PUtenteComponent,
     ModificadatiComponent
   ],
   imports: [

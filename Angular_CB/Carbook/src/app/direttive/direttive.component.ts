@@ -68,11 +68,14 @@ export class DirettiveComponent implements OnInit {
    immagini: any[]*/
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:8080/pubblicazioni').subscribe((pubblicazioni) =>
-    {
-      this.pubblicazioni = pubblicazioni;
-    })
+   
   }
+  /*
+  this.http.get<any[]>('http://localhost:8080/pubblicazioni').subscribe((pubblicazioni) =>
+  {
+    this.pubblicazioni = pubblicazioni;
+  }) */
+
 
   aggiungi(/*picByte:Byte,*/ fotoAuto: File, alimentazione: string, potenza: number,
     chilometraggio:number, modello:string, costo: number,  
