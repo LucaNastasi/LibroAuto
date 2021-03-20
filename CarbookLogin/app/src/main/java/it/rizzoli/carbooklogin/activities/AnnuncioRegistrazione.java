@@ -2,6 +2,7 @@ package it.rizzoli.carbooklogin.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,7 +13,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import it.rizzoli.carbooklogin.ClasseCondivisa;
+import it.rizzoli.carbooklogin.fragments.HomeFragment;
+import it.rizzoli.carbooklogin.model.ClasseCondivisa;
 import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.PubblicazioneApi;
@@ -44,6 +46,7 @@ public class AnnuncioRegistrazione extends AppCompatActivity implements View.OnC
         if (descrizione.isEmpty()){
             editTextDescrivi.setError("Compila il campo richiesto");
             editTextDescrivi.requestFocus();
+            return;
         }
 
         Pubblicazione pubblicazione = new Pubblicazione();
@@ -59,7 +62,8 @@ public class AnnuncioRegistrazione extends AppCompatActivity implements View.OnC
             public void onResponse(Call<Pubblicazione> call, Response<Pubblicazione> response) {
                 if (response.code() == 200) {
                     Pubblicazione p = response.body();
-                    Toast.makeText(AnnuncioRegistrazione.this, "Annuncio pubblicato", Toast.LENGTH_LONG).show();
+                    Intent annuncioRegistrato = new Intent(AnnuncioRegistrazione.this, HomeFragment.class);
+                    startActivity(annuncioRegistrato);
                 }
             }
 

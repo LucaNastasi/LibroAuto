@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import it.rizzoli.carbooklogin.ClasseCondivisa;
+import it.rizzoli.carbooklogin.model.ClasseCondivisa;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.PersonaApi;
 import it.rizzoli.carbooklogin.R;
@@ -92,7 +92,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Persona personaLoggata = response.body();
                     if(personaLoggata != null){
                         //login start main activity
-
                         ClasseCondivisa.personaLoggata = personaLoggata;
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         startActivity(intent);

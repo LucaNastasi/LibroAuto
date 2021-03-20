@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import it.rizzoli.carbooklogin.CommentoListAdapter;
+import it.rizzoli.carbooklogin.adapter.CommentoListAdapter;
 import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.model.Commento;
 

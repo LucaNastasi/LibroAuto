@@ -1,4 +1,4 @@
-package it.rizzoli.carbooklogin;
+package it.rizzoli.carbooklogin.model;
 
 import android.app.Application;
 

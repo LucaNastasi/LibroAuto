@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.SearchFragment"
+    android:background="#1D000000"
     >
 
 
@@ -13,6 +14,5 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_baseline_search_24"
-        android:tint="@color/colorAccent"
         />
 </FrameLayout>

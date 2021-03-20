@@ -14,8 +14,7 @@ import java.util.ArrayList;
 
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.PubblicazioneApi;
-import it.rizzoli.carbooklogin.model.Pubblicazione;
-import it.rizzoli.carbooklogin.ListaPubblicazioneListAdapter;
+import it.rizzoli.carbooklogin.adapter.ListaPubblicazioneListAdapter;
 import it.rizzoli.carbooklogin.R;
 import it.rizzoli.carbooklogin.model.ListaPubblicazione;
 import retrofit2.Call;
