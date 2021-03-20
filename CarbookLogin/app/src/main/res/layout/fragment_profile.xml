@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment"
+    android:background="#1D000000"
     >
 <FrameLayout
     android:layout_width="match_parent"
@@ -47,7 +48,7 @@
         android:layout_height="wrap_content"
         android:text="Luca"
         android:layout_margin="@dimen/margin20"
-        android:layout_marginRight="0dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/info"
         android:textSize="25dp"/>
     <TextView
@@ -83,6 +84,11 @@
         android:layout_margin="@dimen/margin20"
         android:textSize="25dp"
         android:layout_below="@id/telefono"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ferrari"
+        android:layout_below="@+id/citta"/>
 
 
 </RelativeLayout>

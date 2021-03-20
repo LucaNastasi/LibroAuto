@@ -15,8 +15,6 @@ public interface PersonaApi {
     @POST("/accesso")
     Call<Persona> accesso (@Body Persona persona);
 
-    @GET("/persone/{id}")
-    Call<Persona> byID(@Path("id") Integer id);
 
 
 

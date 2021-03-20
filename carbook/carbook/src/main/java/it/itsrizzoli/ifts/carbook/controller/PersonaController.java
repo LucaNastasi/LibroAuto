@@ -85,7 +85,7 @@ public class PersonaController {
 			p.setUsername(persona.getUsername());
 			p.setCitta(persona.getCitta());
 			p.setTelefono(persona.getTelefono());
-					p.setPubblicazioni(persona.getPubblicazioni());
+			p.setPubblicazioni(persona.getPubblicazioni());
  
 			return repository.save(p);
 		}).orElseGet(() -> {

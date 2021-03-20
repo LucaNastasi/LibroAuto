@@ -66,42 +66,52 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         if(modello.isEmpty()){
             editTextModello.setError("Compila questo campo");
             editTextModello.requestFocus();
+            return;
         }
         if(marca.isEmpty()){
             editTextMarca.setError("Compila questo campo");
             editTextMarca.requestFocus();
+            return;
         }
         if(cambio.isEmpty()){
             editTextCambio.setError("Compila questo campo");
             editTextCambio.requestFocus();
+            return;
         }
         if(alimentazione.isEmpty()){
             editTextCarburante.setError("Compila questo campo");
             editTextCarburante.requestFocus();
+            return;
         }
         if(potenzaStr.isEmpty()){
             editTextPotenza.setError("Compila questo campo");
             editTextPotenza.requestFocus();
+            return;
         }
         if(chilometraggioStr.isEmpty()){
             editTextChilometraggio.setError("Compila questo campo");
             editTextChilometraggio.requestFocus();
+            return;
         }
         if(stato.isEmpty()){
             editTextStato.setError("Compila questo campo");
             editTextStato.requestFocus();
+            return;
         }
         if(annoImmatricolazione.isEmpty()){
             editTextImmatricolazione.setError("Compila questo campo");
             editTextImmatricolazione.requestFocus();
+            return;
         }
         if(prezzoStr.isEmpty()){
             editTextPrezzo.setError("Compila questo campo");
             editTextPrezzo.requestFocus();
+            return;
         }
         if(citta.isEmpty()){
             editTextCitta.setError("Compila questo campo");
             editTextCitta.requestFocus();
+            return;
         }
 
 

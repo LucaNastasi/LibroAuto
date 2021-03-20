@@ -1,60 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/margin20"
+
+    android:background="#1D000000"
     tools:context=".activities.AnnuncioRegistrazione">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/titolo"
-    android:text="Nuovo Annuncio"
-    android:textSize="30dp"
-    android:fontFamily="sans-serif-black"
-    android:textColor="@color/black"
-    android:layout_centerHorizontal="true"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin20">
+
 
     <TextView
-        android:layout_marginTop="100dp"
-        android:id="@+id/textDescrivi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/titolo"
-        android:text="Descrivi la tua auto:"
-        android:textSize="18dp"
-        android:layout_marginLeft="20dp"/>
+        android:id="@+id/titolo"
+        android:text="Nuovo Annuncio"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"/>
 
-    <EditText
-        android:id="@+id/editTextDescrivi"
-        android:layout_width="335dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textDescrivi"
-        android:hint="Scrivi una didascalia.."
-        android:background="@drawable/editext_border"
-        android:layout_marginTop="@dimen/margin20"
-        android:maxLines="10"
-        android:layout_centerHorizontal="true"
-        android:minLines="4"
-        android:inputType="textMultiLine" />
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/textDescrivi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titolo"
+            android:text="Descrivi il tuo annuncio:"
+            android:textSize="18dp"
+            android:layout_marginLeft="20dp"/>
 
-    <TextView
-        android:id="@+id/textDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:inputType="date" />
+        <EditText
+            android:id="@+id/editTextDescrivi"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDescrivi"
+            android:hint="Scrivi una didascalia.."
+            android:background="@drawable/editext_border"
+            android:layout_marginTop="@dimen/margin20"
+            android:maxLines="10"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:minLines="12"
+            android:inputType="textMultiLine" />
 
-    <Button
-        android:id="@+id/buttonAnnuncio"
-        android:layout_width="335dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextDescrivi"
-        android:text="Pubblica"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"/>
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:inputType="date" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/buttonAnnuncio"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextDescrivi"
+            android:text="Pubblica"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:background="@color/buttonblue"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+</LinearLayout>
