@@ -8,9 +8,10 @@ import { PrimapaginaComponent } from './primapagina/primapagina.component';
 import { DirettiveComponent } from './direttive/direttive.component';
 import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-password.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule } from '@angular/forms';
 import { ModificadatiComponent } from './modificadati/modificadati.component';
+import { PAnnuncioComponent } from './p-annuncio/p-annuncio.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ModificadatiComponent } from './modificadati/modificadati.component';
     DirettiveComponent,
     PaginaAlertComponent,
     ReimpostaPasswordComponent,
-    ModificadatiComponent
+    ModificadatiComponent,
+    PAnnuncioComponent
   ],
   imports: [
       BrowserModule,

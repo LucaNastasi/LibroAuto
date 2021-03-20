@@ -76,6 +76,7 @@ export class DirettiveComponent implements OnInit {
     this.pubblicazioni = pubblicazioni;
   }) */
 
+emailPRSN = sessionStorage.getItem('email1')
 
   aggiungi(/*picByte:Byte,*/ fotoAuto: File, alimentazione: string, potenza: number,
     chilometraggio:number, modello:string, costo: number,  

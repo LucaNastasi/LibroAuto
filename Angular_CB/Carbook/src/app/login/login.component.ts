@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Persona } from '../model/persona';
 import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http'
 import { ClasseCondivisa } from '../model/ClasseCondivisa';
+import { stringify } from 'querystring';
 
 
 @Component({
@@ -60,22 +61,25 @@ export class LoginComponent implements OnInit {
   }
   
   messageError=false;
-
+  idPers: any;
   loginUser(email1: string, password1: string){
-    //let personaLoggata = new ClasseCondivisa();
+   
     
     let personaLogin = new Persona();
+    
     personaLogin.email= email1;
     personaLogin.password = password1;
     this.http.post<Persona>('http://localhost:8080/accesso', personaLogin, {observe: 'response'} ).subscribe(response => {
       if(response.status == 200){
-         // sessionStorage.setItem('id', personaLogin.id)
-
-       /* personaLoggata.usernameLoggato = email1;
-        sessionStorage.setItem('usernameLog', email1)
-      
-        if(sessionStorage.getItem('usernameLog') != null) */
-        this.router.navigate(['primapagina']) 
+        console.log(personaLogin)
+         
+       sessionStorage.setItem('idLog', response.body.id);
+        
+         
+         
+         console.log(response.body.id)
+     
+        this.router.navigate(['modificadati']) 
        
       } 
     }) 

@@ -66,3 +66,46 @@ body{
 .toppad
 {margin-top:20px;
 }
+ 
+ .titolo{
+    font-style: italic;
+  }
+  .ricerca {
+    padding: 7px;
+  }
+  .input-group {
+    width: 57%;
+    float: left;
+    left: 21%;
+  }
+  .btn-toolbar {
+    padding-top: 1%;
+  }
+  .btn-group{
+    float: left;
+    left: 19%;
+  }
+
+  .attr{
+    background-color: darkcyan;
+    color: white;
+  }
+
+  .list{
+    border: darkcyan;
+    
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+  
+  }
+  
+  .tda, .tha, .tra {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  

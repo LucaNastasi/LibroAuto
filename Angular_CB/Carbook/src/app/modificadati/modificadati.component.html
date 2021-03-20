@@ -61,13 +61,21 @@
                    <input type="text" class="form-control" id="citta" #citta>
                    <label for="descrizione">Cambio</label>
                    <input type="text" class="form-control" id="cambio" #cambio>
-                   <label for="example-date-input" class="col-4 col-form-label" style="font-size: 20px;">Data</label>
-                  <input class="form-control" type="date" value="2011-08-19" id="example-date-input" #dataPubblicazione>
-                  <div class="modal-footer">
-                   <button type="button" class="btn btn-primary"  (click)="aggiungi(fotoAuto.value, alimentazione.value, potenza.value, 
+        
+                  <div class="container" style="margin-top: 10px; ">
+                    <div class="row" style="width: 100%;">
+                      <div class="col">
+                   <label>{{DataOra | date:'yyyy-MM-dd'}}</label>
+                   <input type="date" class="form-control"  style="display: none;" value="{{DataOra | date:'yyyy-MM-dd'}}" #dataPubblicazione>
+                      </div>
+                      <div class="col" style="text-align: right;">
+                   <button type="button" class="btn btn-primary" (click)="aggiungi(fotoAuto.value, alimentazione.value, potenza.value, 
                    chilometraggio.value, modello.value, costo.value, stato.value, cambio.value, 
                    marca.value, annoImmatricolazione.value, citta.value, descrizione.value, dataPubblicazione.value)">Pubblica</button>
-                  </div>
+                       </div>
+                       <!--<input type="text" value="{{idAuto}}" style="display: none;" #id_automobile>-->
+                 </div> 
+                 </div>
                   </div>
                   </div>
           </div>
@@ -84,46 +92,116 @@
   </nav>
   
   <div class="container-fluid" style="margin: 1%; background-color: transparent;">
-        <div class="row">
-            <div class="panel panel-info shadow p-2 bg-white " style="border:black solid; padding: 5px; border-radius: 5px;">
+    <div class="row">   
+      <div class=" col-md-2 ">      
+    <div *ngIf="idPersonalog != null" class="panel panel-info shadow p-2 bg-white " style="border-radius: 5%;" >
               <div class="panel-heading">
-                <h3 class="panel-title">Nome utente</h3>
+                <h3 class="panel-title">{{idPersonalog.nome}} {{idPersonalog.cognome}}</h3>
               </div>
               <div class="panel-body">
-                <div class="row">
-                  <div class=" col-md-9 col-lg-9 "> 
                     <table class="table table-user-information">
                       <tbody>
                         <tr>
                           <td>Città</td>
-                          <td>Milano</td>
+                          <td>{{idPersonalog.citta}}</td>
                         </tr>
                         <tr>
                           <td>Username</td>
-                          <td>nome user</td>
+                          <td>{{idPersonalog.username}}</td>
                         </tr>
                         <tr>
                           <td>Telefono</td>
-                          <td>364950485</td>
+                          <td>{{idPersonalog.telefono}}</td>
                         </tr>
                         <tr>
                           <td>Email</td>
-                          <td><a href="#">mia@email.com</a></td>
+                          <td><a href="#">{{idPersonalog.email}}</a></td>
                         </tr>
                         <tr>
                           <td>Password</td>
-                          <td>******</td>
-                        </tr> 
-                      
-                       
+                          <td>{{idPersonalog.password}}</td>
+                        </tr>
                       </tbody>
                     </table>
+                    <button class="btn btn-primary">Modifica</button>
                   </div>
                 </div>
               </div>
-              
+              <div class="col-md-9">
+                <div *ngFor="let automobile of automobili" style="margin:auto; height: 400px; width: 1200px; background-color:white; " class="shadow p-2 mb-1 bg-white rounded">
+                  <div id="titoloMacchina" style="position: relative; height: 20px; width: 20%; ">
+                    <p style="font-size: 20px; font-family:Arial, Helvetica, sans-serif; "><strong><a routerLink="/pannuncio">{{automobile.marca}}: {{automobile.modello}}</a></strong></p>
+                  </div>
+                  <div style="position: relative; height: 90%; width: 100%;">
+                  <div style="position: absolute; top: 20px; left: 10px; height: 300px; width: 30%; "> 
+                    <img src="assets/sfondo.jpg" class="large shadow rounded" style=" height: 100%; width: 100%; border-radius: 5px; border: darkcyan solid;">  
+                  </div>
+                
+                  <div id="prezzo" style="position: absolute; left: 32%; top: 20px; height: 30px; width: 150px; ">
+                  <p style="font-size: 30px;">{{automobile.costo}} €</p>
+                
+                  </div>
+                
+                  <table style="position: absolute; top: 30%; left: 35%;">
+                    <tr class="tra">
+                      <th class="tha">Potenza</th>
+                      <th class="tha">Alimentazione</th>
+                      <th class="tha">Chilometraggio</th>
+                      <th class="tha">Anno di immatricolazione</th>
+                      <th class="tha">Cambio</th>
+                      <th class="tha">Stato</th>
+                    </tr>
+                    <tr class="tra">
+                      <td class="tda">{{automobile.potenza}}</td>
+                      <td class="tda">{{automobile.alimentazione}}</td>
+                      <td class="tda">{{automobile.chilometraggio}}</td>
+                      <td class="tda">{{automobile.annoImmatricolazione}}</td>
+                      <td class="tda">{{automobile.cambio}}</td>
+                      <td class="tda">{{automobile.stato}}</td>
+                    </tr>
+                    </table>
+                  <!--
+                  <div id="attributi" style="position: absolute; top: 30%; left: 35%; width: 800px;">
+                    <div class="card" style="width: 20%; text-align: center; display: inline-block;">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item list border border-1">Potenza</li>
+                        <li class="list-group-item list border border-1">Alimentazione</li>
+                        <li class="list-group-item list border border-1">Chilometraggio</li>
+                      </ul>
+                    </div>
+                    <div class="card" style="width: 20%; text-align: center; display: inline-block;">
+                      <ul class="list-group list-group-flush" >
+                
+                        <li class="list-group-item attr border border-1">{{automobile.potenza}}</li>
+                        <li class="list-group-item attr border border-1">{{automobile.alimentazione}}</li>
+                        <li class="list-group-item attr border border-1">{{automobile.chilometraggio}}</li>
+                
+                      </ul>
+                    </div>
+                    <div class="card" style="width: 20%; text-align: center; display: inline-block; margin-left: 10%;">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item list border border-1">Anno di immatricolazione</li>
+                        <li class="list-group-item list border border-1">Cambio</li>
+                        <li class="list-group-item list border border-1">Stato</li>
+                      </ul>
+                    </div>
+                    <div class="card" style="width: 20%; text-align: center; display: inline-block;">
+                      <ul class="list-group list-group-flush" >
+                        <li class="list-group-item attr border border-1">{{automobile.annoImmatricolazione}}</li>
+                        <li class="list-group-item attr border border-1">{{automobile.cambio}}</li>
+                        <li class="list-group-item attr border border-1">{{automobile.stato}}</li>
+                
+                      </ul>
+                    </div>
+                  </div>
+                -->
+                <a routerLink="/pannuncio">  <button class="btn btn-primary" style="position: absolute; left: 90%; top: 90%;">Modifica</button></a>
+                  
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          
       </div>
 
 </body>
