@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PUtenteComponent}  from'./p-utente/p-utente.component'
 import { FormsModule } from '@angular/forms';
 import { ModificadatiComponent } from './modificadati/modificadati.component';
+import { VisioneAnnuncioComponent } from './visione-annuncio/visione-annuncio.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ModificadatiComponent } from './modificadati/modificadati.component';
     PaginaAlertComponent,
     ReimpostaPasswordComponent,
     PUtenteComponent,
-    ModificadatiComponent
+    ModificadatiComponent,
+    VisioneAnnuncioComponent
   ],
   imports: [
       BrowserModule,

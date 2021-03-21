@@ -9,6 +9,7 @@ import { PUtenteComponent } from './p-utente/p-utente.component';
 import { DirettiveComponent} from './direttive/direttive.component'
 import { PAnnuncioComponent} from './p-annuncio/p-annuncio.component'
 import { ModificadatiComponent} from './modificadati/modificadati.component'
+import { VisioneAnnuncioComponent } from './visione-annuncio/visione-annuncio.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'putente', component: PUtenteComponent},
   {path: 'direttive', component: DirettiveComponent},
   {path: 'pannuncio', component: PAnnuncioComponent},
-  {path: 'modificadati', component: ModificadatiComponent}
+  {path: 'modificadati', component: ModificadatiComponent},
+  {path: 'visioneannuncio', component: VisioneAnnuncioComponent}
 ];
 
 
