@@ -8,11 +8,14 @@ import { PrimapaginaComponent } from './primapagina/primapagina.component';
 import { DirettiveComponent } from './direttive/direttive.component';
 import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-password.component';
-import { HttpClientModule } from '@angular/common/http';
-import { PUtenteComponent}  from'./p-utente/p-utente.component'
+import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule } from '@angular/forms';
 import { ModificadatiComponent } from './modificadati/modificadati.component';
+<<<<<<< HEAD
 import { VisioneAnnuncioComponent } from './visione-annuncio/visione-annuncio.component';
+=======
+import { PAnnuncioComponent } from './p-annuncio/p-annuncio.component';
+>>>>>>> 295626d8453b1f070aaf95412f4bc896dacea42f
 
 @NgModule({
   declarations: [
@@ -22,9 +25,14 @@ import { VisioneAnnuncioComponent } from './visione-annuncio/visione-annuncio.co
     DirettiveComponent,
     PaginaAlertComponent,
     ReimpostaPasswordComponent,
+<<<<<<< HEAD
     PUtenteComponent,
     ModificadatiComponent,
     VisioneAnnuncioComponent
+=======
+    ModificadatiComponent,
+    PAnnuncioComponent
+>>>>>>> 295626d8453b1f070aaf95412f4bc896dacea42f
   ],
   imports: [
       BrowserModule,

@@ -47,7 +47,7 @@
                         <input type="text" class="form-control" placeholder="Email" aria-label="First-name">
                       </div>
                       <div>
-                    <a href="" ><button type="button" class="btn btn-light" style="color: white; text-align: center; margin-right: 5px; margin-top: 5px">Reimposta password</button></a>
+                    <a routerLink="/reimpostapassword"><button type="button" class="close" data-dismiss="modal" aria-label="Close" class="btn btn-light" style="color: white; text-align: center; margin-right: 5px; margin-top: 5px">Reimposta password</button></a>
                     </div> 
                     </div>
                   </div>
@@ -55,7 +55,7 @@
                 </div>
               </div>
             </div>
-
+              <div *ngIf="messageError"><h1>Tutto sbagliato</h1></div>
                 <div>
                     <label>
                       <input type="checkbox" value="remember-me"> Ricorda il mio ID CarBook
@@ -115,6 +115,7 @@
                         </div>
               
                       </div>
+<<<<<<< HEAD
                       <div class="modal-footer">          <!-- (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, dataNascita.value, citta.value)" -->
                         <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, telefono.value, citta.value)">Registrati</button>
                       </div>
@@ -123,6 +124,17 @@
                   </div>
                 </div>        
 
+=======
+                      
+              <div class="modal-footer">         
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="aggiungi(nome.value, cognome.value, email.value, username.value, password.value, telefono.value, citta.value)">Registrati</button>
+              </div>
+       
+            </div>
+          </div>
+        </div>      
+                                                                                <!-- richestaHttp(loginform.value)-->
+>>>>>>> 295626d8453b1f070aaf95412f4bc896dacea42f
         <button class="btn btn-lg btn-danger btn-block" type="submit" (click)="loginUser(email2.value, password2.value)">Accedi</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
        

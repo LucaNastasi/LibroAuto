@@ -10,5 +10,6 @@ export class Pubblicazione {
         dataPubblicazione:Date;
         persona:Persona;
         automobile:Automobile;
+        id_automobile:number;
 
 }

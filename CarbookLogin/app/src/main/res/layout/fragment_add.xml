@@ -4,17 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="56dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#1D000000"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/margin20">
+            android:layout_margin="@dimen/margin20"
+            >
 
 
             <ImageView
@@ -222,6 +225,8 @@
                 android:layout_below="@id/editTextPrezzo"
                 android:layout_marginTop="20dp"
                 android:text="Registra auto"
+                android:background="@color/buttonblue"
+                android:textColor="@color/white"
                 android:layout_marginBottom="56dp"/>
 
 

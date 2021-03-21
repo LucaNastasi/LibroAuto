@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import it.rizzoli.carbooklogin.ClasseCondivisa;
+import it.rizzoli.carbooklogin.model.ClasseCondivisa;
 import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
 import it.rizzoli.carbooklogin.Retrofit.api.PersonaApi;
 import it.rizzoli.carbooklogin.R;
@@ -21,9 +21,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
-    private final static String MY_PREFERENCES = "AuthPrefs";
-    private final static String EMAIL_KEY = "email";
-    private final static String PASSWORD_KEY = "password";
     private EditText emailEditText, passwordEditText;
 
 
@@ -61,22 +58,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             passwordEditText.requestFocus();
             return;
         }
-         if (validateLogin(email, password)) {
-             //do login
-             doLogin(email, password);
-         }
+            doLogin(email, password);
+
     }
-    private boolean validateLogin(String email, String password){
-        if(email == null || email.trim().length() == 0){
-            Toast.makeText(this, "Email is required", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if(password == null || password.trim().length() == 0){
-            Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return true;
-    }
+
 
 
     private void doLogin(final String email,final String password){
@@ -91,12 +76,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 if(response.code() == 200){
                     Persona personaLoggata = response.body();
                     if(personaLoggata != null){
-                        //login start main activity
-
                         ClasseCondivisa.personaLoggata = personaLoggata;
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         startActivity(intent);
-                        savePreferencesData();
+
 
                     } else {
                         emailEditText.setError("L'email o la password non è corretta");
@@ -113,15 +96,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             }
         });
     }
-    public void savePreferencesData() {
-        // Otteniamo il riferimento alle Preferences
-        SharedPreferences prefs = getSharedPreferences(MY_PREFERENCES, Context.MODE_PRIVATE);
-        // Otteniamo il corrispondente Editor
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString(EMAIL_KEY, emailEditText.getText().toString());
-        editor.putString(PASSWORD_KEY, passwordEditText.getText().toString());
-        editor.commit();
-    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -170,3 +145,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 startActivity(registratiIntent);
             }
         });*/
+
+// if (validateLogin(email, password)) {
+//do login
+
+/*private boolean validateLogin(String email, String password){
+        if(email == null || email.trim().length() == 0){
+            Toast.makeText(this, "Email is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(password == null || password.trim().length() == 0){
+            Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }*/
