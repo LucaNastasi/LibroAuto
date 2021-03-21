@@ -99,6 +99,3 @@ export class PrimapaginaComponent implements OnInit {
   }
 
 }
-
-
-
