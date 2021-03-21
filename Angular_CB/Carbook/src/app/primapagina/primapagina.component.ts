@@ -110,7 +110,11 @@ export class PrimapaginaComponent implements OnInit {
     
     this.http.post<Pubblicazione>('http://localhost:8080/pubblicazioni', pubblicazione).subscribe();
 
+<<<<<<< HEAD
+}
+=======
 }
 }
 
 
+>>>>>>> 295626d8453b1f070aaf95412f4bc896dacea42f
