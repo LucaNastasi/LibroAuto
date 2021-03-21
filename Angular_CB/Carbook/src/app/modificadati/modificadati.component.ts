@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Pubblicazione } from '../model/pubblicazione';
 import { Automobile } from '../model/automobile'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
-import { Byte } from '@angular/compiler/src/util';
+
 import {Persona} from '../model/persona'
 
 import { Component, OnInit } from '@angular/core';
