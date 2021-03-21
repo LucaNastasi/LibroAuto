@@ -30,7 +30,6 @@
     height: 100%;
   }
 
-<<<<<<< HEAD
   .prova{
     height: 100px;
     display:grid;
@@ -54,7 +53,6 @@
     {background-color: #ff0000;} /* Green */
   .button2 
     {background-color: #008CBA;} /* Blue */
-=======
   .button1 {
     background-color: white; 
   border: 2px solid black;
@@ -71,4 +69,3 @@
     background-color:#756dec;
     color: white;
   }
->>>>>>> 295626d8453b1f070aaf95412f4bc896dacea42f
