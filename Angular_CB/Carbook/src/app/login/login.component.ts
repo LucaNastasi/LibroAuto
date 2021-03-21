@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from '../model/persona';
 import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http'
-import { ClasseCondivisa } from '../model/ClasseCondivisa';
-import { stringify } from 'querystring';
 
 
 @Component({
@@ -23,7 +21,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
        

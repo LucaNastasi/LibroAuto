@@ -3,7 +3,7 @@
         
     </head>
 
-    <body> 
+    <body style="background-color: rgb(66, 66, 66);">
         <nav class="navbar navbar-dark bg-primary">
             <div class="container-fluid">
               <div class="row col-12">
@@ -120,6 +120,7 @@
             </div>
           </nav>
 
+            
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="min-width:700px; max-width: 50%; margin: auto;" >
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -128,13 +129,13 @@
                   </ol>
                 <div class="carousel-inner" style="margin: auto; height: 500px; width: 100%; border: black solid;">
                   <div class="carousel-item active" style="height: 500px; width: 100%; ">
-                    <img class="immagine" src="../assets/logo-2.png" alt="First slide">
+                    <img class="immagine" src="https://prod.pictures.autoscout24.net/listing-images/6cc49cb4-abc0-6f58-e053-0100007f9a4c_3fa78083-1281-4341-b46e-2db3c23e0b7d.jpg/640x480.jpg" alt="First slide">
                   </div> 
                   <div class="carousel-item" style="height: 100%; width: 100%;">
-                    <img class="immagine" src="../assets/classiccar.jpg" alt="Second slide">
+                    <img class="immagine" src="https://prod.pictures.autoscout24.net/listing-images/6cc49cb4-abc0-6f58-e053-0100007f9a4c_c738f91f-9a17-404a-bd1c-dd3bdc6470fb.jpg/640x480.jpg" alt="Second slide">
                   </div>
                   <div class="carousel-item" style="height: 100%; width: 100%;">
-                    <img class="immagine" src="../assets/pimpcar.jpg" alt="Third slide">
+                    <img class="immagine" src="https://prod.pictures.autoscout24.net/listing-images/6cc49cb4-abc0-6f58-e053-0100007f9a4c_2406185a-6748-448c-b644-41e9d1077e48.jpg/640x480.jpg" alt="Third slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -149,206 +150,245 @@
             <div class="container" style="margin: auto; width: 400px;">
                 <div class="row" >
                     <div class="col-sm" style="padding: 10px; height: 70px; width: 50px;">
-                        <img src="../assets/pimpcar.jpg" class="immagine">
+                        <img src="https://prod.pictures.autoscout24.net/listing-images/6cc49cb4-abc0-6f58-e053-0100007f9a4c_3fa78083-1281-4341-b46e-2db3c23e0b7d.jpg/640x480.jpg" class="immagine">
                     </div>
                     <div class="col-sm" style="padding: 10px; height: 70px; width: 50px;">
-                        <img src="../assets/classiccar.jpg" class="immagine">
+                        <img src="https://prod.pictures.autoscout24.net/listing-images/6cc49cb4-abc0-6f58-e053-0100007f9a4c_c738f91f-9a17-404a-bd1c-dd3bdc6470fb.jpg/640x480.jpg" class="immagine">
                     </div>
                     <div class="col-sm" style="padding: 10px; height: 70px; width: 50px;">
-                        <img src="../assets/logo-2.png" class="immagine">
+                        <img src="https://prod.pictures.autoscout24.net/listing-images/6cc49cb4-abc0-6f58-e053-0100007f9a4c_2406185a-6748-448c-b644-41e9d1077e48.jpg/640x480.jpg" class="immagine">
                     </div>
                 </div>
             </div>
 
-        <table class="table table-dark table-hover">
+            <table class="table table-dark table-hover" style = "table-layout:fixed">
 
-            <h3><strong>Dati principali</strong></h3>
+                <h3><strong>Dati principali</strong></h3>
 
-            <tr>
-                <th>Stato</th>
-                <th>Motore e trazione</th>
-                <th>Caratteristiche</th>
-            </tr>
-            <br>
+                <tr>
+                    <th>Stato</th>
+                    <th>Motore e trazione</th>
+                    <th>Caratteristiche</th>
+                </tr>
+                <br>
 
-            <script>
-            </script>
-            <tr>
-                <td>Tipologia di veicolo: 
-                    <button type="button" 
-                    class="btn btn-secondary">Nuovo</button>
-                    <button type="button" 
-                    class="btn btn-secondary">Usato</button>
-                </td>
+                <script>
+                </script>
+                <tr>
+                    <td>Tipologia di veicolo: 
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                            Nuovo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                            Usato
+                            </label>
+                        </div>
+                    </td>
 
-                <td>
-                    Tipo di cambio: 
-                    <label for="cambio">Cambio</label>
-                    <input value = "" type="text" class="form-control" id="cambio" #cambio>
-                </td>
+                    <td>
+                        Tipo di cambio: 
+                        <label for="cambio"></label>
+                        <input value = "" type="text" class="form-control" id="cambio" #cambio>
+                    </td>
 
-                <td>Marca: 
-                    <label for="Marca">Marca</label>
-                    <input value = "" type="text" class="form-control" id="marca" #marca>
-                </td>
-            </tr>
+                    <td>Marca: 
+                        <label for="Marca"></label>
+                        <input value = "" type="text" class="form-control" id="marca" #marca>
+                    </td>
+                </tr>
 
-            <br>
+                <br>
 
-            <tr>
-                <td>Prossima revisione: </td>
+                <tr>
+                    <td>Prossima revisione: <br>
+                        <label for="start"></label>
 
-                <td>Marce: 
-                    <label for="marce">Marce</label>
-                    <input value = "" type="text" class="form-control" id="marce" #marce>
-                </td>
+                            <input type="date" id="start" name="trip-start" value="" min="2018-01-01" max="2099-12-31">
+                    </td>
 
-                <td>Modello: 
-                    <label for="modello">Modello</label>
-                    <input value = "" type="text" class="form-control" id="modello" #modello>
-                </td>
-            </tr>
-            <br>
+                    <td>Marce: 
+                        <label for="marce"></label>
+                        <input value = "" type="text" class="form-control" id="marce" #marce>
+                    </td>
 
-            <tr>
-                <td>Ultimo tagliando: </td>
+                    <td>Modello: 
+                        <label for="modello"></label>
+                        <input value = "" type="text" class="form-control" id="modello" #modello>
+                    </td>
+                </tr>
+                <br>
 
-                <td>Cilindrata: 
-                    <label for="cilindrata">Cilindrata</label>
-                    <input value = "" type="text" class="form-control" id="cilindrata" #cilindrata>
-                </td>
+                <tr>
+                    <td>Ultimo tagliando: <br>
+                        <label for="start"></label>
 
-                <td>Anno: 
-                    <label for="anno">Anno</label>
-                    <input value = "" type="text" class="form-control" id="anno" #anno>
-                </td>
-            </tr>
-            <br>
+                            <input type="date" id="start" name="trip-start" value="" min="2018-01-01" max="2099-12-31">
+                    </td>
 
-            <tr>
-                <td>Tagliandi certificati: </td>
+                    <td>Cilindrata: 
+                        <label for="cilindrata"></label>
+                        <input value = "" type="text" class="form-control" id="cilindrata" #cilindrata>
+                    </td>
 
-                <td>Cilindri: 
-                    <label for="cilindri">Cilindri</label>
-                    <input value = "" type="text" class="form-control" id="cilindri" #cilindri>
-                </td>
+                    <td>Anno: 
+                        <label for="anno"></label>
+                        <input value = "" type="text" class="form-control" id="anno" #anno>
+                    </td>
+                </tr>
+                <br>
 
-                <td>Colore esterno: 
-                    <label for="coloreesterno">Colore esterno</label>
-                    <input value = "" type="text" class="form-control" id="coloreesterno" #coloreesterno>
-                </td>
-            </tr>
-            <br>
+                <tr>
+                    <td>Tagliandi certificati: 
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                            No
+                            </label>
+                        </div>
+                    </td>
 
-            <tr>
-                <td>&nbsp;</td>
+                    <td>Cavalli: 
+                        <label for="cavalli"></label>
+                        <input value = "" type="text" class="form-control" id="cavalli" #cavalli>
+                    </td>
 
-                <td>Peso a vuoto: 
-                    <label for="pesovuoto">Peso a vuoto</label>
-                    <input value = "" type="text" class="form-control" id="pesovuoto" #pesovuoto>
-                </td>
+                    <td>Colore esterno: 
+                        <label for="coloreesterno"></label>
+                        <input value = "" type="text" class="form-control" id="coloreesterno" #coloreesterno>
+                    </td>
+                </tr>
+                <br>
 
-                <td>Tipo di vernice: 
-                    <label for="vernice">Tipo di vernice</label>
-                    <input value = "" type="text" class="form-control" id="vernice" #vernice>
-                </td>
-            </tr>
-            <br>
+                <tr>
+                    <td>&nbsp;</td>
 
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>Carrozzeria: 
-                    <label for="carrozzeria">Carrozzeria</label>
-                    <input value = "" type="text" class="form-control" id="carrozzeria" #carrozzeria>
-                </td>
-            </tr>
-            <br>
+                    <td>Cilindri: 
+                        <label for="cilindri"></label>
+                        <input value = "" type="text" class="form-control" id="cilindri" #cilindri>
+                    </td>
 
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>Porte: 
-                    <label for="porte">Porte</label>
-                    <input value = "" type="text" class="form-control" id="porte" #porte>
-                </td>
-            </tr>
-            <br>
+                    <td>Tipo di vernice: 
+                        <label for="vernice"></label>
+                        <input value = "" type="text" class="form-control" id="vernice" #vernice>
+                    </td>
+                </tr>
+                <br>
 
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                
-                <td>Posti a sedere: 
-                    <label for="postiasedere">Posti a sedere</label>
-                    <input value = "" type="text" class="form-control" id="postiasedere" #postiasedere>
-                </td>
+                <tr>
+                    <td>&nbsp;</td>
 
-            </tr>
-            <br>
-            <hr>
-<!--
-            <h3><strong>Equipaggiamento</strong></h3>
+                    <td>Peso a vuoto: 
+                        <label for="pesovuoto"></label>
+                        <input value = "" type="text" class="form-control" id="pesovuoto" #pesovuoto>
+                    </td>
 
-            <tr>
-                <th>Comfort</th>
-                <th>Infotainment</th>
-                <th>Extra</th>
-                <th>Sicurezza</th>
-            </tr>
--->
-            <!--
-            <tr>
-                <td>
-                    <ul>
-                        <li>Alzacristalli elettrici</li>
-                        <li>Braccioli</li>
-                        <li>Climatizzatore bi-zona</li>
-                        <li>Parabrezza riscaldato</li>
-                        <li>Sedile posteriore sdoppiato</li>
-                        <li>Sensori di parcheggio</li>
-                        <li>Sensore di luminosità</li>
-                        <li>Sistema di navigazione</li>
-                        <li>Volante multifunzione</li>
-                      </ul>
-                </td>
+                    <td>Carrozzeria: 
+                        <label for="carrozzeria"></label>
+                        <input value = "" type="text" class="form-control" id="carrozzeria" #carrozzeria>
+                    </td>
+                </tr>
+                <br>
 
-                <td>
-                    <ul>
-                        <li>Autoradio</li>
-                        <li>Bluetooth</li>
-                        <li>Android auto / Apple car-play</li>
-                        <li>USB</li>
-                        <li>Vivavoce</li>
-                    </ul>
-                </td>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>Porte: 
+                        <label for="porte"></label>
+                        <input value = "" type="text" class="form-control" id="porte" #porte>
+                    </td>
+                </tr>
+                <br>
 
-                <td>
-                    <ul>
-                        <li>Cerchi in lega</li>
-                        <li>Controllo vocale</li>
-                        <li>Freno di stazionamento elettrico</li>
-                    </ul>
-                </td>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    
+                    <td>Posti a sedere: 
+                        <label for="postiasedere"></label>
+                        <input value = "" type="text" class="form-control" id="postiasedere" #postiasedere>
+                    </td>
 
-                <td>
-                    <ul>
-                        <li>ABS</li>
-                        <li>Airbag conducente</li>
-                        <li>Airbag laterali</li>
-                        <li>Airbag passeggero</li>
-                        <li>Airbag posteriore</li>
-                        <li>Antifurto</li>
-                        <li>Chiusura centralizzata</li>
-                        <li>Controllo automatico trazione</li>
-                        <li>ESP</li>
-                        <li>Servosterzo</li>
-                    </ul>
-                </td>
-            
-            </tr>
-        -->
+                </tr>
+                <br>
+                <hr>
 
-        </table>
+                <h3><strong>Equipaggiamento</strong></h3>
+
+                <tr>
+                    <th>Comfort</th>
+                    <th>Infotainment</th>
+                    <th>Extra</th>
+                    <th>Sicurezza</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Alzacristalli elettrici</li>
+                            <li>Braccioli</li>
+                            <li>Climatizzatore bi-zona</li>
+                            <li>Parabrezza riscaldato</li>
+                            <li>Sedile posteriore sdoppiato</li>
+                            <li>Sensori di parcheggio</li>
+                            <li>Sensore di luminosità</li>
+                            <li>Sistema di navigazione</li>
+                            <li>Volante multifunzione</li>
+                        </ul>
+                    </td>
+
+                    <td>
+                        <ul>
+                            <li>Autoradio</li>
+                            <li>Bluetooth</li>
+                            <li>Android auto / Apple car-play</li>
+                            <li>USB</li>
+                            <li>Vivavoce</li>
+                        </ul>
+                    </td>
+
+                    <td>
+                        <ul>
+                            <li>Cerchi in lega</li>
+                            <li>Controllo vocale</li>
+                            <li>Freno di stazionamento elettrico</li>
+                        </ul>
+                    </td>
+
+                    <td>
+                        <ul>
+                            <li>ABS</li>
+                            <li>Airbag conducente</li>
+                            <li>Airbag laterali</li>
+                            <li>Airbag passeggero</li>
+                            <li>Airbag posteriore</li>
+                            <li>Antifurto</li>
+                            <li>Chiusura centralizzata</li>
+                            <li>Controllo automatico trazione</li>
+                            <li>ESP</li>
+                            <li>Servosterzo</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+<!-- padding left sui bottoni per staccarli e paddin-top per centrare i bottoni-->
+
+        <div class = "prova">
+            <div style = "position: absolute; background-color: transparent;">
+                <button type="button" class="button button1">Annulla</button>
+                <button type="button" class="button button2">Salva cambiamenti</button>
+            </div>
+        </div>
     </body>
 </html>
