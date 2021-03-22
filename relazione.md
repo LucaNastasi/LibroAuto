@@ -15,15 +15,9 @@ Nell’annuncio vi sarà presente anche una sezione “Descrizione” dove il ve
 Ti auguriamo una buona permanenza sulla piattaforma e buona compravendita!
 
 <ul>
-<li><a href="https://wireframe.cc/w54CQa">Wireframe Social</a></li>
- <li><a href="https://wireframe.cc/5QKU0w">Wireframe Registrazione/Accedi</a></li>
- <li><a href="https://wireframe.cc/U3LoLr">Wireframe Profilo</a></li>
-<li><a href="https://wireframe.cc/DyoQnj">Wireframe News</a></li>
-<li><a href="https://wireframe.cc/AJ9ykL">Wireframe Eventi</a></li>
 <li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/UseCase.png">Use Case</a></li>
 <li><a href="https://github.com/LucaNastasi/LibroAuto/blob/main/diagramma-er-auto.png">Diagramma ER</a></li>
-<li><a href="https://github.com/LucaNastasi/LibroAuto/tree/main/wireframeWeb">Wireframe web</a></li>
- 
+
 
 </ul>
 </p>
