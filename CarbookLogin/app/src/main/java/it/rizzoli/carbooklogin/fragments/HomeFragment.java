@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -44,10 +45,11 @@ public class HomeFragment extends Fragment {
                 if (response.code() == 200) {
                     ArrayList<ListaPubblicazione> listRisposta = response.body();
                     list.addAll(listRisposta);
-                    Toast.makeText(getContext(), list.toString(), Toast.LENGTH_LONG).show();
 
                     ListaPubblicazioneListAdapter listaPubblicazioneListAdapter = new ListaPubblicazioneListAdapter(getActivity(), R.layout.rowlist_car_layout, list);
                     pubblicazioneListView.setAdapter(listaPubblicazioneListAdapter);
+
+
 
                 }
             }
@@ -63,3 +65,23 @@ public class HomeFragment extends Fragment {
     }
 
 }
+
+
+
+
+
+
+/* userListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Utente ut = userListAdapter.getItem(i);
+                String nominativo = ut.getCognome() + " " + ut.getNome();
+                Toast.makeText(MainActivity.this, nominativo, Toast.LENGTH_LONG).show();
+            }
+        });*/
+
+
+
+
+
+// Toast.makeText(getContext(), list.toString(), Toast.LENGTH_LONG).show();

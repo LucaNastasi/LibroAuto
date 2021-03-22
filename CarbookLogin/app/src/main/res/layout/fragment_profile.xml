@@ -10,10 +10,19 @@
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="150dp">
+
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_baseline_logout_24"
+        android:tint="@color/black" />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:src="#D5008577"/>
+        android:src="#D5008577" />
 
     <ImageView
         android:layout_width="wrap_content"
