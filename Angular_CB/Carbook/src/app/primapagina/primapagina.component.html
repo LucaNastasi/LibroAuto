@@ -140,7 +140,7 @@
 
   <div *ngFor="let automobile of automobili" style="margin:auto; height: 400px; width: 1200px; background-color:white; margin-top: 20px;" class="shadow p-2 mb-1 bg-white rounded">
   <div id="titoloMacchina" style="position: relative; height: 20px; width: 20%; ">
-    <p style="font-size: 20px; font-family:Arial, Helvetica, sans-serif; "><strong>{{automobile.marca}}: {{automobile.modello}}</strong></p>
+    <p style="font-size: 20px; font-family:Arial, Helvetica, sans-serif; "><strong><a routerLink="/visioneannuncio">{{automobile.marca}}: {{automobile.modello}}</a></strong></p>
   </div>
   <div style="position: relative; height: 90%; width: 100%;">
   <div style="position: absolute; top: 20px; left: 10px; height: 300px; width: 30%; "> 

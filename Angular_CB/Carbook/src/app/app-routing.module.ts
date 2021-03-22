@@ -8,7 +8,7 @@ import { PaginaAlertComponent } from './pagina-alert/pagina-alert.component';
 import { DirettiveComponent} from './direttive/direttive.component'
 import { PAnnuncioComponent} from './p-annuncio/p-annuncio.component'
 import { ModificadatiComponent} from './modificadati/modificadati.component'
-//import { VisioneAnnuncioComponent } from './visione-annuncio/visione-annuncio.component';
+import { VisioneAnnuncioComponent } from './visione-annuncio/visione-annuncio.component';
 import { ReimpostaPasswordComponent } from './reimposta-password/reimposta-password.component'
 
 
@@ -20,7 +20,8 @@ const routes: Routes = [
   {path: 'direttive', component: DirettiveComponent},
   {path: 'pannuncio', component: PAnnuncioComponent},
   {path: 'modificadati', component: ModificadatiComponent},
-  {path: 'reimpostapassword', component: ReimpostaPasswordComponent}
+  {path: 'reimpostapassword', component: ReimpostaPasswordComponent},
+  {path: 'visioneannuncio', component: VisioneAnnuncioComponent}
 ];
 
 
