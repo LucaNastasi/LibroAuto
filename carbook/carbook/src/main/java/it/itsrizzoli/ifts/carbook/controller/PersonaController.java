@@ -59,6 +59,11 @@ public class PersonaController {
 	public Persona byID(@PathVariable Integer id) {
 		return repository.findById(id).orElseThrow(() -> new NotFoundException());
 	}
+	
+	@GetMapping("/persone/username/{username}")
+	public Persona byUsername(@PathVariable String username) {
+		return repository.findByUsername(username).orElseThrow(() -> new NotFoundException());
+	}
 
 	@PostMapping("/nuovaPersona") // api
 	public Persona inserisci(@RequestBody Persona persona) {

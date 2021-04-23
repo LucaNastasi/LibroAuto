@@ -14,4 +14,7 @@ public interface PersonaRepository extends JpaRepository<Persona, Integer> {
 
 	@Query("SELECT p FROM Persona p where email= :email and password= :password")
 	public Optional<Persona> match(@Param("email") String email, @Param("password") String password);
+	
+	@Query("select p from Persona p where p.username= :username")
+	public Optional<Persona> findByUsername(@Param ("username")String username);
 }

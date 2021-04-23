@@ -13,7 +13,10 @@ public interface PersonaApi {
     Call<Persona> nuovaPersona(@Body Persona persona);
 
     @POST("/accesso")
-    Call<Persona> accesso (@Body Persona persona);
+    Call<Persona> accesso(@Body Persona persona);
+
+    @GET("/persone/username/{username}")
+    Call<Persona> byUsername(@Path("username") String username);
 
 
 
