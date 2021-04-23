@@ -87,5 +87,17 @@ public class Persona {
         this.citta = citta;
     }
 
-
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", citta='" + citta + '\'' +
+                '}';
+    }
 }
