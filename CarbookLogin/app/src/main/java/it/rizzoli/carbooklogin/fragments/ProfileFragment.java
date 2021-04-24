@@ -13,9 +13,17 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import java.util.List;
+
 import it.rizzoli.carbooklogin.R;
+import it.rizzoli.carbooklogin.Retrofit.RetrofitManager;
+import it.rizzoli.carbooklogin.Retrofit.api.PubblicazioneApi;
 import it.rizzoli.carbooklogin.activities.Login;
 import it.rizzoli.carbooklogin.model.ClasseCondivisa;
+import it.rizzoli.carbooklogin.model.Pubblicazione;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProfileFragment extends Fragment {
     public ProfileFragment() {
@@ -48,7 +56,27 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent logout = new Intent(getActivity(), Login.class);
                 startActivity(logout);
+                pubblicazioneUser();
 
+            }
+
+            private void pubblicazioneUser() {
+                PubblicazioneApi pubblicazioneApi = RetrofitManager.retrofit.create(PubblicazioneApi.class);
+                Call<List<Pubblicazione>> byUser = pubblicazioneApi.byPersona(ClasseCondivisa.personaLoggata);
+                byUser.enqueue(new Callback<List<Pubblicazione>>() {
+                    @Override
+                    public void onResponse(Call<List<Pubblicazione>> call, Response<List<Pubblicazione>> response) {
+                        if(response.code() == 200){
+                            List<Pubblicazione> risposta = response.body();
+                            Toast.makeText(getContext(), (CharSequence) risposta, Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Pubblicazione>> call, Throwable t) {
+
+                    }
+                });
             }
         });
 
