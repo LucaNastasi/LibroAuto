@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.itsrizzoli.ifts.carbook.exceptions.NotFoundException;
+import it.itsrizzoli.ifts.carbook.model.Persona;
 import it.itsrizzoli.ifts.carbook.model.Pubblicazione;
 import it.itsrizzoli.ifts.carbook.repository.PubblicazioneRepository;
 
@@ -30,6 +31,10 @@ public class PubblicazioneController {
 	@GetMapping("/pubblicazioni") // api
 	public List<Pubblicazione> all() {
 		return repository.findAll();
+	}
+	@GetMapping("/pubblicazioni/persona/{persona}")
+	public List<Pubblicazione> byPersona(@PathVariable Persona persona){
+		return repository.byPersona(persona);
 	}
 
 	@GetMapping("/pubblicazioni/{id}")

@@ -63,9 +63,9 @@ public class Pubblicazione {
         return "Pubblicazione{" +
                 "idPubblicazione=" + idPubblicazione +
                 ", descrizione='" + descrizione + '\'' +
-                ", dataPubblicazione=" + dataPubblicazione +
-                ", idAutomobile=" + automobile +
-                ", idPersona=" + persona +
+                ", dataPubblicazione='" + dataPubblicazione + '\'' +
+                ", automobile=" + automobile +
+                ", persona=" + persona +
                 '}';
     }
 }
